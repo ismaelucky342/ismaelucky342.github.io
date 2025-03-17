@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
 
-
 * {
   margin: 0;
   padding: 0;
@@ -16,13 +15,6 @@ body {
   text-align: center;
 }
 
-.pixel-header {
-  position: relative;
-  background-color: #441144;
-  padding: 20px;
-  border-bottom: 4px solid #ffcc00;
-}
-
 /* Animación de parpadeo retro suave */
 @keyframes retroBlink {
   0%, 100% {
@@ -33,15 +25,60 @@ body {
   }
 }
 
-/* Aplicar la animación retro al título */
+/* Efecto de rebote suave retro para el logo */
+@keyframes retroBounce {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Efecto de máquina de escribir para el texto */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Estilo del header */
+.pixel-header {
+  position: relative;
+  background-color: #441144;
+  padding: 20px;
+  border-bottom: 4px solid #ffcc00;
+}
+
+/* Título principal con parpadeo retro */
 .site-title {
   color: #ffcc00;
   text-shadow: 3px 3px 0 #222, 6px 6px 0 #ff0099;
   animation: retroBlink 1.5s ease-in-out infinite; /* Parpadeo suave y lento */
 }
 
-
-
+/* Animación de rebote suave para el logo */
+.pixel-logo {
+  font-size: 48px;
+  color: #FFD700;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  display: inline-block;
+  animation: retroBounce 2s infinite;
+}
 
 .nav-menu {
   display: flex;
@@ -50,7 +87,7 @@ body {
   margin-top: 15px;
 }
 
-
+/* Botones de navegación con efecto retro */
 .nav-button {
   color: #fff090;
   background: none;
@@ -61,6 +98,7 @@ body {
   text-decoration: none;
   position: relative;
   text-transform: uppercase;
+  animation: retroBounce 1.5s infinite; /* Rebote suave en los botones */
 }
 
 .nav-button::after {
@@ -89,14 +127,45 @@ body {
 .nav-button:focus {
   outline: none;
 }
+/* Animación de máquina de escribir para títulos introductorios */
+.intro-title {
+  color: #ffcc00;
+  font-size: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #ffcc00;
+  animation: typing 3s steps(30) 0s 1 normal both;
+  margin: 0 auto;
+  line-height: 1.6;
+}
 
+/* Animación de máquina de escribir para cada párrafo introductorio */
+.intro-text {
+  color: #fff090;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #fff090;
+  animation: typing 4s steps(40) 3s 1 normal both;
+  margin-top: 10px;
+  display: block;
+}
+
+/* Retrasos de animación para cada línea */
+.intro-text:nth-of-type(2) { animation-delay: 3s; }
+.intro-text:nth-of-type(3) { animation-delay: 7s; }
+.intro-text:nth-of-type(4) { animation-delay: 11s; }
+.intro-text:nth-of-type(5) { animation-delay: 15s; }
+.intro-text:nth-of-type(6) { animation-delay: 19s; }
+.intro-text:nth-of-type(7) { animation-delay: 23s; }
+.intro-text:nth-of-type(8) { animation-delay: 27s; }
+.intro-text:nth-of-type(9) { animation-delay: 31s; }
 /* Estilo de la lista y los enlaces con flechas */
 ol {
   list-style-type: none;
   padding: 0;
   margin: 20px 0;
 }
-
 
 .arrow {
   position: relative;
@@ -149,6 +218,7 @@ ol {
   letter-spacing: 5px;
   text-transform: uppercase;
   display: inline-block;
+  animation: retroBounce 2s infinite;
 }
 
 .intro-section {
@@ -167,7 +237,7 @@ ol {
 }
 
 .text-box {
-  max-width: 600px;
+  max-width: 1000px;
   text-align: left;
   padding: 20px;
   border: 4px solid #ffcc00;
