@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
 
-
-
 * {
   margin: 0;
   padding: 0;
@@ -271,7 +269,7 @@ ol {
 .logo-container {
   position: fixed;
   top: 60px;
-  left: 10px;
+  left: 40px;
   display: flex;
   align-items: center;
   justify-content: center;

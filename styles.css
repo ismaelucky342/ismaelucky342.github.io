@@ -110,7 +110,7 @@ body {
     left: 0;
     width: 100%;
     background: rgba(68, 17, 68, 0.9); /* Fondo semitransparente */
-    padding: 15px;
+    padding: 35px;
     border-bottom: 4px solid #ffcc00;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
@@ -118,7 +118,7 @@ body {
   
   /* Asegurar que el contenido no quede oculto detrás del menú */
   body {
-    padding-top: 100px; /* Ajusta según la altura del menú */
+    padding-top: 80px; /* Ajusta según la altura del menú */
   }
 
 /* Título principal con parpadeo retro */
@@ -142,7 +142,7 @@ body {
 .nav-menu {
     display: flex;
     justify-content: center;  /* Centra los botones */
-    gap: 80px; 
+    gap: 40px; 
     margin-top: 15px;
 }
 
@@ -152,7 +152,7 @@ body {
     background: none;
     border: 2px solid #ffcc00;
     padding: 10px 20px;
-    margin: 5px;
+    margin: 10px;
     font-size: 12px;
     text-decoration: none;
     position: relative;
@@ -270,8 +270,8 @@ ol {
 /* Contenedor del logo de 42 */
 .logo-container {
   position: fixed;
-  top: 40px;
-  left: 10px;
+  top: 60px;
+  left: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -281,26 +281,26 @@ ol {
 
 /* Estilo para el logo "42" */
 @keyframes neonGlow {
-  0% {
-    text-shadow: 0 0 3px #FFD700, 0 0 6px #FF9900;
+    0% {
+      text-shadow: 0 0 3px #FFD700, 0 0 6px #FF9900;
+    }
+    50% {
+      text-shadow: 0 0 5px #FFD700, 0 0 8px #FFCC00;
+    }
+    100% {
+      text-shadow: 0 0 3px #FFD700, 0 0 6px #FF9900;
+    }
   }
-  50% {
-    text-shadow: 0 0 5px #FFD700, 0 0 8px #FFCC00;
+  
+  .pixel-logo {
+    font-size: 48px;
+    color: #FFD700;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    display: inline-block;
+    animation: retroBounce 2s infinite, neonGlow 1.5s infinite alternate;
   }
-  100% {
-    text-shadow: 0 0 3px #FFD700, 0 0 6px #FF9900;
-  }
-}
-
-.pixel-logo {
-  font-size: 48px;
-  color: #FFD700;
-  font-weight: bold;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  display: inline-block;
-  animation: retroBounce 2s infinite, neonGlow 1.5s infinite alternate;
-}
 
 .intro-section {
   display: flex;
