@@ -10,9 +10,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.querySelectorAll('.card').forEach(card => {
+// Seleccionamos todas las tarjetas
+const cards = document.querySelectorAll('.card');
+
+// Añadimos el evento de clic para cada tarjeta
+cards.forEach(card => {
     card.addEventListener('click', () => {
-        card.querySelector('.card-inner').classList.toggle('flipped');
+        const cardInner = card.querySelector('.card-inner');
+        cardInner.classList.toggle('flipped'); // Al hacer clic, se agrega o elimina la clase "flipped"
     });
 });
 
+function redirectTo(projectName) {
+    window.location.href = `/projects/${projectName}.html`;
+}
