@@ -358,122 +358,114 @@ ol {
   
 /* Cada tarjeta */
 .card {
-    width: 350px; /* Aumenta el ancho de la tarjeta */
-    height: 450px; /* Aumenta la altura de la tarjeta */
-    perspective: 1000px; /* Esto crea la perspectiva para el giro */
-    margin: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  width: 350px; /* Aumenta el ancho de la tarjeta */
+  height: 450px; /* Aumenta la altura de la tarjeta */
+  perspective: 1000px; /* Esto crea la perspectiva para el giro */
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
-  
+
 /* Envoltorio de la tarjeta que se voltea */
 .card-inner {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease-in-out;
-    cursor: pointer;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+  cursor: pointer;
 }
-  
+
+/* El lado frontal y posterior de la tarjeta */
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
 /* El lado frontal de la tarjeta */
-.card-front,
-.card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.card-front {
+  background-color: #441144; /* Fondo oscuro */
+  border: 4px solid #ffcc00; /* Borde amarillo */
+  box-shadow: 5px 5px 0 #ff0099; /* Sombra rosa */
 }
-  
+
+/* Contenedor de la imagen */
+.image-container {
+  width: 200px;
+  height: 200px; /* Ajusta la altura de la imagen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 0 #ff0099; /* Sombra rosa */
+  overflow: hidden; /* Evita que la imagen sobresalga */
+}
+
+/* Imagen dentro de la tarjeta */
+.intro-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ajusta la imagen sin deformarla */
+}
+
 /* Estilo de los textos dentro de las tarjetas */
 .text-box {
-    width: 100%; /* Usa todo el ancho disponible de la tarjeta */
-    height: 100%; /* Usa toda la altura de la tarjeta */
-    text-align: center; /* Centra el texto dentro de la caja */
-    padding: 20px;
-    border: 4px solid #ffcc00; /* Borde amarillo */
-    background-color: #441144; /* Fondo oscuro */
-    box-shadow: 5px 5px 0 #ff0099; /* Sombra rosa */
-    color: white; /* Texto blanco */
-    font-family: 'Press Start 2P', cursive; /* Fuente pixel art */
-    font-size: 20px; /* Aumenta el tamaño de la fuente */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* Centra el contenido de texto dentro del box */
-    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+  max-width: 90%; /* Ajusta el ancho de la caja de texto */
+  text-align: center;
+  padding: 15px;
+  border: 4px solid #ffcc00;
+  background-color: #441144;
+  box-shadow: 5px 5px 0 #ff0099;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-  
+
 /* El lado posterior de la tarjeta */
 .card-back {
-    transform: rotateY(180deg); /* Gira el lado posterior */
+  transform: rotateY(180deg);
+  background-color: #441144; /* Fondo oscuro */
+  border: 4px solid #ffcc00; /* Borde amarillo */
+  box-shadow: 5px 5px 0 #ff0099; /* Sombra rosa */
 }
-  
+
 /* Eliminamos el hover para que no gire al pasar el ratón */
 .card-inner.flipped {
-    transform: rotateY(180deg); /* Gira 180 grados cuando se hace clic */
+  transform: rotateY(180deg);
 }
-  
-/* Títulos de cada rango con efecto de brillo */
-h2 {
-    font-family: 'Press Start 2P', cursive; /* Fuente pixel art */
-    font-size: 20px; /* Tamaño de fuente más pequeño para los títulos */
-    color: #ffcc00; /* Color amarillo */
-    text-align: center;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00; /* Efecto de brillo */
-}
-  
-/* Estilo de los textos dentro de las tarjetas */
-.text-box {
-    max-width: 90%; /* Ajuste el ancho de la caja de texto */
-    text-align: center; /* Centra el texto dentro de la caja */
-    padding: 15px; /* Reducir el padding para que haya más espacio */
-    border: 4px solid #ffcc00; /* Borde amarillo */
-    background-color: #441144; /* Fondo oscuro */
-    box-shadow: 5px 5px 0 #ff0099; /* Sombra rosa */
-    color: white; /* Texto blanco */
-    font-family: 'Press Start 2P', cursive; /* Fuente pixel art */
-    font-size: 14px; /* Reducir el tamaño de la fuente */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centra el contenido de texto dentro del box */
-    align-items: center;
-}
-  
+
 /* Botón de "Jugar" */
 .play-button {
-    background-color: #4CAF50; /* Verde */
-    border: none;
-    color: white;
-    padding: 15px 30px; /* Aumenta el tamaño del botón */
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-    font-family: 'Press Start 2P', cursive;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  font-family: 'Press Start 2P', cursive;
 }
-  
+
 .play-button:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
-  
-/* Asegurar que el botón quede en la parte inferior */
-.card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    align-items: center;
-}
+
 
 
 .accordion {
