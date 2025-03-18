@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Ismaelucky342</title>
-    <link rel="stylesheet" href="../styles.css">
-    <script src="particles.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press%20Start%202P">
+    <title>42 Philosophers</title>
+    <link rel="stylesheet" href="../proj_styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </head>
 <body class="dark-mode pixel-art">
     <div id="particles-js"></div>
@@ -29,16 +27,76 @@
         <!-- Menú de navegación añadido aquí -->
         <nav class="nav-menu">
             <nav>
-                <a href="../index.html" class="nav-item">ABOUT ME</a>
-                <a href="../projects.html" class="nav-item">42 PROJECTS</a>
-                <a href="../U-Tad.html" class="nav-item">U-Tad</a>
-                <a href="../Contact.html" class="nav-item">CONTACT</a>
+                <a href="index.html" class="nav-item">ABOUT ME</a>
+                <a href="projects.html" class="nav-item">42 PROJECTS</a>
+                <a href="U-Tad.html" class="nav-item">U-Tad</a>
+                <a href="Contact.html" class="nav-item">CONTACT</a>
             </nav>  
             <br>
         </nav>
         <br>
     </header>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <h2>Philosophers</h2>
+    <main class="main-content">
+        <br>
+        <div class="image-box">
+            <img src="../images/philosophers.png" alt="Philosophers"
+                 class="intro-image pixel-border">
+        </div>
+        <br>
+        <section class="intro-section">
+            <div class="container">
+                <div class="text-box">
+                    <p class="intro-text">Philosophers is is a classic synchronization </p>
+                    <p class="intro-text">problem in computer science.</p>
+                    <br>
+                    <p class="intro-text">We have a certain number of philosophers who are</p> 
+                    <p class="intro-text">sitting at a table and need to eat and think. Each</p> 
+                    <p class="intro-text">philosopher needs two forks to eat, but there</p>
+                    <p class="intro-text">are only as many forks as there are philosophers.</p>
+                    <p class="intro-text">The challenge is to design a protocol that ensures</p>
+                    <p class="intro-text">no philosopher starves and that the system avoids</p>
+                    <p class="intro-text">deadlocks.</p>
+                    <br>
+                    <p class="intro-text">The goal is to simulate the Dining Philosophers problem</p>
+                    <p class="intro-text">ensuring that each philosopher can eat and think without</p>
+                    <p class="intro-text">causing deadlocks and starvation.</p>
+                    <p class="intro-text">The bonus extends the simulation by using processes and</p>
+                    <p class="intro-text">semaphores, introducing a more complex synchronization</p> 
+                    <p class="intro-text">mechanism.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-header">Funciones Autorizadas <i class="fas fa-chevron-down"></i></div>
+            <div class="accordion-content">
+                <p>memset, printf, malloc, free, write, usleep, gettimeofday, pthread_create, pthread_detach, pthread_join, pthread_mutex_init, pthread_mutex_destroy, pthread_mutex_lock, pthread_mutex_unlock.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">Bonus <i class="fas fa-chevron-down"></i></div>
+            <div class="accordion-content">
+                <p>Philosophers con procesos y semáforos.</p>
+            </div>
+        </div>
+    </div>
     
-    <script src="../script.js"></script>
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', function () {
+                this.classList.toggle('active');
+                let content = this.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
