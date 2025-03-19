@@ -512,3 +512,13 @@ ol {
 .accordion-item.active .accordion-title i {
   transform: rotate(90deg);
 }
+
+/* Títulos de cada rango con efecto de brillo */
+h2 {
+  font-family: 'Press Start 2P', cursive; /* Fuente pixel art */
+  font-size: 20px; /* Tamaño de fuente más pequeño para los títulos */
+  color: #ffcc00; /* Color amarillo */
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 20px #ffcc00; /* Efecto de brillo */
+}
