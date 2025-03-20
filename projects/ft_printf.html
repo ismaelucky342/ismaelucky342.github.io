@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Ismaelucky342</title>
-    <link rel="stylesheet" href="../styles.css">
-    <script src="particles.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press%20Start%202P">
+    <title>42 Philosophers</title>
+    <link rel="stylesheet" href="../proj_styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </head>
 <body class="dark-mode pixel-art">
     <div id="particles-js"></div>
@@ -38,7 +36,67 @@
         </nav>
         <br>
     </header>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <h2>ft_printf</h2>
+    <main class="main-content">
+        <br>
+        <div class="image-box">
+            <img src="../images/ft_printf.png" alt="Philosophers"
+                 class="intro-image pixel-border">
+        </div>
+        <br>
+        <section class="intro-section">
+            <div class="container">
+                <div class="text-box">
+                    <p class="intro-text">Ft_printf is a custom implementation of the</p>
+                    <p class="intro-text">standard printf function in C.</p>
+                    <br>
+                    <p class="intro-text">It formats and prints output based on format</p> 
+                    <p class="intro-text">specifiers, handling different data types.</p> 
+                    <p class="intro-text">The function processes conversion flags and</p>
+                    <p class="intro-text">modifiers to format strings, numbers, and</p>
+                    <p class="intro-text">memory addresses efficiently.</p>
+                    <p class="intro-text">The challenge is to recreate printf while ensuring</p>
+                    <p class="intro-text">correct parsing, memory management, and performance.</p>
+                    <br>
+                    <p class="intro-text">The goal is to provide a reliable alternative to</p>
+                    <p class="intro-text">printf with support for common specifiers.</p>
+                    <p class="intro-text">The bonus extends the implementation by adding</p>
+                    <p class="intro-text">flags, width, precision, and length modifiers.</p>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-header">Funciones Autorizadas <i class="fas fa-chevron-down"></i></div>
+            <div class="accordion-content">
+                <p>memset, printf, malloc, free, write, usleep, gettimeofday, pthread_create, pthread_detach, pthread_join, pthread_mutex_init, pthread_mutex_destroy, pthread_mutex_lock, pthread_mutex_unlock.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">Bonus <i class="fas fa-chevron-down"></i></div>
+            <div class="accordion-content">
+                <p>Philosophers con procesos y semáforos.</p>
+            </div>
+        </div>
+    </div>
     
-    <script src="../script.js"></script>
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', function () {
+                this.classList.toggle('active');
+                let content = this.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+
