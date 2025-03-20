@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>42 Philosophers</title>
+    <link rel="stylesheet" href="../proj_styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body class="dark-mode pixel-art">
+    <div id="particles-js"></div>
+    
+    <header class="pixel-header">
+        <div class="logo-container">
+            <div class="pixel-logo">42</div>
+        </div>
+        
+        <div class="profile-container">
+            <div class="title-container">
+                <a href="https://github.com/Ismaelucky342" target="_blank" class="title-link">
+                    <h1 class="site-title">Ismaelucky342 HUB</h1>
+                    <br>
+                    <br>
+                </a>
+            </div>
+        </div>
+        <!-- Menú de navegación añadido aquí -->
+        <nav class="nav-menu">
+            <nav>
+                <a href="../index.html" class="nav-item">ABOUT ME</a>
+                <a href="../projects.html" class="nav-item">42 PROJECTS</a>
+                <a href="../U-Tad.html" class="nav-item">U-Tad</a>
+                <a href="../Contact.html" class="nav-item">CONTACT</a>
+            </nav>  
+            <br>
+        </nav>
+        <br>
+    </header>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <h2>MiniShell</h2>
+    <main class="main-content">
+        <br>
+        <div class="image-box">
+            <img src="../images/miniche.png" alt="Philosophers"
+                 class="intro-image pixel-border">
+        </div>
+        <br>
+        <section class="intro-section">
+            <div class="container">
+                <div class="text-box">
+                    <p class="intro-text">Minishell is an implementation of a Unix shell</p>
+                    <p class="intro-text">that allows executing commands and managing processes.</p>
+                    <br>
+                    <p class="intro-text">It uses an AST to parse and execute commands,</p>
+                    <p class="intro-text">including logical operators and wildcards. The AST</p>
+                    <p class="intro-text">structures execution into nodes, making it easier to</p>
+                    <p class="intro-text">handle priorities and command combinations.</p>
+                    <br>
+                    <p class="intro-text">The goal is to create a functional shell that</p>
+                    <p class="intro-text">supports input parsing, redirections, and pipelines.</p>
+                    <p class="intro-text">The bonus extends the functionality with wildcards</p>
+                    <p class="intro-text">and logical operators, enhancing command execution.</p>                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-header">Funciones Autorizadas <i class="fas fa-chevron-down"></i></div>
+            <div class="accordion-content">
+                <p>memset, printf, malloc, free, write, usleep, gettimeofday, pthread_create, pthread_detach, pthread_join, pthread_mutex_init, pthread_mutex_destroy, pthread_mutex_lock, pthread_mutex_unlock.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">Bonus <i class="fas fa-chevron-down"></i></div>
+            <div class="accordion-content">
+                <p>Philosophers con procesos y semáforos.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', function () {
+                this.classList.toggle('active');
+                let content = this.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
