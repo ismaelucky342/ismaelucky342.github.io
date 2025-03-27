@@ -219,14 +219,14 @@ body {
 }
 
 /* Retrasos de animación para cada línea, esperando a que termine la anterior */
-.intro-text:nth-of-type(1) { animation-delay: 3s; } /* Espera a que termine el título */
-.intro-text:nth-of-type(2) { animation-delay: 3.5s; }
-.intro-text:nth-of-type(3) { animation-delay: 4s; }
-.intro-text:nth-of-type(4) { animation-delay: 4.5s; }
-.intro-text:nth-of-type(5) { animation-delay: 5s; }
-.intro-text:nth-of-type(6) { animation-delay: 5.5s; }
-.intro-text:nth-of-type(7) { animation-delay: 6s; }
-.intro-text:nth-of-type(8) { animation-delay: 6.5s; }
+.intro-text:nth-of-type(1) { animation-delay: 1.5s; } /* Espera a que termine el título */
+.intro-text:nth-of-type(2) { animation-delay: 2s; }
+.intro-text:nth-of-type(3) { animation-delay: 2.5s; }
+.intro-text:nth-of-type(4) { animation-delay: 3s; }
+.intro-text:nth-of-type(5) { animation-delay: 3.5s; }
+.intro-text:nth-of-type(6) { animation-delay: 4s; }
+.intro-text:nth-of-type(7) { animation-delay: 4.5s; }
+.intro-text:nth-of-type(8) { animation-delay: 5s; }
 /* Estilo de la lista y los enlaces con flechas */
 ol {
   list-style-type: none;
@@ -301,6 +301,7 @@ ol {
   }
 
 .intro-section {
+  margin-top: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -347,6 +348,7 @@ ol {
 
 /* Contenedor principal de las tarjetas */
 .container {
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -358,8 +360,8 @@ ol {
   
 /* Cada tarjeta */
 .card {
-  width: 350px; /* Aumenta el ancho de la tarjeta */
-  height: 450px; /* Aumenta la altura de la tarjeta */
+  width: 300px; /* Aumenta el ancho de la tarjeta */
+  height: 400px; /* Aumenta la altura de la tarjeta */
   perspective: 1000px; /* Esto crea la perspectiva para el giro */
   margin: 15px;
   display: flex;

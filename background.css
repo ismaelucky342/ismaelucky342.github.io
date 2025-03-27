@@ -5,9 +5,6 @@ body {
 	overflow: hidden;
     overflow: auto;
 	background-color: #000;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
 
@@ -64,8 +61,8 @@ body {
 			}
 
 			&::before {
-				background-image: repeating-linear-gradient(to left, green, green 4px, transparent 4px, transparent var(--grid)), 
-					repeating-linear-gradient(to bottom, green, green 4px, transparent 4px, transparent var(--grid));
+				background-image: repeating-linear-gradient(to left, yellow, yellow 4px, transparent 4px, transparent var(--grid)), 
+					repeating-linear-gradient(to bottom, yellow, yellow 4px, transparent 4px, transparent var(--grid));
 				animation: move 1s linear infinite forwards;
 			}
 

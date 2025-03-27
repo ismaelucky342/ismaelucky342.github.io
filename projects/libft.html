@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>42 Philosophers</title>
     <link rel="stylesheet" href="../proj_styles.css">
+    <link rel="stylesheet" href="../background.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </head>
 <body class="dark-mode pixel-art">
-    <div id="particles-js"></div>
-    
+    <div class="grid-container">
+        <div class="plane">
+            <div class="grid"></div>
+            <div class="glow"></div>
+        </div>
+        <div class="plane">
+            <div class="grid"></div>
+            <div class="glow"></div>
+        </div>
+    </div>    
     <header class="pixel-header">
         <div class="logo-container">
             <div class="pixel-logo">42</div>
@@ -67,20 +76,173 @@
         </section>
     </main>
 
-    <div class="accordion">
-        <div class="accordion-item">
-            <div class="accordion-header">Funciones Autorizadas <i class="fas fa-chevron-down"></i></div>
-            <div class="accordion-content">
-                <p>memset, printf, malloc, free, write, usleep, gettimeofday, pthread_create, pthread_detach, pthread_join, pthread_mutex_init, pthread_mutex_destroy, pthread_mutex_lock, pthread_mutex_unlock.</p>
+    <section class="intro-section">
+        <div class="container">
+            <div class="text-box">
+                <h3 class="intro-title">String and Character Manipulation Functions</h3>
+                <div class="accordion-container">
+                    <div class="accordion-item">
+                        <button class="accordion-header">ft_tolower.c</button>
+                        <div class="accordion-content">
+                            Converts a character to lowercase if it's an uppercase letter.
+                        </div>
+                    </div>
+                    <div class="accordion-item"></div>
+                        <button class="accordion-header">ft_toupper.c</button>
+                        <div class="accordion-content">
+                            Converts a character to uppercase if it's a lowercase letter.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">ft_strlen.c</button>
+                        <div class="accordion-content">
+                            Calculates the length of a string (excluding the null terminator).
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">ft_strlcpy.c</button>
+                        <div class="accordion-content">
+                            Copies a string to another, ensuring the result is null-terminated and does not exceed the buffer size.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">ft_strlcat.c</button>
+                        <div class="accordion-content">
+                            Concatenates two strings, ensuring the result is null-terminated and does not exceed the buffer size.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">ft_strncmp.c</button>
+                        <div class="accordion-content">
+                            Compares the first n characters of two strings.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">ft_strnstr.c</button>
+                        <div class="accordion-content">
+                            Finds the first occurrence of a substring within another string, limited to n characters.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">ft_strjoin.c</button>
+                        <div class="accordion-content">
+                            Joins two strings into a new string.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">ft_strdup.c</button>
+                        <div class="accordion-content">
+                            Duplicates a string, allocating memory dynamically.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">ft_strrchr.c</button>
+                        <div class="accordion-content">
+                            Searches for the last occurrence of a character in a string.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">ft_strmapi.c</button>
+                        <div class="accordion-content">
+                            Applies a function to each character of a string to create a new string.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">ft_striteri.c</button>
+                        <div class="accordion-content">
+                            Applies a function to each character of a string, modifying it in place.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">ft_strchr.c</button>
+                        <div class="accordion-content">
+                            Searches for the first occurrence of a character in a string.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">ft_strtrim.c</button>
+                        <div class="accordion-content">
+                            Trims specified characters from the beginning and end of a string.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">ft_substr.c</button>
+                        <div class="accordion-content">
+                            Extracts a substring from a string, starting at a given index and for a specific length.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">ft_split.c</button>
+                        <div class="accordion-content">
+                            Splits a string into an array of strings using a specified delimiter.
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="accordion-item">
-            <div class="accordion-header">Bonus <i class="fas fa-chevron-down"></i></div>
-            <div class="accordion-content">
-                <p>Philosophers con procesos y semáforos.</p>
+        <div class="container">
+            <div class="text-box">
+                <h3 class="group-title">Conversion Functions</h3>
+                <ul class="function-list">
+                    <li>ft_atoi.c: Converts a string to an integer.</li>
+                    <li>ft_itoa.c: Converts an integer to a string.</li>
+                </ul>
             </div>
         </div>
-    </div>
+        <div class="container">
+            <div class="text-box">
+                <h3 class="group-title">Input/Output (I/O) Functions</h3>
+                <ul class="function-list">
+                    <li>ft_putstr_fd.c: Writes a string to a file descriptor (e.g., a file or console).</li>
+                    <li>ft_putendl_fd.c: Writes a string followed by a newline to a file descriptor.</li>
+                    <li>ft_putchar_fd.c: Writes a character to a file descriptor.</li>
+                    <li>ft_putnbr_fd.c: Writes an integer to a file descriptor.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="text-box">
+                <h3 class="group-title">Memory Functions</h3>
+                <ul class="function-list">
+                    <li>ft_memset.c: Fills a block of memory with a specific value.</li>
+                    <li>ft_bzero.c: Sets all bytes in a block of memory to zero.</li>
+                    <li>ft_memcpy.c: Copies a block of memory to another location.</li>
+                    <li>ft_memmove.c: Copies a block of memory to another location, handling overlapping areas correctly.</li>
+                    <li>ft_calloc.c: Allocates memory for a number of elements, initializing them to zero.</li>
+                    <li>ft_memchr.c: Searches for the first occurrence of a byte in a block of memory.</li>
+                    <li>ft_memcmp.c: Compares two blocks of memory.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="text-box">
+                <h3 class="group-title">Character Checking Functions</h3>
+                <ul class="function-list">
+                    <li>ft_isalnum.c: Checks if a character is alphanumeric.</li>
+                    <li>ft_isalpha.c: Checks if a character is a letter.</li>
+                    <li>ft_isdigit.c: Checks if a character is a digit.</li>
+                    <li>ft_isascii.c: Checks if a character is part of the ASCII set.</li>
+                    <li>ft_isprint.c: Checks if a character is printable.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="text-box">
+                <h3 class="group-title">Linked List Functions (Bonus)</h3>
+                <ul class="function-list">
+                    <li>ft_lstnew_bonus.c: Creates a new linked list node.</li>
+                    <li>ft_lstadd_front_bonus.c: Adds a node to the front of a linked list.</li>
+                    <li>ft_lstsize_bonus.c: Counts the number of nodes in a linked list.</li>
+                    <li>ft_lstlast_bonus.c: Gets the last node in a linked list.</li>
+                    <li>ft_lstadd_back_bonus.c: Adds a node to the end of a linked list.</li>
+                    <li>ft_lstdelone_bonus.c: Deletes and frees a single node from the list.</li>
+                    <li>ft_lstclear_bonus.c: Deletes and frees all nodes in a linked list.</li>
+                    <li>ft_lstiter_bonus.c: Applies a function to each node in a linked list.</li>
+                    <li>ft_lstmap_bonus.c: Creates a new list by applying a function to each node of the original list.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
     
     <script>
         document.querySelectorAll('.accordion-header').forEach(header => {
