@@ -14,7 +14,7 @@ body {
 	height: 100%;
 	position: fixed;
     z-index: -1;
-	top: 60;
+	top: 0;
 	left: 0;
 	transform-style: preserve-3d;
 	perspective: 100rem;

@@ -77,22 +77,101 @@
                 </div>
             </div>
         </section>
+
+        <section class="intro-section">
+            <div class="container">
+                <div class="text-box">
+                    <p class="intro-title">Philosophers - Mandatory part</p>
+                    <p class="intro-text">Each philosopher is represented as a thread.</p>
+                    <p class="intro-text">There is one fork between each philosopher, and each fork is 
+                    <p class="intro-text">protected by a mutex.Philosophers must alternate between eating,</p>
+                    <p class="intro-text"> thinking, and sleeping.</p>
+                    <p class="intro-text">The program must prevent deadlocks and ensure no philosopher </p>
+                    <p class="intro-text">starves. The simulation ends when all philosophers have</p>
+                    <p class="intro-text">eaten a specified number of times (if provided).</p>
+                    <br>
+                    <p class="intro-text">The implementation must adhere to the following constraints:</p>
+                    <p class="intro-text">Authorized functions include:</p>
+                    <div class="accordion">
+                        <div class="accordion-header">Click to view authorized functions</div>
+                        <div class="accordion-content" style="display: none;">
+                            <ul>
+                                <li>memset</li>
+                                <li>printf</li>
+                                <li>malloc</li>
+                                <li>free</li>
+                                <li>write</li>
+                                <li>usleep</li>
+                                <li>gettimeofday</li>
+                                <li>pthread_create</li>
+                                <li>pthread_detach</li>
+                                <li>pthread_join</li>
+                                <li>pthread_mutex_init</li>
+                                <li>pthread_mutex_destroy</li>
+                                <li>pthread_mutex_lock</li>
+                                <li>pthread_mutex_unlock</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="intro-text">The use of external libraries like libft is not allowed.</p>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="intro-section">
+            <div class="container">
+                <div class="text-box">
+                    <p class="intro-title">Philosophers - Bonus part</p>
+                    <p class="intro-text">In the bonus part, philosophers are represented as processes </p> 
+                    <p class="intro-text">instead of threads.</p>
+                    <p class="intro-text">The forks are placed in the center of the table and are </p> 
+                    <p class="intro-text">controlled by semaphores.</p>
+                    <p class="intro-text">Each philosopher is a process, and the main process should </p> 
+                    <p class="intro-text">not be a philosopher.</p>
+                    <p class="intro-text">Each philosopher must alternate between eating, thinking, </p> 
+                    <p class="intro-text">and sleeping.</p>
+                    <p class="intro-text">The program must prevent deadlocks and ensure no philosopher </p> 
+                    <p class="intro-text">starves.</p>
+                    <p class="intro-text">The simulation ends when all philosophers have eaten a </p> 
+                    <p class="intro-text">specified number of times (if provided).</p>
+                    <br>
+                    <p class="intro-text">The implementation must adhere to the following constraints:</p>
+                    <p class="intro-text">Authorized functions include:</p>
+                    <div class="accordion">
+                        <div class="accordion-header">Click to view authorized functions</div>
+                        <div class="accordion-content" style="display: none;">
+                            <ul>
+                                <li>memset</li>
+                                <li>printf</li>
+                                <li>malloc</li>
+                                <li>free</li>
+                                <li>write</li>
+                                <li>fork</li>
+                                <li>kill</li>
+                                <li>exit</li>
+                                <li>pthread_create</li>
+                                <li>pthread_detach</li>
+                                <li>pthread_join</li>
+                                <li>usleep</li>
+                                <li>gettimeofday</li>
+                                <li>waitpid</li>
+                                <li>sem_open</li>
+                                <li>sem_close</li>
+                                <li>sem_post</li>
+                                <li>sem_wait</li>
+                                <li>sem_unlink</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="intro-text">The use of external libraries like libft is not allowed in this part.</p>
+                </div>
+            </div>
+        </section>
+        
+
     </main>
 
-    <div class="accordion">
-        <div class="accordion-item">
-            <div class="accordion-header">Funciones Autorizadas <i class="fas fa-chevron-down"></i></div>
-            <div class="accordion-content">
-                <p>memset, printf, malloc, free, write, usleep, gettimeofday, pthread_create, pthread_detach, pthread_join, pthread_mutex_init, pthread_mutex_destroy, pthread_mutex_lock, pthread_mutex_unlock.</p>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">Bonus <i class="fas fa-chevron-down"></i></div>
-            <div class="accordion-content">
-                <p>Philosophers con procesos y semáforos.</p>
-            </div>
-        </div>
-    </div>
     
     <script>
         document.querySelectorAll('.accordion-header').forEach(header => {
