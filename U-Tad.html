@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - Ismaelucky342</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="proj_styles.css">
     <link rel="stylesheet" href="background.css">
     <script src="particles.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -47,8 +47,71 @@
         </nav>
         <br>
     </header>
+    <br><br><br><br><br><br><br><br><br><br>
+    <utadh2>U-Tad</utadh2>
+    <br><br>
+    <main class="main-content">
+        <br>
+        <div class="image-box">
+            <img src="images/pixel_utad.png" alt="Philosophers"
+                 class="intro-image pixel-border">
+        </div>
+        <br>
+        <section class="intro-section">
+            <div class="container">
+                <div class="utext-box">
+                    <p class="intro-title">My journey at U-Tad</p>
+                    <p class="intro-text">Here are the projects and content carried out during my B.S. Double </p>
+                    <p class="intro-text">Degree in Computer Science and Computational Mathematics at U-Tad. </p>
+                    <br>
+                    <p class="intro-text">This program at U-Tad offers a comprehensive and interdisciplinary </p>
+                    <p class="intro-text">education that combines the core principles of <strong>Computer Science</strong> with</p>
+                    <p class="intro-text">advanced mathematical theories, preparing students to tackle complex  </p>
+                    <p class="intro-text">problems in areas such as data science, artificial intelligence, </p>
+                    <p class="intro-text">machine learning and software engineering.</p>
+                    <br>
+                    <p class="intro-text">The Github repository is organized by academic year, semester, and</p>
+                    <p class="intro-text">finally by subject, where I have stored study content, practical</p>
+                    <p class="intro-text">materials from the subjects, personal projects, and exams. </p>
+                    <p class="intro-text"><br>
+                    <p class="intro-text">Many of the subjects, such as those taken in the mathematics section</p>
+                    <p class="intro-text">of the double degree, do not include practical or coding content</p>
+                    <p class="intro-text">so they will only contain a transcription of my summaries and</p>
+                    <p class="intro-text">study materials into Markdown.</p>
+                    <p class="intro-text">The rest of the subjects, unless otherwise specified, will have the</p>
+                    <p class="intro-text">full content (study material, examples, practical exercises, etc.).</p>
+                    <br>
+                </div>
+            </div>
+        </section>
+        <section class="intro-section">
+            <div class="container2">
+                <div class="text-box2">
+                    <p class="intro-title"><strong>Degree Curriculum:</strong></p>
+                    <p class="intro-text">The degree is divided into <strong>five academic </p>
+                    <p class="intro-text">courses</strong>, each consisting of two semesters  </p>
+                    <p class="intro-text">(Q1 & Q2), which offer a blend >of <strong>core subjects</strong></p>
+                    <p class="intro-text"><strong>elective subjects</strong>,and <strong>interships for work</strong>.</p>
+                    <br>
+                    <div class="button-container">
+                        <button class="index-button" onclick="scrollToSection('1st Course')">Year 1</button>
+                        <button class="index-button" onclick="scrollToSection('2nd Course')">Year 2</button>
+                        <button class="index-button" onclick="scrollToSection('3th Course')">Year 3</button>
+                        <button class="index-button" onclick="scrollToSection('4th Course')">Year 4</button>
+                        <button class="index-button" onclick="scrollToSection('5th Course')">Year 5</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+
+    </main>
     
     
+    <script>function scrollToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    }</script>
     <script src="script.js"></script>
 </body>
 </html>
