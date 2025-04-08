@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>42 Philosophers</title>
+    <link rel="stylesheet" href="../proj_styles.css">
+    <link rel="stylesheet" href="../background.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body class="dark-mode pixel-art">
+    <div class="grid-container">
+        <div class="plane">
+            <div class="grid"></div>
+            <div class="glow"></div>
+        </div>
+        <div class="plane">
+            <div class="grid"></div>
+            <div class="glow"></div>
+        </div>
+    </div>    
+    <header class="pixel-header">
+        <div class="logo-container">
+            <div class="pixel-logo">42</div>
+        </div>
+        
+        <div class="profile-container">
+            <div class="title-container">
+                <a href="https://github.com/Ismaelucky342" target="_blank" class="title-link">
+                    <h1 class="site-title">Ismaelucky342 HUB</h1>
+                    <br>
+                    <br>
+                </a>
+            </div>
+        </div>
+        <!-- Menú de navegación añadido aquí -->
+        <nav class="nav-menu">
+            <nav>
+                <a href="../index.html" class="nav-item">ABOUT ME</a>
+                <a href="../projects.html" class="nav-item">42 PROJECTS</a>
+                <a href="../U-Tad.html" class="nav-item">U-Tad</a>
+                <a href="../Contact.html" class="nav-item">CONTACT</a>
+            </nav>  
+            <br>
+        </nav>
+        <br>
+    </header>
+    <h2>cpp module 00</h2>
+    <main class="main-content">
+        <br>
+        <div class="image-box">
+            <img src="../images/cpp.png" alt="Philosophers"
+                 class="intro-image pixel-border">
+        </div>
+        <br>
+        <section class="intro-section">
+            <div class="container">
+                <div class="text-box">
+                    <p class="intro-text">cpp_module_00 is the first step into</p>
+                    <p class="intro-text">C++ programming,fundamental concepts</p>
+                    <p class="intro-text">and syntax.</p>
+                    <br>
+                    <p class="intro-text">It covers variables, data types, and </p>
+                    <p class="intro-text">basic input/output.</p>
+                    <br>
+                    <p class="intro-text">The goal is to build a strong foundation</p>
+                    <p class="intro-text"> in C++, focusing on structured programming</p>
+                    <p class="intro-text">and best practices. Understanding these </p>
+                    <p class="intro-text">basics is crucial for later modules that</p>   
+                    <p class="intro-text">introduce object-oriented programming.</p>                 
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="button-container2">
+                    <button class="index-button2" onclick="scrollToSection('ex00')">Exercise 00</button>
+                    <button class="index-button2" onclick="scrollToSection('ex01')">Exercise 01</button>
+                    <button class="index-button2" onclick="scrollToSection('ex02')">Exercise 02</button>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id='ex00' class="intro-section">
+            <div class="container">
+                <div class="text-box">
+                    <p class="intro-title3">Exercise 00: Megaphone</p>
+                    <p class="intro-text"><strong>Description:</strong> The "Megaphone" exercise involves creating a C++ </p>
+                    <p class="intro-text">program that takes command-line arguments and converts them to </p>
+                    <p class="intro-text">uppercase. If no arguments are provided, the program should </p>
+                    <p class="intro-text">print a loud and annoying feedback noise message.</p>
+                    <p class="intro-text"><strong>Objective:</strong></p>
+                    <br>
+                    <p class="intro-text">->Handling command-line arguments.</li>
+                    <p class="intro-text">->Converting characters to uppercase.</li>
+                    <p class="intro-text">->Printing messages to the console.</li>
+                    </section>
+                </div>
+            </div>
+        </section>
+        <section id='ex01' class="intro-section">
+            <div class="container">
+                <div class="text-box">
+                    <p class="intro-title3">Exercise 01: Phonebook</p>
+                    <p class="intro-text"><strong>Description:</strong> The "Phonebook" exercise involves creating a C++ program to manage contact information.</p>
+                    <p class="intro-text">The program allows users to add new contacts and search for existing ones.</p>
+                    <p class="intro-text">Each contact consists of a first name, last name, nickname, phone number, and a secret.</p>
+                    <p class="intro-text"><strong>Objective:</strong></p>
+                    <br>
+                    <p class="intro-text">-> Handling user input and commands.</p>
+                    <p class="intro-text">-> Managing and storing contact information.</p>
+                    <p class="intro-text">-> Implementing a simple phonebook with add and search functionalities.</p>
+                </div>
+            </div>
+        </section>
+        <section id='ex02' class="intro-section">
+            <div class="container">
+                <div class="text-box">
+                    <p class="intro-title3">Exercise 02: Account Class</p>
+                    <p class="intro-text"><strong>Description:</strong> This project implements a C++ Account class that simulates the basic behavior of a bank account.</p>
+                    <p class="intro-text">The class handles operations like deposits and withdrawals and provides both individual and global account information.</p>
+                    <p class="intro-text">Each transaction also displays a timestamp to track the operation time.</p>
+                    <p class="intro-text"><strong>Objective:</strong></p>
+                    <br>
+                    <p class="intro-text">-> Implement the Account class with deposit and withdrawal operations.</p>
+                    <p class="intro-text">-> Track and display global statistics for all accounts.</p>
+                    <p class="intro-text">-> Display account and transaction information with timestamps.</p>
+                    <p class="intro-text">-> Create a test program to validate functionality and correctness.</p>
+                </div>
+            </div>
+        </section>
+        
+    
+        
+    </main>
+
+    
+    
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', function () {
+                this.classList.toggle('active');
+                let content = this.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+            function scrollToSection(sectionId) {
+        const element = document.getElementById(sectionId);
+        const offset = 200; // Ajusta este valor según el espacio que desees dejar arriba
+        const top = element.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+    }   
+    </script>
+
+</body>
+</html>

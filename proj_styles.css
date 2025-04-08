@@ -216,7 +216,17 @@ body {
   line-height: 1.6;
 }
 
-
+.intro-title3 {
+  font-size: 20px;
+  font-family: 'Press Start 2P', cursive; /* Fuente pixel art */
+  text-shadow: 0 0 5px #0084ff, 0 0 10px#1100ff, 0 0 20px#1ec7dd; /* Efecto de brillo */
+  color: #fafaf8; /* Color amarillo */
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 1s steps(20) 2s normal both;
+  margin: 0 auto;
+  line-height: 1.6;
+}
 
 /* Animación de máquina de escribir para cada párrafo introductorio */
 .intro-text {
@@ -225,14 +235,16 @@ body {
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid #fff090;
-  animation: typing 0.5s steps(40) 1s 1 normal both;
+  animation: typing 1s steps(40) 1s 1 normal both;
   margin-top: 10px;
   display: block;
   display: flex;
 }
 
 
-
+.intro-title3:nth-of-type(1) {
+  animation-delay: 0.5s; /* Espera a que termine el título */
+}
 
 /* Retrasos de animación para cada línea, esperando a que termine la anterior */
 .intro-text:nth-of-type(1) { animation-delay: 0.5s; } /* Espera a que termine el título */
@@ -471,6 +483,53 @@ utadh2 {
   flex: 0 0 auto; /* Evita que los botones se expandan */
 }
 
+.button-container2 {
+  margin-left: 50px;
+  display: flex;
+  padding-top: 20px;
+  flex-direction: column; /* Botones en columna */
+  align-items: flex-end; /* Alinea los botones a la derecha */
+  gap: 40px;
+  flex: 0 0 auto; /* Evita que los botones se expandan */
+}
+
+.index-button2 {
+  height: 70px; /* Ajusta la altura según lo necesario */
+  font-family: "Press Start 2P", cursive;
+  font-size: 14px;
+  color: #00FFFF; /* Azul eléctrico */
+  background: black;
+  border: 4px solid #00FFFF; /* Azul eléctrico */
+  padding: 10px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0px #00FFFF; /* Azul eléctrico */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px; /* Tamaño fijo */
+}
+.index-button2:hover {
+  background: #333;
+  color: yellow;
+  border-color: yellow;
+  box-shadow: 4px 4px 0px yellow;
+}
+
+.index-button2::after {
+  content: "\f061";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: yellow;
+  margin-left: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.index-button2:hover::after {
+  opacity: 1;
+}
 
 .index-button {
   font-family: "Press Start 2P", cursive;
