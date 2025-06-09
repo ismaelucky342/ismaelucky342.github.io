@@ -97,196 +97,93 @@
         </nav>
         <br>
     </header>
-    <h2>cpp module 01</h2>
-    <main class="main-content">
-        <br>
-        <div class="image-box">
-            <img src="../images/cpp.png" alt="Philosophers"
-                 class="intro-image pixel-border">
-        </div>
-        <br>
-        <section class="intro-section">
-            <div class="container">
-                <div class="text-box">
-                    <p class="intro-text">cpp_module_01 delves deeper into</p>
-                    <p class="intro-text">C++ programming, focusing on memory</p>
-                    <p class="intro-text">allocation and management.</p>
-                    <br>
-                    <p class="intro-text">It introduces pointers to members,</p>
-                    <p class="intro-text">references, and the use of switch</p>
-                    <p class="intro-text">statements for control flow.</p>
-                    <br>
-                    <p class="intro-text">The goal is to enhance understanding</p>
-                    <p class="intro-text">of dynamic memory and structured</p>
-                    <p class="intro-text">programming techniques. Mastering</p>
-                    <p class="intro-text">these concepts is essential for tackling</p>
-                    <p class="intro-text">more advanced topics in future modules.</p>
-                    <br>
-                    <p class="intro-text">Additionally, this module emphasizes</p>
-                    <p class="intro-text">the importance of constructors and</p>
-                    <p class="intro-text">destructors in managing object lifecycles.</p>
-                    <br>
-                    <p class="intro-text">Students will also explore the nuances</p>
-                    <p class="intro-text">of operator overloading, enabling more</p>
-                    <p class="intro-text">intuitive and efficient code.</p>
-                    <br>
-                    <p class="intro-text">By the end of cpp_module_01, learners</p>
-                    <p class="intro-text">will have a solid foundation in memory</p>
-                    <p class="intro-text">management and object-oriented design.</p>
-                </div>
-                <br>
-                <br>
-                <br>
-                <div class="button-containercp1">
-                    <button class="index-buttoncp1" onclick="scrollToSection('ex00')">Exercise 00</button>
-                    <button class="index-buttoncp1" onclick="scrollToSection('ex01')">Exercise 01</button>
-                    <button class="index-buttoncp1" onclick="scrollToSection('ex02')">Exercise 02</button>
-                    <button class="index-buttoncp1" onclick="scrollToSection('ex03')">Exercise 03</button>
-                    <button class="index-buttoncp1" onclick="scrollToSection('ex04')">Exercise 04</button>
-                    <button class="index-buttoncp1" onclick="scrollToSection('ex05')">Exercise 05</button>
-                    <button class="index-buttoncp1" onclick="scrollToSection('ex06')">Exercise 06</button>
-                </div>
+    <h2>cpp module 02</h2>
+        <main class="main-content">
+            <br>
+            <div class="image-box">
+                <img src="../images/cpp.png" alt="CPP Module 02"
+                    class="intro-image pixel-border">
             </div>
-        </section>
+            <br>
+            <section class="intro-section">
+                <div class="container">
+                    <div class="text-box">
+                        <p class="intro-text">cpp_module_02 dives into more advanced object-oriented programming in C++.</p>
+                        <p class="intro-text">It introduces the Orthodox Canonical Form and the concept of fixed-point numbers.</p>
+                        <br>
+                        <p class="intro-text">Students will gain experience with operator overloading and ad-hoc polymorphism.</p>
+                        <p class="intro-text">They'll also build reusable and correctly structured C++ classes split into .hpp and .cpp files.</p>
+                        <br>
+                        <p class="intro-text">This module emphasizes clean class design, memory management, and precise object behavior.</p>
+                        <p class="intro-text">It culminates with a geometric challenge using a custom Point class and fixed-point arithmetic.</p>
+                        <br>
+                        <p class="intro-text">By completing cpp_module_02, learners strengthen their understanding of class mechanics,</p>
+                        <p class="intro-text">encapsulation, and operator customization in C++.</p>
+                    </div>
+                    <br><br><br>
+                    <div class="button-containercp1">
+                        <button class="index-buttoncp1" onclick="scrollToSection('ex00')">Exercise 00</button>
+                        <button class="index-buttoncp1" onclick="scrollToSection('ex01')">Exercise 01</button>
+                        <button class="index-buttoncp1" onclick="scrollToSection('ex02')">Exercise 02</button>
+                        <button class="index-buttoncp1" onclick="scrollToSection('ex03')">Exercise 03</button>
+                    </div>
+                </div>
+            </section>
 
-        <section id='ex00' class="intro-section">
-            <div class="container">
-            <div class="text-box">
-                <p class="intro-title3">Exercise 00: BraiiiiiiinnnzzzZ</p>
-                <p class="intro-text">This exercise involves creating a Zombie class in C++.</p>
-                <p class="intro-text">The class includes a private string attribute for the zombie's</p>
-                <p class="intro-text">name and a member function void announce() that makes the zombie </p>
-                <p class="intro-text">announce itself.</p>
-                <p class="intro-text">Additionally, two functions are implemented:</p>
-                <br>
-                <p class="intro-text"><strong>-> Zombie* newZombie(std::string name):</strong> Creates a zombie, names it,</p>
-                <p class="intro-text">   and returns it for use outside the function scope.</p>
-                <br>
-                <p class="intro-text"><strong>-> void randomChump(std::string name):</strong> Creates a zombie, names it,</p>
-                <p class="intro-text">   and makes it announce itself.</p>
-                <br>
-                <p class="intro-text"><strong>Objective:</strong> Understand when to allocate zombies on</p>
-                <p class="intro-text">the stack versus the heap and ensure proper destruction of zombies</p>
-                <p class="intro-text">with a destructor that prints a debugging message.</p>
-            </div>
-            </div>
-        </section>
-        <section id='ex01' class="intro-section">
-            <div class="container">
+            <section id='ex00' class="intro-section">
+                <div class="container">
                 <div class="text-box">
-                    <p class="intro-title3">Exercise 01: Moar brainz!</p>
-                    <p class="intro-text"><strong>Description:</strong> The "Moar brainz!" exercise involves creating a </p>
-                    <p class="intro-text">horde of Zombies in C++.</p>
-                    <p class="intro-text">The goal is to allocate multiple Zombie objects in a single  </p>
-                    <p class="intro-text">allocation and initialize them with a given name.</p>
+                    <p class="intro-title3">Exercise 00: My First Class in Orthodox Canonical Form</p>
+                    <p class="intro-text"><strong>Description:</strong> Create a class named <code>Fixed</code> following the Orthodox Canonical Form.</p>
+                    <p class="intro-text">This includes: default constructor, copy constructor, copy assignment operator, and destructor.</p>
                     <br>
-                    <p class="intro-text"><strong>Objective:</strong></p>
-                    <br>
-                    <p class="intro-text">-> Implement the function <strong>zombieHorde</strong>.</p>
-                    <p class="intro-text">-> Allocate N Zombie objects and initialize them with the </p>
-                    <p class="intro-text">   provided name.</p>
-                    <p class="intro-text">-> Ensure proper memory management by deallocating the zombies</p>
-                    <p class="intro-text">   using <strong>delete</strong>.</p>
-                    <p class="intro-text">-> Test the function by calling <strong>announce()</strong> for</p>
-                    <p class="intro-text">   each zombie in the horde.</p>
-                    <p class="intro-text">-> Check for memory leaks to ensure proper cleanup.</p>
+                    <p class="intro-text"><strong>Objective:</strong> Learn how to structure a well-formed C++ class with basic member functions.</p>
+                    <p class="intro-text">Use internal representation with a fixed-point format and implement <code>getRawBits()</code> and <code>setRawBits()</code>.</p>
                 </div>
-            </div>
-        </section>
-        <section id='ex02' class="intro-section">
-            <div class="container">
-            <div class="text-box">
-                <p class="intro-title3">Exercise 02: HI THIS IS BRAIN</p>
-                <p class="intro-text"><strong>Description:</strong> Write a program that demonstrates the use of pointers 
-                <p class="intro-text">and references in C++.</p>
-                <p class="intro-text">The program must include:</p>
-                <p class="intro-text"> -> A string variable initialized to "HI THIS IS BRAIN".</p>
-                <p class="intro-text"> -> A pointer to the string (stringPTR).</p>
-                <p class="intro-text"> -> A reference to the string (stringREF).</p>
-                <p class="intro-text">The program should print:</p>
-                <p class="intro-text"> -> The memory address of the string variable.</p>
-                <p class="intro-text"> -> The memory address held by stringPTR.</p>
-                <p class="intro-text"> -> The memory address held by stringREF.</p>
-                <p class="intro-text"> -> The value of the string variable.</p>
-                <p class="intro-text"> -> The value pointed to by stringPTR.</p>
-                <p class="intro-text"> -> The value pointed to by stringREF.</p>
-                <p class="intro-text"><strong>Objective:</strong> Understand the differences and similarities between </p>
-                <p class="intro-text">pointers and references in C++.</p>
-            </div>
-            </div>
-        </section>
-        <section id='ex03' class="intro-section">
-            <div class="container">
-            <div class="text-box">
-                <p class="intro-title3">Exercise 03: Unnecessary violence</p>
-                <p class="intro-text"><strong>Description:</strong> Implement a Weapon class and two Human classes </p>
-                <p class="intro-text">(HumanA and HumanB) to demonstrate the use of references</p>
-                <p class="intro-text">and pointers.</p>
-                <br>
-                <p class="intro-text">The Weapon class should include:</p>
-                <p class="intro-text"> -> A private attribute <strong>type</strong> (string).</p>
-                <p class="intro-text"> -> A <strong>getType()</strong> member returning a constant reference to type.</p>
-                <p class="intro-text"> -> A <strong>setType()</strong> member to update the type.</p>
-                <br>
-                <p class="intro-text">Human-A and Human-B should have:</p>
-                <p class="intro-text"> -> A name and a Weapon.</p>
-                <p class="intro-text"> -> An <strong>attack()</strong>  that displays "< name > attacks with their weapon".</p>
-                <br>
-                <p class="intro-text"><strong>Objective:</strong> Demonstrate the differences between using references</p>
-                <p class="intro-text">and pointers in C++.</p>
-            </div>
-            </div>
-        </section>
-        <section id='ex04' class="intro-section">
-            <div class="container">
-            <div class="text-box">
-                <p class="intro-title3">Exercise 04: Sed is for losers</p>
-                <p class="intro-text"><strong>Description:</strong> Create a program that replaces all occurrences
-                <p class="intro-text">of a string (s1) with another string (s2) in a file.</p>
-                <br>
-                <p class="intro-text">The program should:</p>
-                <p class="intro-text"> -> Take three parameters: a filename, s1, and s2.</p>
-                <p class="intro-text"> -> Create a new file named <filename>.replace with the modified content.</p>
-                <p class="intro-text"> -> Handle unexpected inputs and errors gracefully.</p>
-                <br>
-                <p class="intro-text"><strong>Objective:</strong>   Practice file manipulation and string </p>
-                <p class="intro-text">operations in C++.</p>
-            </div>
-            </div>
-        </section>
-        <section id='ex05' class="intro-section">
-            <div class="container">
-            <div class="text-box">
-                <p class="intro-title3">Exercise 05: Harl 2.0</p>
-                <p class="intro-text"><strong>Description:</strong> Automate Harl's complaints using a class with member</p>
-                <p class="intro-text">functions for different log levels.</p>
-                <br>
-                <p class="intro-text">The Harl class should include:</p>
-                <p class="intro-text"> -> Private member functions: <strong>debug()</strong>, <strong>info()</strong>, <strong>warning()</strong>, and <strong>error()</strong>.</p>
-                <p class="intro-text"> -> A public <strong>complain(std::string level)</strong> function to call the appropriate private function based on the level.</p>
-                <br>
-                <p class="intro-text"><strong>Objective:</strong> Use pointers to member functions to avoid a forest of 
-                <p class="intro-text">if/else statements.</p>
-            </div>
-            </div>
-        </section>
-        <section id='ex06' class="intro-section">
-            <div class="container">
-            <div class="text-box">
-                <p class="intro-title3">Exercise 06: Harl filter</p>
-                <p class="intro-text"><strong>Description:</strong> Implement a system to filter Harl's complaints based</p>
-                <p class="intro-text">on log levels.</p>
-                <br>
-                <p class="intro-text">The program should:</p>
-                <p class="intro-text"> -> Take one parameter: a log level.</p>
-                <p class="intro-text"> -> Display all messages from the specified level and above.</p>
-                <p class="intro-text"> -> Handle invalid log levels gracefully.</p>
-                <br>
-                <p class="intro-text"><strong>Objective:</strong> Use the switch statement to filter log levels</p>
-                <p class="intro-text">effectively.</p>
-            </div>
-            </div>
-        </section>
+                </div>
+            </section>
+
+            <section id='ex01' class="intro-section">
+                <div class="container">
+                    <div class="text-box">
+                        <p class="intro-title3">Exercise 01: Towards a more useful fixed-point number class</p>
+                        <p class="intro-text"><strong>Description:</strong> Enhance the <code>Fixed</code> class to support conversions from and to int and float.</p>
+                        <p class="intro-text">Add constructors that accept <code>int</code> and <code>float</code>, and member functions <code>toFloat()</code> and <code>toInt()</code>.</p>
+                        <br>
+                        <p class="intro-text"><strong>Objective:</strong> Make the class practical and printable by overloading the <code>&lt;&lt;</code> operator.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id='ex02' class="intro-section">
+                <div class="container">
+                <div class="text-box">
+                    <p class="intro-title3">Exercise 02: Now we’re talking</p>
+                    <p class="intro-text"><strong>Description:</strong> Overload a wide range of operators for the <code>Fixed</code> class:</p>
+                    <p class="intro-text"> -> Arithmetic: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code></p>
+                    <p class="intro-text"> -> Comparison: <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code></p>
+                    <p class="intro-text"> -> Increment/Decrement: <code>++</code>, <code>--</code> (pre and post)</p>
+                    <br>
+                    <p class="intro-text"><strong>Objective:</strong> Understand ad-hoc polymorphism and write intuitive arithmetic logic for user-defined types.</p>
+                    <p class="intro-text">Also implement static <code>min()</code> and <code>max()</code> functions for comparisons.</p>
+                </div>
+                </div>
+            </section>
+
+            <section id='ex03' class="intro-section">
+                <div class="container">
+                <div class="text-box">
+                    <p class="intro-title3">Exercise 03: BSP (Bonus)</p>
+                    <p class="intro-text"><strong>Description:</strong> Create a <code>Point</code> class using <code>Fixed</code> values and implement the <code>bsp</code> function.</p>
+                    <p class="intro-text">This function determines if a given point lies inside a triangle formed by three other points.</p>
+                    <br>
+                    <p class="intro-text"><strong>Objective:</strong> Apply your <code>Fixed</code> class in a geometric context using Binary Space Partitioning logic.</p>
+                    <p class="intro-text">This is optional, but highly recommended to solidify your understanding of class usage in real applications.</p>
+                </div>
+                </div>
+            </section>
+        </main>
+
 
         <script>
             document.querySelectorAll('.accordion-header').forEach(header => {

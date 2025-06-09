@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>42 Philosophers</title>
+    <title>42 C++ Module 02</title>
     <link rel="stylesheet" href="../proj_styles.css">
     <link rel="stylesheet" href="../background.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
@@ -23,17 +23,14 @@
         <div class="logo-container">
             <div class="pixel-logo">42</div>
         </div>
-        
         <div class="profile-container">
             <div class="title-container">
                 <a href="https://github.com/Ismaelucky342" target="_blank" class="title-link">
                     <h1 class="site-title">Ismaelucky342 HUB</h1>
-                    <br>
-                    <br>
+                    <br><br>
                 </a>
             </div>
         </div>
-        <!-- Menú de navegación añadido aquí -->
         <nav class="nav-menu">
             <nav>
                 <a href="../index.html" class="nav-item">ABOUT ME</a>
@@ -45,36 +42,84 @@
         </nav>
         <br>
     </header>
-    <h2>MiniShell</h2>
+    <h2>C++ Module 02</h2>
     <main class="main-content">
         <br>
         <div class="image-box">
-            <img src="../images/miniche.png" alt="Philosophers"
+            <img src="../images/miniche.png" alt="C++ Module 02"
                  class="intro-image pixel-border">
         </div>
         <br>
         <section class="intro-section">
             <div class="container">
                 <div class="text-box">
-                    <p class="intro-text">Minishell is an implementation of a Unix shell</p>
-                    <p class="intro-text">that allows executing commands and managing processes.</p>
-                    <br>
-                    <p class="intro-text">It uses an AST to parse and execute commands,</p>
-                    <p class="intro-text">including logical operators and wildcards. The AST</p>
-                    <p class="intro-text">structures execution into nodes, making it easier to</p>
-                    <p class="intro-text">handle priorities and command combinations.</p>
-                    <br>
-                    <p class="intro-text">The goal is to create a functional shell that</p>
-                    <p class="intro-text">supports input parsing, redirections, and pipelines.</p>
-                    <p class="intro-text">The bonus extends the functionality with wildcards</p>
-                    <p class="intro-text">and logical operators, enhancing command execution.</p>                    
+                    <h3>Objetivo del Proyecto</h3>
+                    <p class="intro-text">
+                        El objetivo del proyecto C++ - Module 02 es introducir conceptos fundamentales de la programación orientada a objetos en C++ mediante la implementación progresiva de clases que respeten la forma ortodoxa canónica (Orthodox Canonical Form), incluyendo:
+                    </p>
+                    <ul class="intro-text">
+                        <li>Polimorfismo ad-hoc (a través de sobrecarga de operadores).</li>
+                        <li>Sobre carga de operadores aritméticos, de comparación e incremento/decremento.</li>
+                        <li>Uso de una clase <b>Fixed</b> que representa números de punto fijo como alternativa a los tipos enteros y de punto flotante tradicionales.</li>
+                    </ul>
+                    <p class="intro-text">
+                        <b>Objetivos específicos:</b>
+                        <ul class="intro-text">
+                            <li>Diseñar clases en Canonical Form, implementando constructor por defecto, constructor de copia, operador de asignación y destructor.</li>
+                            <li>Implementar una clase de punto fijo (<b>Fixed</b>), que permita conversiones entre enteros y flotantes, y que sea capaz de operar con operadores sobrecargados.</li>
+                            <li>Aplicar estas clases en un contexto práctico creando una clase <b>Point</b> y una función <b>bsp</b> para determinar si un punto está dentro de un triángulo.</li>
+                            <li>Fomentar buenas prácticas de diseño en C++98, incluyendo separación de código en .hpp y .cpp, manejo adecuado de memoria, y uso limitado del estándar de la biblioteca.</li>
+                        </ul>
+                        Este módulo es una parte clave del recorrido de aprendizaje de C++ en 42 y busca sentar bases sólidas en el uso de clases, sobrecarga y diseño orientado a objetos clásico.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <br>
+        <section>
+            <div class="container">
+                <div class="accordion-header pixel-border">✅ Exercise 00: My First Class in Orthodox Canonical Form</div>
+                <div class="accordion-content" style="display:none;">
+                    <p><b>Objetivo:</b> Crear una clase <code>Fixed</code> en forma ortodoxa canónica.</p>
+                    <ul>
+                        <li>Implementar los 4 métodos canónicos: constructor por defecto, constructor de copia, operador de asignación y destructor.</li>
+                        <li>Añadir métodos <code>getRawBits()</code> y <code>setRawBits()</code> para acceder al valor interno (entero) que representa el número de punto fijo.</li>
+                    </ul>
+                </div>
+
+                <div class="accordion-header pixel-border">✅ Exercise 01: Towards a more useful fixed-point number class</div>
+                <div class="accordion-content" style="display:none;">
+                    <p><b>Objetivo:</b> Hacer útil la clase <code>Fixed</code>.</p>
+                    <ul>
+                        <li>Añadir constructores que acepten <code>int</code> y <code>float</code> como parámetros, y los conviertan al formato de punto fijo.</li>
+                        <li>Implementar métodos <code>toFloat()</code> y <code>toInt()</code> para convertir de vuelta.</li>
+                        <li>Sobrecargar el operador <code>&lt;&lt;</code> para mostrar el valor como <code>float</code> con <code>std::ostream</code>.</li>
+                    </ul>
+                </div>
+
+                <div class="accordion-header pixel-border">Exercise 02: Now we’re talking</div>
+                <div class="accordion-content" style="display:none;">
+                    <p><b>Objetivo:</b> Añadir sobrecarga de operadores a la clase <code>Fixed</code>.</p>
+                    <ul>
+                        <li>Sobrecargar operadores de comparación: <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code>.</li>
+                        <li>Sobrecargar operadores aritméticos: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>.</li>
+                        <li>Sobrecargar operadores de incremento y decremento (pre y post).</li>
+                        <li>Añadir métodos <code>min</code> y <code>max</code> (estáticos) que devuelvan referencias al menor o mayor de dos objetos <code>Fixed</code>.</li>
+                    </ul>
+                </div>
+
+                <div class="accordion-header pixel-border"> Exercise 03: BSP (Bonus - no obligatorio)</div>
+                <div class="accordion-content" style="display:none;">
+                    <p><b>Objetivo:</b> Aplicar la clase <code>Fixed</code> en un contexto más complejo.</p>
+                    <ul>
+                        <li>Crear una clase <code>Point</code> con coordenadas <code>x</code> y <code>y</code> del tipo <code>Fixed</code>.</li>
+                        <li>Implementar una función <code>bsp(Point a, Point b, Point c, Point point)</code> que devuelve <code>true</code> si <code>point</code> está dentro del triángulo <code>abc</code> (excluyendo bordes y vértices).</li>
+                        <li>Usar álgebra o determinantes para comprobar si un punto está dentro de un triángulo (algoritmo BSP - Binary Space Partitioning).</li>
+                    </ul>
                 </div>
             </div>
         </section>
     </main>
-
-    
-    
     <script>
         document.querySelectorAll('.accordion-header').forEach(header => {
             header.addEventListener('click', function () {
