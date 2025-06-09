@@ -80,31 +80,3 @@ body {
 		}
 	}
 }
-
-@keyframes move {
-	from {
-		transform: translateY(0px);
-	}
-	
-	to {
-		transform: translateY(calc(var(--grid) * var(--dir)));
-	}
-}
-
-@keyframes blink {
-	0% {
-		visibility: visible;
-	}
-	
-	50% {
-		visibility: visible;
-	}
-	
-	51% {
-		visibility: hidden;
-	}
-	
-	100% {
-		visibility: hidden;
-	}
-}
