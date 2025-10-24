@@ -487,6 +487,212 @@
             color: var(--gray-600);
         }
 
+        /* ==================== EXPANDED BIOMARKERS SECTION ==================== */
+        .biomarkers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .biomarker-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .biomarker-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
+        }
+
+        .biomarker-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .biomarker-info-block {
+            flex: 1;
+        }
+
+        .biomarker-name-main {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .biomarker-category-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--gray-100);
+            color: var(--gray-600);
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .biomarker-status {
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .status-optimal {
+            background: rgba(6, 214, 160, 0.1);
+            color: var(--accent-mint);
+        }
+
+        .status-warning {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+        }
+
+        .status-critical {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+        }
+
+        .biomarker-values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: var(--gray-50);
+            border-radius: 8px;
+        }
+
+        .value-block h4 {
+            font-size: 0.75rem;
+            color: var(--gray-600);
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .value-block .value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .value-block .unit {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin-left: 0.25rem;
+        }
+
+        .biomarker-miniChart {
+            width: 100%;
+            height: 60px;
+            margin: 1rem 0;
+        }
+
+        .biomarker-stats {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .stat-mini {
+            text-align: center;
+        }
+
+        .stat-mini-label {
+            font-size: 0.7rem;
+            color: var(--gray-600);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-mini-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        /* Category Filters */
+        .category-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--gray-200);
+            background: var(--white);
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--gray-600);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent-teal);
+            color: var(--accent-teal);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-teal);
+            border-color: var(--accent-teal);
+            color: var(--white);
+        }
+
+        /* Detailed Stats Section */
+        .detailed-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .detailed-stat-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .detailed-stat-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-icon-large {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, var(--accent-teal), var(--accent-mint));
+        }
+
+        .stat-info h4 {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-main-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
         /* ==================== FOOTER ==================== */
         .footer {
             background: var(--primary-dark);
@@ -735,7 +941,7 @@
 
             <div class="dashboard">
                 <div class="dashboard-header">
-                    <h3 class="dashboard-title">Panel de Monitorización</h3>
+                    <h3 class="dashboard-title">Panel de Monitorización Completo</h3>
                     <div class="status-badge">
                         <span class="status-dot"></span>
                         DATOS EN TIEMPO REAL
@@ -751,7 +957,7 @@
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">Biomarcadores Activos</div>
-                        <div class="metric-value">6</div>
+                        <div class="metric-value" id="activeBiomarkers">0</div>
                         <div class="metric-trend">100% operativos</div>
                     </div>
                     <div class="metric-card">
@@ -763,6 +969,62 @@
                         <div class="metric-label">Latencia Promedio</div>
                         <div class="metric-value">42<span style="font-size: 1rem;">ms</span></div>
                         <div class="metric-trend">↓ -8ms vs baseline</div>
+                    </div>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="metabolico">Metabólico</button>
+                    <button class="filter-btn" data-category="cardiovascular">Cardiovascular</button>
+                    <button class="filter-btn" data-category="hepatico">Hepático</button>
+                    <button class="filter-btn" data-category="renal">Renal</button>
+                    <button class="filter-btn" data-category="endocrino">Endocrino</button>
+                    <button class="filter-btn" data-category="inmunologico">Inmunológico</button>
+                </div>
+
+                <!-- Expanded Biomarkers Grid -->
+                <div class="biomarkers-grid" id="biomarkersGrid">
+                    <!-- Populated by JavaScript -->
+                </div>
+
+                <!-- Detailed Statistics -->
+                <div class="detailed-stats">
+                    <div class="detailed-stat-card">
+                        <div class="detailed-stat-header">
+                            <div class="stat-icon-large">📊</div>
+                            <div class="stat-info">
+                                <h4>Desviación Estándar Global</h4>
+                            </div>
+                        </div>
+                        <div class="stat-main-value" id="globalStdDev">0.00</div>
+                    </div>
+                    <div class="detailed-stat-card">
+                        <div class="detailed-stat-header">
+                            <div class="stat-icon-large">🎯</div>
+                            <div class="stat-info">
+                                <h4>Coeficiente de Variación</h4>
+                            </div>
+                        </div>
+                        <div class="stat-main-value" id="coeffVariation">0.00<span style="font-size: 1rem;">%</span></div>
+                    </div>
+                    <div class="detailed-stat-card">
+                        <div class="detailed-stat-header">
+                            <div class="stat-icon-large">📈</div>
+                            <div class="stat-info">
+                                <h4>Tendencia Dominante</h4>
+                            </div>
+                        </div>
+                        <div class="stat-main-value" id="dominantTrend" style="font-size: 1.2rem;">--</div>
+                    </div>
+                    <div class="detailed-stat-card">
+                        <div class="detailed-stat-header">
+                            <div class="stat-icon-large">⚡</div>
+                            <div class="stat-info">
+                                <h4>Alertas Activas</h4>
+                            </div>
+                        </div>
+                        <div class="stat-main-value" id="activeAlerts">0</div>
                     </div>
                 </div>
 
@@ -778,15 +1040,23 @@
                     </div>
                 </div>
 
+                <!-- Correlation Matrix -->
+                <div class="correlation-matrix">
+                    <h4 class="chart-title">Matriz de Correlación entre Biomarcadores</h4>
+                    <canvas id="correlationMatrix" style="width: 100%; height: 400px;"></canvas>
+                </div>
+
                 <!-- Data Table -->
                 <table class="data-table">
                     <thead>
                         <tr>
                             <th>Biomarcador</th>
+                            <th>Categoría</th>
                             <th>Valor Actual</th>
                             <th>Rango de Referencia</th>
                             <th>Tendencia (30d)</th>
                             <th>Predicción (7d)</th>
+                            <th>Z-Score</th>
                         </tr>
                     </thead>
                     <tbody id="biomarkersTable">
@@ -808,26 +1078,162 @@
     </footer>
 
     <script>
-        // ==================== DATA MODEL ====================
+        // ==================== EXPANDED DATA MODEL ====================
         const biomarkersData = [
-            { id: 1, name: 'Hemoglobina A1c', unit: '%', value: 6.8, range: '4.0-5.6', history: [7.2, 7.0, 6.9, 6.8, 6.7, 6.8] },
-            { id: 2, name: 'Colesterol LDL', unit: 'mg/dL', value: 145, range: '<100', history: [160, 155, 152, 148, 145, 145] },
-            { id: 3, name: 'Proteína C Reactiva', unit: 'mg/L', value: 4.2, range: '<3.0', history: [5.1, 4.8, 4.5, 4.3, 4.2, 4.2] },
-            { id: 4, name: 'Vitamina D', unit: 'ng/mL', value: 28, range: '30-100', history: [22, 24, 25, 26, 27, 28] },
-            { id: 5, name: 'Creatinina', unit: 'mg/dL', value: 0.9, range: '0.7-1.3', history: [0.95, 0.93, 0.91, 0.90, 0.89, 0.90] },
-            { id: 6, name: 'TSH', unit: 'mIU/L', value: 2.1, range: '0.4-4.0', history: [2.3, 2.2, 2.2, 2.1, 2.0, 2.1] }
+            // Metabólico
+            { id: 1, name: 'Hemoglobina A1c', category: 'metabolico', unit: '%', value: 6.8, range: '4.0-5.6', history: [7.2, 7.0, 6.9, 6.8, 6.7, 6.8], status: 'warning' },
+            { id: 2, name: 'Glucosa en Ayunas', category: 'metabolico', unit: 'mg/dL', value: 102, range: '70-100', history: [110, 108, 105, 103, 102, 102], status: 'warning' },
+            { id: 3, name: 'Insulina Basal', category: 'metabolico', unit: 'μU/mL', value: 8.5, range: '2.6-24.9', history: [9.2, 9.0, 8.8, 8.7, 8.6, 8.5], status: 'optimal' },
+            
+            // Cardiovascular
+            { id: 4, name: 'Colesterol LDL', category: 'cardiovascular', unit: 'mg/dL', value: 145, range: '<100', history: [160, 155, 152, 148, 145, 145], status: 'warning' },
+            { id: 5, name: 'Colesterol HDL', category: 'cardiovascular', unit: 'mg/dL', value: 52, range: '>40', history: [48, 49, 50, 51, 51, 52], status: 'optimal' },
+            { id: 6, name: 'Triglicéridos', category: 'cardiovascular', unit: 'mg/dL', value: 155, range: '<150', history: [180, 170, 165, 160, 157, 155], status: 'warning' },
+            { id: 7, name: 'Homocisteína', category: 'cardiovascular', unit: 'μmol/L', value: 11.2, range: '5-15', history: [12.5, 12.0, 11.8, 11.5, 11.3, 11.2], status: 'optimal' },
+            
+            // Hepático
+            { id: 8, name: 'ALT (GPT)', category: 'hepatico', unit: 'U/L', value: 32, range: '7-56', history: [38, 36, 35, 34, 33, 32], status: 'optimal' },
+            { id: 9, name: 'AST (GOT)', category: 'hepatico', unit: 'U/L', value: 28, range: '10-40', history: [32, 31, 30, 29, 28, 28], status: 'optimal' },
+            { id: 10, name: 'Bilirrubina Total', category: 'hepatico', unit: 'mg/dL', value: 0.8, range: '0.1-1.2', history: [0.9, 0.9, 0.85, 0.82, 0.8, 0.8], status: 'optimal' },
+            { id: 11, name: 'Fosfatasa Alcalina', category: 'hepatico', unit: 'U/L', value: 72, range: '30-120', history: [78, 76, 75, 74, 73, 72], status: 'optimal' },
+            
+            // Renal
+            { id: 12, name: 'Creatinina', category: 'renal', unit: 'mg/dL', value: 0.9, range: '0.7-1.3', history: [0.95, 0.93, 0.91, 0.90, 0.89, 0.90], status: 'optimal' },
+            { id: 13, name: 'Urea', category: 'renal', unit: 'mg/dL', value: 38, range: '15-40', history: [42, 41, 40, 39, 38, 38], status: 'optimal' },
+            { id: 14, name: 'Ácido Úrico', category: 'renal', unit: 'mg/dL', value: 5.8, range: '3.5-7.2', history: [6.2, 6.1, 6.0, 5.9, 5.8, 5.8], status: 'optimal' },
+            { id: 15, name: 'TFG (eGFR)', category: 'renal', unit: 'mL/min', value: 95, range: '>90', history: [92, 93, 94, 94, 95, 95], status: 'optimal' },
+            
+            // Endocrino
+            { id: 16, name: 'TSH', category: 'endocrino', unit: 'mIU/L', value: 2.1, range: '0.4-4.0', history: [2.3, 2.2, 2.2, 2.1, 2.0, 2.1], status: 'optimal' },
+            { id: 17, name: 'T4 Libre', category: 'endocrino', unit: 'ng/dL', value: 1.3, range: '0.8-1.8', history: [1.2, 1.25, 1.28, 1.29, 1.3, 1.3], status: 'optimal' },
+            { id: 18, name: 'Cortisol', category: 'endocrino', unit: 'μg/dL', value: 12.5, range: '6-23', history: [14.0, 13.5, 13.0, 12.8, 12.6, 12.5], status: 'optimal' },
+            { id: 19, name: 'Vitamina D', category: 'endocrino', unit: 'ng/mL', value: 28, range: '30-100', history: [22, 24, 25, 26, 27, 28], status: 'critical' },
+            
+            // Inmunológico
+            { id: 20, name: 'Proteína C Reactiva', category: 'inmunologico', unit: 'mg/L', value: 4.2, range: '<3.0', history: [5.1, 4.8, 4.5, 4.3, 4.2, 4.2], status: 'warning' },
+            { id: 21, name: 'Velocidad de Sedimentación', category: 'inmunologico', unit: 'mm/h', value: 15, range: '<20', history: [18, 17, 16, 15, 15, 15], status: 'optimal' },
+            { id: 22, name: 'Ferritina', category: 'inmunologico', unit: 'ng/mL', value: 125, range: '30-400', history: [110, 115, 118, 120, 123, 125], status: 'optimal' },
+            { id: 23, name: 'Leucocitos', category: 'inmunologico', unit: '10³/μL', value: 7.2, range: '4.5-11.0', history: [7.5, 7.4, 7.3, 7.2, 7.2, 7.2], status: 'optimal' },
         ];
 
         let samplesCount = 1247;
+        let currentFilter = 'all';
 
         // ==================== INITIALIZATION ====================
         document.addEventListener('DOMContentLoaded', function() {
+            renderBiomarkersGrid();
             renderTable();
             drawTimeSeriesChart();
             drawDistributionChart();
+            drawCorrelationMatrix();
             startLiveUpdates();
             updateMetrics();
+            updateDetailedStats();
+            setupFilters();
         });
+
+        // ==================== BIOMARKERS GRID RENDERING ====================
+        function renderBiomarkersGrid() {
+            const container = document.getElementById('biomarkersGrid');
+            const filtered = currentFilter === 'all' 
+                ? biomarkersData 
+                : biomarkersData.filter(b => b.category === currentFilter);
+            
+            container.innerHTML = filtered.map(bio => {
+                const trend = calculateTrend(bio.history);
+                const zScore = calculateZScore(bio);
+                
+                return `
+                    <div class="biomarker-card">
+                        <div class="biomarker-header">
+                            <div class="biomarker-info-block">
+                                <div class="biomarker-name-main">${bio.name}</div>
+                                <span class="biomarker-category-tag">${getCategoryName(bio.category)}</span>
+                            </div>
+                            <div class="biomarker-status status-${bio.status}">
+                                ${bio.status === 'optimal' ? '✓ Óptimo' : bio.status === 'warning' ? '⚠ Atención' : '🔴 Crítico'}
+                            </div>
+                        </div>
+                        
+                        <div class="biomarker-values">
+                            <div class="value-block">
+                                <h4>Valor Actual</h4>
+                                <div class="value">${bio.value}<span class="unit">${bio.unit}</span></div>
+                            </div>
+                            <div class="value-block">
+                                <h4>Rango Normal</h4>
+                                <div class="value" style="font-size: 1rem;">${bio.range} ${bio.unit}</div>
+                            </div>
+                        </div>
+                        
+                        <canvas class="biomarker-miniChart" id="mini-${bio.id}"></canvas>
+                        
+                        <div class="biomarker-stats">
+                            <div class="stat-mini">
+                                <div class="stat-mini-label">Tendencia</div>
+                                <div class="stat-mini-value">${trend.symbol} ${trend.value}%</div>
+                            </div>
+                            <div class="stat-mini">
+                                <div class="stat-mini-label">Z-Score</div>
+                                <div class="stat-mini-value">${zScore}</div>
+                            </div>
+                            <div class="stat-mini">
+                                <div class="stat-mini-label">Promedio</div>
+                                <div class="stat-mini-value">${calculateAvg(bio.history).toFixed(1)}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            // Draw mini charts
+            filtered.forEach(bio => {
+                setTimeout(() => drawMiniChart(`mini-${bio.id}`, bio.history), 50);
+            });
+        }
+
+        // ==================== MINI CHART ====================
+        function drawMiniChart(canvasId, data) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = 60;
+            
+            const max = Math.max(...data);
+            const min = Math.min(...data);
+            const range = max - min || 1;
+            const padding = 5;
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Area
+            ctx.fillStyle = 'rgba(17, 138, 178, 0.1)';
+            ctx.beginPath();
+            data.forEach((val, i) => {
+                const x = (i / (data.length - 1)) * (canvas.width - 2 * padding) + padding;
+                const y = canvas.height - padding - ((val - min) / range) * (canvas.height - 2 * padding);
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            });
+            ctx.lineTo(canvas.width - padding, canvas.height - padding);
+            ctx.lineTo(padding, canvas.height - padding);
+            ctx.closePath();
+            ctx.fill();
+            
+            // Line
+            ctx.strokeStyle = '#118AB2';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            data.forEach((val, i) => {
+                const x = (i / (data.length - 1)) * (canvas.width - 2 * padding) + padding;
+                const y = canvas.height - padding - ((val - min) / range) * (canvas.height - 2 * padding);
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+        }
 
         // ==================== TABLE RENDERING ====================
         function renderTable() {
@@ -835,27 +1241,153 @@
             tbody.innerHTML = biomarkersData.map(bio => {
                 const trend = calculateTrend(bio.history);
                 const prediction = (bio.value * (1 + (Math.random() - 0.5) * 0.1)).toFixed(2);
+                const zScore = calculateZScore(bio);
                 
                 return `
                     <tr>
                         <td><strong>${bio.name}</strong></td>
+                        <td>${getCategoryName(bio.category)}</td>
                         <td>${bio.value} ${bio.unit}</td>
                         <td>${bio.range}</td>
                         <td><span class="trend-indicator ${trend.class}">${trend.symbol} ${trend.value}%</span></td>
                         <td>${prediction} ${bio.unit}</td>
+                        <td>${zScore}</td>
                     </tr>
                 `;
             }).join('');
         }
 
+        // ==================== CORRELATION MATRIX ====================
+        function drawCorrelationMatrix() {
+            const canvas = document.getElementById('correlationMatrix');
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = 400;
+            
+            const markers = ['HbA1c', 'LDL', 'PCR', 'Vit D', 'TSH', 'Crea'];
+            const size = markers.length;
+            const cellSize = Math.min((canvas.width - 100) / size, (canvas.height - 100) / size);
+            const startX = 80;
+            const startY = 20;
+            
+            // Generate correlation matrix
+            const correlations = [];
+            for (let i = 0; i < size; i++) {
+                correlations[i] = [];
+                for (let j = 0; j < size; j++) {
+                    if (i === j) correlations[i][j] = 1.0;
+                    else correlations[i][j] = (Math.random() * 1.6) - 0.8;
+                }
+            }
+            
+            // Draw cells
+            correlations.forEach((row, i) => {
+                row.forEach((value, j) => {
+                    const x = startX + j * cellSize;
+                    const y = startY + i * cellSize;
+                    
+                    const intensity = Math.abs(value);
+                    const color = value > 0 
+                        ? `rgba(6, 214, 160, ${intensity})`
+                        : `rgba(239, 68, 68, ${intensity})`;
+                    
+                    ctx.fillStyle = color;
+                    ctx.fillRect(x, y, cellSize - 2, cellSize - 2);
+                    
+                    ctx.fillStyle = intensity > 0.5 ? 'white' : '#1e293b';
+                    ctx.font = 'bold 12px sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText(value.toFixed(2), x + cellSize / 2, y + cellSize / 2);
+                });
+                
+                // Labels
+                ctx.fillStyle = '#4B5563';
+                ctx.font = '11px sans-serif';
+                ctx.textAlign = 'right';
+                ctx.fillText(markers[i], startX - 10, startY + i * cellSize + cellSize / 2);
+                ctx.textAlign = 'center';
+                ctx.fillText(markers[i], startX + i * cellSize + cellSize / 2, startY - 10);
+            });
+        }
+
+        // ==================== HELPER FUNCTIONS ====================
         function calculateTrend(history) {
             const recent = history.slice(-3);
-            const avg = recent.reduce((a, b) => a + b) / recent.length;
             const change = ((recent[recent.length - 1] - recent[0]) / recent[0] * 100).toFixed(1);
             
             if (Math.abs(change) < 1) return { class: 'trend-stable', symbol: '→', value: change };
             if (change > 0) return { class: 'trend-up', symbol: '↑', value: change };
             return { class: 'trend-down', symbol: '↓', value: change };
+        }
+
+        function calculateZScore(bio) {
+            const avg = calculateAvg(bio.history);
+            const stdDev = calculateStdDev(bio.history, avg);
+            return ((bio.value - avg) / stdDev).toFixed(2);
+        }
+
+        function calculateAvg(arr) {
+            return arr.reduce((a, b) => a + b) / arr.length;
+        }
+
+        function calculateStdDev(arr, avg) {
+            const variance = arr.reduce((sum, val) => sum + Math.pow(val - avg, 2), 0) / arr.length;
+            return Math.sqrt(variance);
+        }
+
+        function getCategoryName(category) {
+            const names = {
+                'metabolico': 'Metabólico',
+                'cardiovascular': 'Cardiovascular',
+                'hepatico': 'Hepático',
+                'renal': 'Renal',
+                'endocrino': 'Endocrino',
+                'inmunologico': 'Inmunológico'
+            };
+            return names[category] || category;
+        }
+
+        // ==================== FILTERS ====================
+        function setupFilters() {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilter = btn.dataset.category;
+                    renderBiomarkersGrid();
+                    updateMetrics();
+                });
+            });
+        }
+
+        // ==================== UPDATE METRICS ====================
+        function updateMetrics() {
+            document.getElementById('samplesProcessed').textContent = samplesCount.toLocaleString();
+            document.getElementById('activeBiomarkers').textContent = biomarkersData.length;
+            
+            const correlations = biomarkersData.map(() => Math.random() * 0.4 + 0.5);
+            const avgCorr = (correlations.reduce((a, b) => a + b) / correlations.length).toFixed(2);
+            document.getElementById('avgCorrelation').textContent = avgCorr;
+        }
+
+        function updateDetailedStats() {
+            const allValues = biomarkersData.map(b => b.value);
+            const avg = calculateAvg(allValues);
+            const stdDev = calculateStdDev(allValues, avg);
+            const coeffVar = (stdDev / avg * 100);
+            
+            document.getElementById('globalStdDev').textContent = stdDev.toFixed(2);
+            document.getElementById('coeffVariation').textContent = coeffVar.toFixed(1);
+            
+            const trends = biomarkersData.map(b => calculateTrend(b.history));
+            const upCount = trends.filter(t => t.symbol === '↑').length;
+            const downCount = trends.filter(t => t.symbol === '↓').length;
+            const dominant = upCount > downCount ? 'Alcista ↑' : downCount > upCount ? 'Bajista ↓' : 'Estable →';
+            document.getElementById('dominantTrend').textContent = dominant;
+            
+            const alerts = biomarkersData.filter(b => b.status !== 'optimal').length;
+            document.getElementById('activeAlerts').textContent = alerts;
         }
 
         // ==================== TIME SERIES CHART ====================
@@ -900,7 +1432,6 @@
                     if (i === 0) ctx.moveTo(x, y);
                     else ctx.lineTo(x, y);
 
-                    // Points
                     ctx.fillStyle = colors[idx];
                     ctx.beginPath();
                     ctx.arc(x, y, 4, 0, 2 * Math.PI);
@@ -926,13 +1457,17 @@
             canvas.width = canvas.offsetWidth;
             canvas.height = 300;
 
+            const optimal = biomarkersData.filter(b => b.status === 'optimal').length;
+            const warning = biomarkersData.filter(b => b.status === 'warning').length;
+            const critical = biomarkersData.filter(b => b.status === 'critical').length;
+            const total = biomarkersData.length;
+
             const data = [
-                { label: 'Óptimo', value: 3, color: '#06D6A0' },
-                { label: 'Atención', value: 2, color: '#f59e0b' },
-                { label: 'Crítico', value: 1, color: '#ef4444' }
+                { label: 'Óptimo', value: optimal, color: '#06D6A0' },
+                { label: 'Atención', value: warning, color: '#f59e0b' },
+                { label: 'Crítico', value: critical, color: '#ef4444' }
             ];
 
-            const total = data.reduce((sum, d) => sum + d.value, 0);
             const centerX = canvas.width / 2;
             const centerY = canvas.height / 2;
             const radius = 90;
@@ -976,559 +1511,24 @@
 
                 samplesCount += Math.floor(Math.random() * 5);
                 
+                renderBiomarkersGrid();
                 renderTable();
                 drawTimeSeriesChart();
+                drawDistributionChart();
                 updateMetrics();
+                updateDetailedStats();
             }, 4000);
         }
 
-        function updateMetrics() {
-            document.getElementById('samplesProcessed').textContent = samplesCount.toLocaleString();
-            
-            const correlations = biomarkersData.map(b => Math.random() * 0.4 + 0.5);
-            const avgCorr = (correlations.reduce((a, b) => a + b) / correlations.length).toFixed(2);
-            document.getElementById('avgCorrelation').textContent = avgCorr;
-        }
-
-        // ==================== RESPONSIVE CHARTS ====================
+        // ==================== RESPONSIVE ====================
         window.addEventListener('resize', () => {
             drawTimeSeriesChart();
             drawDistributionChart();
+            drawCorrelationMatrix();
         });
     </script>
 </body>
 </html>
-            <h2 class="cta-title">Únete al Programa Piloto</h2>
-            <p class="cta-text">
-                Acceso anticipado para centros médicos y profesionales de la salud. 
-                Plazas limitadas para fase beta.
-            </p>
-            <form class="cta-form" id="ctaForm">
-                <input type="email" class="cta-input" placeholder="correo@hospital.com" required>
-                <button type="submit" class="cta-button">Solicitar Acceso</button>
-            </form>
-            <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.9;">
-                ✓ Sin compromiso · ✓ Soporte dedicado · ✓ Implementación guiada
-            </p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <div class="footer-logo">🧬 BioSense</div>
-                <p class="footer-description">
-                    Plataforma líder en análisis predictivo de biomarcadores. Transformando datos en decisiones clínicas.
-                </p>
-                <p style="font-size: 0.85rem;">© 2024 BioSense Technologies</p>
-            </div>
-            <div>
-                <h4 class="footer-title">Producto</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Funcionalidades</a></li>
-                    <li><a href="#">Integraciones</a></li>
-                    <li><a href="#">Casos de estudio</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="footer-title">Recursos</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Documentación</a></li>
-                    <li><a href="#">API Reference</a></li>
-                    <li><a href="#">Guías médicas</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="footer-title">Legal</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Privacidad</a></li>
-                    <li><a href="#">Términos</a></li>
-                    <li><a href="#">Certificaciones</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Desarrollado con ❤️ para mejorar la salud mundial</p>
-        </div>
-    </footer>
-
-    <script>
-        // ==================== DATOS DE BIOMARCADORES ====================
-        const biomarkersData = [
-            { id: 1, name: 'Hemoglobina A1c', category: 'Glucemia', value: 6.8, unit: '%', icon: '🩸', history: [7.2, 7.0, 6.9, 6.8, 6.7, 6.8], status: 'warning' },
-            { id: 2, name: 'Colesterol LDL', category: 'Lípidos', value: 145, unit: 'mg/dL', icon: '💊', history: [160, 155, 152, 148, 145, 145], status: 'warning' },
-            { id: 3, name: 'Proteína C Reactiva', category: 'Inflamación', value: 4.2, unit: 'mg/L', icon: '🔥', history: [5.1, 4.8, 4.5, 4.3, 4.2, 4.2], status: 'warning' },
-            { id: 4, name: 'Vitamina D', category: 'Vitaminas', value: 28, unit: 'ng/mL', icon: '☀️', history: [22, 24, 25, 26, 27, 28], status: 'optimal' },
-            { id: 5, name: 'Creatinina', category: 'Función Renal', value: 0.9, unit: 'mg/dL', icon: '🫘', history: [0.95, 0.93, 0.91, 0.90, 0.89, 0.90], status: 'optimal' },
-            { id: 6, name: 'TSH', category: 'Tiroides', value: 2.1, unit: 'mIU/L', icon: '🦋', history: [2.3, 2.2, 2.2, 2.1, 2.0, 2.1], status: 'optimal' }
-        ];
-
-        // ==================== INICIALIZACIÓN ====================
-        document.addEventListener('DOMContentLoaded', function() {
-            renderBiomarkers();
-            drawMainChart();
-            drawDonutChart();
-            setupEventListeners();
-            startLiveUpdates();
-        });
-
-        // ==================== RENDERIZAR BIOMARCADORES ====================
-        function renderBiomarkers() {
-            const container = document.getElementById('biomarkersList');
-            container.innerHTML = biomarkersData.map(bio => `
-                <div class="biomarker-item">
-                    <div class="biomarker-icon">${bio.icon}</div>
-                    <div class="biomarker-info">
-                        <div class="biomarker-name">${bio.name}</div>
-                        <div class="biomarker-category">${bio.category}</div>
-                    </div>
-                    <div>
-                        <div class="biomarker-value">
-                            ${bio.value}<span class="biomarker-unit">${bio.unit}</span>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // ==================== GRÁFICO PRINCIPAL ====================
-        function drawMainChart() {
-            const canvas = document.getElementById('mainChart');
-            const ctx = canvas.getContext('2d');
-            canvas.width = canvas.offsetWidth;
-            canvas.height = 300;
-
-            const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'];
-            const colors = ['#ef4444', '#f59e0b', '#10b981'];
-
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            // Dibujar líneas
-            biomarkersData.slice(0, 3).forEach((bio, idx) => {
-                ctx.strokeStyle = colors[idx];
-                ctx.lineWidth = 3;
-                ctx.beginPath();
-                
-                bio.history.forEach((val, i) => {
-                    const x = 50 + (i * (canvas.width - 100) / 5);
-                    const y = canvas.height - 50 - ((val / Math.max(...bio.history)) * (canvas.height - 100));
-                    
-                    if (i === 0) ctx.moveTo(x, y);
-                    else ctx.lineTo(x, y);
-                });
-                ctx.stroke();
-            });
-
-            // Etiquetas
-            ctx.fillStyle = '#4B5563';
-            ctx.font = '12px Inter';
-            months.forEach((m, i) => {
-                const x = 50 + (i * (canvas.width - 100) / 5);
-                ctx.fillText(m, x - 15, canvas.height - 20);
-            });
-        }
-
-        // ==================== GRÁFICO DE DONA ====================
-        function drawDonutChart() {
-            const canvas = document.getElementById('donutChart');
-            const ctx = canvas.getContext('2d');
-            canvas.width = canvas.offsetWidth;
-            canvas.height = 300;
-
-            const optimal = biomarkersData.filter(b => b.status === 'optimal').length;
-            const warning = biomarkersData.filter(b => b.status === 'warning').length;
-            const total = biomarkersData.length;
-
-            const centerX = canvas.width / 2;
-            const centerY = canvas.height / 2;
-            const radius = 80;
-
-            // Óptimo
-            ctx.fillStyle = '#06D6A0';
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, radius, 0, (optimal / total) * 2 * Math.PI);
-            ctx.arc(centerX, centerY, 40, (optimal / total) * 2 * Math.PI, 0, true);
-            ctx.fill();
-
-            // Atención
-            ctx.fillStyle = '#f59e0b';
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, radius, (optimal / total) * 2 * Math.PI, 2 * Math.PI);
-            ctx.arc(centerX, centerY, 40, 2 * Math.PI, (optimal / total) * 2 * Math.PI, true);
-            ctx.fill();
-
-            // Centro
-            ctx.fillStyle = '#FFFFFF';
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, 35, 0, 2 * Math.PI);
-            ctx.fill();
-
-            // Texto
-            ctx.fillStyle = '#0A2463';
-            ctx.font = 'bold 24px Inter';
-            ctx.textAlign = 'center';
-            ctx.fillText(total, centerX, centerY + 8);
-        }
-
-        // ==================== ACTUALIZACIONES EN VIVO ====================
-        function startLiveUpdates() {
-            setInterval(() => {
-                biomarkersData.forEach(bio => {
-                    const variation = (Math.random() - 0.5) * 0.05;
-                    bio.value = parseFloat((bio.value * (1 + variation)).toFixed(1));
-                    bio.history.shift();
-                    bio.history.push(bio.value);
-                });
-                renderBiomarkers();
-                drawMainChart();
-            }, 3000);
-        }
-
-        // ==================== EVENT LISTENERS ====================
-        function setupEventListeners() {
-            window.addEventListener('scroll', () => {
-                const navbar = document.getElementById('navbar');
-                navbar.classList.toggle('scrolled', window.scrollY > 50);
-            });
-
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href'))?.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            document.getElementById('ctaForm').addEventListener('submit', (e) => {
-                e.preventDefault();
-                const email = e.target.querySelector('input').value;
-                alert(`¡Gracias! Nos pondremos en contacto con ${email} pronto.`);
-                e.target.reset();
-            });
-        }
-    </script>
-</body>
-</html>
-                const y = padding + (i * (height - 2 * padding) / 5);
-                ctx.beginPath();
-                ctx.moveTo(padding, y);
-                ctx.lineTo(width - padding, y);
-                ctx.stroke();
-            }
-            
-            // Etiquetas eje X
-            ctx.fillStyle = '#64748b';
-            ctx.font = 'bold 14px sans-serif';
-            ctx.textAlign = 'center';
-            months.forEach((month, i) => {
-                const x = padding + (i * (width - 2 * padding) / (months.length - 1));
-                ctx.fillText(month, x, height - padding + 25);
-            });
-            
-            // Dibujar líneas de datos
-            biomarkersData.slice(0, 3).forEach((biomarker, index) => {
-                const values = biomarker.history;
-                const maxValue = Math.max(...values);
-                const minValue = Math.min(...values);
-                const range = maxValue - minValue || 1;
-                
-                // Línea
-                ctx.strokeStyle = colors[index];
-                ctx.lineWidth = 3;
-                ctx.shadowColor = colors[index];
-                ctx.shadowBlur = 10;
-                ctx.beginPath();
-                
-                values.forEach((value, i) => {
-                    const x = padding + (i * (width - 2 * padding) / (values.length - 1));
-                    const normalizedValue = (value - minValue) / range;
-                    const y = height - padding - (normalizedValue * (height - 2 * padding));
-                    
-                    if (i === 0) ctx.moveTo(x, y);
-                    else ctx.lineTo(x, y);
-                    
-                    // Puntos
-                    ctx.fillStyle = colors[index];
-                    ctx.beginPath();
-                    ctx.arc(x, y, 5, 0, 2 * Math.PI);
-                    ctx.fill();
-                });
-                
-                ctx.stroke();
-                ctx.shadowBlur = 0;
-            });
-            
-            // Leyenda
-            biomarkersData.slice(0, 3).forEach((biomarker, index) => {
-                const x = width - 200;
-                const y = 30 + (index * 30);
-                
-                ctx.fillStyle = colors[index];
-                ctx.fillRect(x, y, 20, 15);
-                ctx.fillStyle = '#1e293b';
-                ctx.textAlign = 'left';
-                ctx.font = '13px sans-serif';
-                ctx.fillText(biomarker.name, x + 30, y + 12);
-            });
-        }
-
-        // ==================== CORRELATION CHART ====================
-        function drawCorrelationChart() {
-            const canvas = document.getElementById('correlationChart');
-            const ctx = canvas.getContext('2d');
-            
-            canvas.width = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
-            
-            const size = Math.min(canvas.width, canvas.height);
-            const cellSize = size / 4;
-            const markers = ['HbA1c', 'LDL', 'PCR', 'Vit D'];
-            
-            // Matriz de correlación simulada
-            const correlations = [
-                [1.0, 0.7, 0.5, -0.3],
-                [0.7, 1.0, 0.6, -0.2],
-                [0.5, 0.6, 1.0, -0.4],
-                [-0.3, -0.2, -0.4, 1.0]
-            ];
-            
-            correlations.forEach((row, i) => {
-                row.forEach((value, j) => {
-                    const x = j * cellSize;
-                    const y = i * cellSize;
-                    
-                    // Color basado en correlación
-                    const intensity = Math.abs(value);
-                    const color = value > 0 
-                        ? `rgba(16, 185, 129, ${intensity})`
-                        : `rgba(239, 68, 68, ${intensity})`;
-                    
-                    ctx.fillStyle = color;
-                    ctx.fillRect(x, y, cellSize - 2, cellSize - 2);
-                    
-                    // Valor
-                    ctx.fillStyle = intensity > 0.5 ? 'white' : '#1e293b';
-                    ctx.font = 'bold 16px sans-serif';
-                    ctx.textAlign = 'center';
-                    ctx.textBaseline = 'middle';
-                    ctx.fillText(value.toFixed(2), x + cellSize / 2, y + cellSize / 2);
-                });
-                
-                // Etiquetas
-                ctx.fillStyle = '#64748b';
-                ctx.font = '12px sans-serif';
-                ctx.textAlign = 'right';
-                ctx.fillText(markers[i], -5, i * cellSize + cellSize / 2);
-                ctx.textAlign = 'center';
-                ctx.fillText(markers[i], i * cellSize + cellSize / 2, size + 15);
-            });
-        }
-
-        // ==================== DONUT CHART ====================
-        function drawDonutChart() {
-            const canvas = document.getElementById('donutChart');
-            const ctx = canvas.getContext('2d');
-            
-            const size = 200;
-            canvas.width = size;
-            canvas.height = size;
-            
-            const categories = {
-                'Glucemia': { value: 20, color: '#ef4444' },
-                'Lípidos': { value: 25, color: '#f59e0b' },
-                'Inflamación': { value: 15, color: '#10b981' },
-                'Vitaminas': { value: 18, color: '#8b5cf6' },
-                'Renal': { value: 12, color: '#2563eb' },
-                'Tiroides': { value: 10, color: '#ec4899' }
-            };
-            
-            const total = Object.values(categories).reduce((sum, cat) => sum + cat.value, 0);
-            let currentAngle = -Math.PI / 2;
-            
-            const centerX = size / 2;
-            const centerY = size / 2;
-            const radius = size / 2 - 10;
-            const innerRadius = radius * 0.6;
-            
-            Object.entries(categories).forEach(([name, data]) => {
-                const sliceAngle = (data.value / total) * 2 * Math.PI;
-                
-                ctx.beginPath();
-                ctx.arc(centerX, centerY, radius, currentAngle, currentAngle + sliceAngle);
-                ctx.arc(centerX, centerY, innerRadius, currentAngle + sliceAngle, currentAngle, true);
-                ctx.closePath();
-                
-                ctx.fillStyle = data.color;
-                ctx.fill();
-                
-                ctx.strokeStyle = 'white';
-                ctx.lineWidth = 3;
-                ctx.stroke();
-                
-                currentAngle += sliceAngle;
-            });
-            
-            // Centro
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, innerRadius, 0, 2 * Math.PI);
-            ctx.fillStyle = 'white';
-            ctx.fill();
-            
-            // Total en el centro
-            ctx.fillStyle = '#1e293b';
-            ctx.font = 'bold 24px sans-serif';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText(total, centerX, centerY - 10);
-            ctx.font = '12px sans-serif';
-            ctx.fillStyle = '#64748b';
-            ctx.fillText('Total', centerX, centerY + 10);
-            
-            // Leyenda
-            const legend = document.getElementById('donutLegend');
-            legend.innerHTML = '';
-            Object.entries(categories).forEach(([name, data]) => {
-                const percentage = ((data.value / total) * 100).toFixed(1);
-                legend.innerHTML += `
-                    <div class="legend-item">
-                        <div class="legend-label">
-                            <div class="legend-color" style="background: ${data.color}"></div>
-                            ${name}
-                        </div>
-                        <div class="legend-value">${percentage}%</div>
-                    </div>
-                `;
-            });
-        }
-
-        // ==================== RISK CHART ====================
-        function drawRiskChart() {
-            const canvas = document.getElementById('riskChart');
-            const ctx = canvas.getContext('2d');
-            
-            canvas.width = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
-            
-            const data = [
-                { label: 'Cardiovascular', value: 35, color: '#ef4444' },
-                { label: 'Metabólico', value: 45, color: '#f59e0b' },
-                { label: 'Inflamatorio', value: 25, color: '#10b981' },
-                { label: 'Nutricional', value: 60, color: '#8b5cf6' }
-            ];
-            
-            const barHeight = 40;
-            const gap = 20;
-            const maxWidth = canvas.width - 150;
-            
-            data.forEach((item, i) => {
-                const y = i * (barHeight + gap) + 20;
-                const barWidth = (item.value / 100) * maxWidth;
-                
-                // Fondo de la barra
-                ctx.fillStyle = '#f1f5f9';
-                ctx.fillRect(100, y, maxWidth, barHeight);
-                
-                // Barra de progreso
-                const gradient = ctx.createLinearGradient(100, 0, 100 + barWidth, 0);
-                gradient.addColorStop(0, item.color);
-                gradient.addColorStop(1, item.color + 'aa');
-                ctx.fillStyle = gradient;
-                ctx.fillRect(100, y, barWidth, barHeight);
-                
-                // Etiqueta
-                ctx.fillStyle = '#1e293b';
-                ctx.font = '13px sans-serif';
-                ctx.textAlign = 'right';
-                ctx.textBaseline = 'middle';
-                ctx.fillText(item.label, 90, y + barHeight / 2);
-                
-                // Valor
-                ctx.fillStyle = 'white';
-                ctx.font = 'bold 14px sans-serif';
-                ctx.textAlign = 'left';
-                ctx.fillText(`${item.value}%`, 110, y + barHeight / 2);
-            });
-        }
-
-        // ==================== HEATMAP ====================
-        function drawHeatmap() {
-            const container = document.getElementById('heatmapGrid');
-            const days = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
-            const intensity = [0.9, 0.7, 0.5, 0.8, 0.6, 0.3, 0.4];
-            
-            days.forEach((day, i) => {
-                const cell = document.createElement('div');
-                cell.className = 'heatmap-cell';
-                const value = Math.floor(intensity[i] * 100);
-                const color = `rgba(37, 99, 235, ${intensity[i]})`;
-                cell.style.background = color;
-                cell.innerHTML = `
-                    <div class="heatmap-day">${day}</div>
-                    <div>${value}</div>
-                `;
-                container.appendChild(cell);
-            });
-        }
-
-        // ==================== ACTUALIZAR ESTADÍSTICAS ====================
-        function updateStats() {
-            const total = biomarkersData.length;
-            const normal = biomarkersData.filter(b => b.score === 'high').length;
-            const warning = biomarkersData.filter(b => b.score === 'medium').length;
-            const critical = biomarkersData.filter(b => b.score === 'low').length;
-
-            animateValue('totalBiomarkers', 0, total, 1000);
-            animateValue('normalBiomarkers', 0, normal, 1200);
-            animateValue('warningBiomarkers', 0, warning, 1400);
-        }
-
-        function animateValue(id, start, end, duration) {
-            const element = document.getElementById(id);
-            const range = end - start;
-            const increment = range / (duration / 16);
-            let current = start;
-
-            const timer = setInterval(() => {
-                current += increment;
-                if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
-                    current = end;
-                    clearInterval(timer);
-                }
-                element.textContent = Math.round(current);
-            }, 16);
-        }
-
-        // ==================== AI ANALYSIS ====================
-        document.getElementById('aiAnalysisBtn').addEventListener('click', function() {
-            const container = document.getElementById('aiRecommendations');
-            container.innerHTML = '<p style="text-align: center; padding: 2rem;">🤖 Analizando datos con IA...</p>';
-            
-            setTimeout(() => {
-                const recommendations = [
-                    {
-                        priority: 'high',
-                        title: 'Vitamina D Crítica',
-                        text: 'Nivel bajo detectado (28 ng/mL). Recomendación: Suplementación de 2000 UI/día + exposición solar controlada.',
-                        confidence: 96
-                    },
-                    {
-                        priority: 'medium',
-                        title: 'Hemoglobina A1c Elevada',
-                        text: 'Tendencia al alza. Ajustar dieta baja en carbohidratos y aumentar actividad física.',
-                        confidence: 89
-                    },
-                    {
-                        priority: 'medium',
-                        title: 'Perfil Lipídico',
-                        text: 'LDL moderadamente elevado. Considerar estatinas si persiste en 3 meses.',
-                        confidence: 85
-                    },
-                    {
-                        priority: 'low',
-                        title: 'Monitoreo Continuo',
-                        text: 'IA detectó patrón de mejora en últimos 3 meses. Mantener adherencia al tratamiento.',
                         confidence: 92
                     }
                 ];
