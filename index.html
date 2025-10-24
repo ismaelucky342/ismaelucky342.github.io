@@ -374,392 +374,62 @@
             font-family: 'Courier New', monospace;
         }
 
-        /* ==================== DEMO SECTION ==================== */
-        .demo {
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            padding: 6rem 2rem;
-        }
-
-        .demo .section-title {
-            color: var(--white);
-        }
-
-        .demo .section-description {
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        .dashboard {
-            background: var(--card-bg);
-            border-radius: 16px;
+        /* Architecture Diagram */
+        .architecture-diagram {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 1rem;
             padding: 2rem;
-            margin-top: 3rem;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-color);
-        }
-
-        .dashboard-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--border-color);
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .dashboard-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .status-badge {
-            padding: 0.5rem 1rem;
-            background: rgba(6, 214, 160, 0.1);
-            color: var(--accent-mint);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--accent-mint);
-            border-radius: 50%;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .metric-card {
-            padding: 1.5rem;
             background: var(--bg-tertiary);
             border-radius: 12px;
-            border-left: 4px solid var(--accent-mint);
         }
 
-        .metric-label {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .metric-value {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--text-primary);
-        }
-
-        .metric-trend {
-            font-size: 0.85rem;
-            color: var(--accent-mint);
-            margin-top: 0.25rem;
-        }
-
-        .charts-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .chart-card {
+        .arch-component {
             background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
-        }
-
-        .chart-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-
-        .chart-canvas {
-            width: 100%;
-            height: 300px;
-        }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 2rem;
-            background: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
-
-        .data-table th {
-            background: var(--bg-tertiary);
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .data-table td {
-            padding: 1rem;
-            border-bottom: 1px solid var(--border-color);
-            color: var(--text-secondary);
-        }
-
-        .data-table tr:hover {
-            background: var(--bg-tertiary);
-        }
-
-        .trend-indicator {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .trend-up {
-            background: rgba(6, 214, 160, 0.1);
-            color: var(--accent-mint);
-        }
-
-        .trend-down {
-            background: rgba(10, 36, 99, 0.1);
-            color: var(--primary-dark);
-        }
-
-        .trend-stable {
-            background: var(--gray-100);
-            color: var(--gray-600);
-        }
-
-        /* ==================== EXPANDED BIOMARKERS SECTION ==================== */
-        .biomarkers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .biomarker-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: all 0.3s;
-        }
-
-        .biomarker-card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-3px);
-        }
-
-        .biomarker-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-
-        .biomarker-info-block {
-            flex: 1;
-        }
-
-        .biomarker-name-main {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .biomarker-category-tag {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: var(--bg-tertiary);
-            color: var(--text-secondary);
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .biomarker-status {
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        .status-optimal {
-            background: rgba(6, 214, 160, 0.1);
-            color: var(--accent-mint);
-            border: 1px solid rgba(6, 214, 160, 0.3);
-        }
-
-        .status-warning {
-            background: rgba(14, 165, 233, 0.1);
-            color: var(--accent-teal);
-            border: 1px solid rgba(14, 165, 233, 0.3);
-        }
-
-        .status-critical {
-            background: rgba(10, 36, 99, 0.1);
-            color: var(--primary-dark);
-            border: 1px solid rgba(10, 36, 99, 0.3);
-        }
-
-        .biomarker-values {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin: 1rem 0;
-            padding: 1rem;
-            background: var(--bg-tertiary);
-            border-radius: 8px;
-        }
-
-        .value-block h4 {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.25rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .value-block .value {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--text-primary);
-        }
-
-        .value-block .unit {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-left: 0.25rem;
-        }
-
-        .biomarker-miniChart {
-            width: 100%;
-            height: 60px;
-            margin: 1rem 0;
-        }
-
-        .biomarker-stats {
-            display: flex;
-            justify-content: space-between;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .stat-mini {
-            text-align: center;
-        }
-
-        .stat-mini-label {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.25rem;
-        }
-
-        .stat-mini-value {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        /* Category Filters */
-        .category-filters {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 0.75rem 1.5rem;
             border: 2px solid var(--border-color);
-            background: var(--card-bg);
             border-radius: 8px;
-            font-weight: 600;
-            color: var(--text-secondary);
-            cursor: pointer;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
             transition: all 0.3s;
         }
 
-        .filter-btn:hover {
+        .arch-component:hover {
+            transform: translateY(-5px);
             border-color: var(--accent-mint);
-            color: var(--accent-mint);
-            background: rgba(6, 214, 160, 0.05);
+            box-shadow: 0 8px 16px rgba(6, 214, 160, 0.2);
         }
 
-        .filter-btn.active {
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-mint));
-            border-color: var(--accent-mint);
-            color: var(--white);
-            box-shadow: 0 4px 12px rgba(6, 214, 160, 0.3);
-        }
-
-        /* Detailed Stats Section */
-        .detailed-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .detailed-stat-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
-        }
-
-        .detailed-stat-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+        .arch-icon {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
         }
 
-        .stat-icon-large {
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-mint));
+        .arch-title {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
         }
 
-        .stat-info h4 {
+        .arch-desc {
             font-size: 0.85rem;
             color: var(--text-secondary);
-            margin-bottom: 0.25rem;
+            line-height: 1.4;
         }
 
-        .stat-main-value {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--text-primary);
+        .arch-arrow {
+            position: absolute;
+            right: -1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--accent-mint);
+        }
+
+        .arch-component:last-child .arch-arrow {
+            display: none;
         }
 
         /* ==================== FOOTER ==================== */
@@ -828,6 +498,15 @@
                 height: 50px;
                 bottom: 1rem;
                 right: 1rem;
+            }
+
+            .architecture-diagram {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .arch-arrow {
+                display: none;
             }
         }
 
@@ -1005,8 +684,25 @@
                         Interfaz web para profesionales sanitarios con dashboards interactivos. 
                         Generación de reportes técnicos con proyecciones estadísticas, intervalos de confianza y alertas basadas en umbrales configurables.
                     </p>
-                    <div class="flow-technical">
-                        OUTPUT: REST API → WebSocket para datos en tiempo real → Exportación PDF/CSV
+                    
+                    <div class="architecture-diagram">
+                        <div class="arch-component">
+                            <div class="arch-icon">📊</div>
+                            <div class="arch-title">Dashboard Web</div>
+                            <div class="arch-desc">Interfaz interactiva con visualizaciones en tiempo real</div>
+                            <div class="arch-arrow">→</div>
+                        </div>
+                        <div class="arch-component">
+                            <div class="arch-icon">🔌</div>
+                            <div class="arch-title">REST API</div>
+                            <div class="arch-desc">Endpoints seguros para integración externa</div>
+                            <div class="arch-arrow">→</div>
+                        </div>
+                        <div class="arch-component">
+                            <div class="arch-icon">📄</div>
+                            <div class="arch-title">Exportación</div>
+                            <div class="arch-desc">Reportes en PDF, CSV y formatos HL7</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1863,6 +1559,310 @@
         // ==================== CORRELATION MATRIX ====================
         function drawCorrelationMatrix() {
             const canvas = document.getElementById('correlationMatrix');
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = 400;
+            
+            const markers = ['HbA1c', 'LDL', 'PCR', 'Vit D', 'TSH', 'Crea'];
+            const size = markers.length;
+            const cellSize = Math.min((canvas.width - 100) / size, (canvas.height - 100) / size);
+            const startX = 80;
+            const startY = 20;
+            
+            // Generate correlation matrix
+            const correlations = [];
+            for (let i = 0; i < size; i++) {
+                correlations[i] = [];
+                for (let j = 0; j < size; j++) {
+                    if (i === j) correlations[i][j] = 1.0;
+                    else correlations[i][j] = (Math.random() * 1.6) - 0.8;
+                }
+            }
+            
+            // Draw cells
+            correlations.forEach((row, i) => {
+                row.forEach((value, j) => {
+                    const x = startX + j * cellSize;
+                    const y = startY + i * cellSize;
+                    
+                    const intensity = Math.abs(value);
+                    const color = value > 0 
+                        ? `rgba(6, 214, 160, ${intensity})`
+                        : `rgba(10, 36, 99, ${intensity})`;
+                    
+                    ctx.fillStyle = color;
+                    ctx.fillRect(x, y, cellSize - 2, cellSize - 2);
+                    
+                    ctx.fillStyle = intensity > 0.5 ? 'white' : (isLight ? '#0A2463' : '#F1F5F9');
+                    ctx.font = 'bold 12px sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText(value.toFixed(2), x + cellSize / 2, y + cellSize / 2);
+                });
+                
+                // Labels
+                ctx.fillStyle = isLight ? '#475569' : '#CBD5E1';
+                ctx.font = '11px sans-serif';
+                ctx.textAlign = 'right';
+                ctx.fillText(markers[i], startX - 10, startY + i * cellSize + cellSize / 2);
+                ctx.textAlign = 'center';
+                ctx.fillText(markers[i], startX + i * cellSize + cellSize / 2, startY - 10);
+            });
+        }
+
+        // ==================== HELPER FUNCTIONS ====================
+        function calculateTrend(history) {
+            const recent = history.slice(-3);
+            const change = ((recent[recent.length - 1] - recent[0]) / recent[0] * 100).toFixed(1);
+            
+            if (Math.abs(change) < 1) return { class: 'trend-stable', symbol: '→', value: change };
+            if (change > 0) return { class: 'trend-up', symbol: '↑', value: change };
+            return { class: 'trend-down', symbol: '↓', value: change };
+        }
+
+        function calculateZScore(bio) {
+            const avg = calculateAvg(bio.history);
+            const stdDev = calculateStdDev(bio.history, avg);
+            return ((bio.value - avg) / stdDev).toFixed(2);
+        }
+
+        function calculateAvg(arr) {
+            return arr.reduce((a, b) => a + b) / arr.length;
+        }
+
+        function calculateStdDev(arr, avg) {
+            const variance = arr.reduce((sum, val) => sum + Math.pow(val - avg, 2), 0) / arr.length;
+            return Math.sqrt(variance);
+        }
+
+        function getCategoryName(category) {
+            const names = {
+                'metabolico': 'Metabólico',
+                'cardiovascular': 'Cardiovascular',
+                'hepatico': 'Hepático',
+                'renal': 'Renal',
+                'endocrino': 'Endocrino',
+                'inmunologico': 'Inmunológico'
+            };
+            return names[category] || category;
+        }
+
+        // ==================== FILTERS ====================
+        function setupFilters() {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilter = btn.dataset.category;
+                    renderBiomarkersGrid();
+                    updateMetrics();
+                });
+            });
+        }
+
+        // ==================== UPDATE METRICS ====================
+        function updateMetrics() {
+            document.getElementById('samplesProcessed').textContent = samplesCount.toLocaleString();
+            document.getElementById('activeBiomarkers').textContent = biomarkersData.length;
+            
+            const correlations = biomarkersData.map(() => Math.random() * 0.4 + 0.5);
+            const avgCorr = (correlations.reduce((a, b) => a + b) / correlations.length).toFixed(2);
+            document.getElementById('avgCorrelation').textContent = avgCorr;
+        }
+
+        function updateDetailedStats() {
+            const allValues = biomarkersData.map(b => b.value);
+            const avg = calculateAvg(allValues);
+            const stdDev = calculateStdDev(allValues, avg);
+            const coeffVar = (stdDev / avg * 100);
+            
+            document.getElementById('globalStdDev').textContent = stdDev.toFixed(2);
+            document.getElementById('coeffVariation').textContent = coeffVar.toFixed(1);
+            
+            const trends = biomarkersData.map(b => calculateTrend(b.history));
+            const upCount = trends.filter(t => t.symbol === '↑').length;
+            const downCount = trends.filter(t => t.symbol === '↓').length;
+            const dominant = upCount > downCount ? 'Alcista ↑' : downCount > upCount ? 'Bajista ↓' : 'Estable →';
+            document.getElementById('dominantTrend').textContent = dominant;
+            
+            const alerts = biomarkersData.filter(b => b.status !== 'optimal').length;
+            document.getElementById('activeAlerts').textContent = alerts;
+        }
+
+        // ==================== TIME SERIES CHART ====================
+        function drawTimeSeriesChart() {
+            const canvas = document.getElementById('timeSeriesChart');
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = 300;
+
+            const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'];
+            const colors = ['#06D6A0', '#0EA5E9', '#1E3A8A'];
+            const padding = 50;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Grid color adapts to theme
+            const isLight = document.body.classList.contains('light-mode');
+            ctx.strokeStyle = isLight ? '#E2E8F0' : '#334155';
+            ctx.lineWidth = 1;
+            for (let i = 0; i <= 5; i++) {
+                const y = padding + (i * (canvas.height - 2 * padding) / 5);
+                ctx.beginPath();
+                ctx.moveTo(padding, y);
+                ctx.lineTo(canvas.width - padding, y);
+                ctx.stroke();
+            }
+
+            // Lines
+            biomarkersData.slice(0,  3).forEach((bio, idx) => {
+                ctx.strokeStyle = colors[idx];
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+
+                const max = Math.max(...bio.history);
+                const min = Math.min(...bio.history);
+                const range = max - min || 1;
+
+                bio.history.forEach((val, i) => {
+                    const x = padding + (i * (canvas.width - 2 * padding) / 5);
+                    const normalized = (val - min) / range;
+                    const y = canvas.height - padding - (normalized * (canvas.height - 2 * padding));
+
+                    if (i === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+
+                    ctx.fillStyle = colors[idx];
+                    ctx.beginPath();
+                    ctx.arc(x, y, 5, 0, 2 * Math.PI);
+                    ctx.fill();
+                });
+                ctx.stroke();
+            });
+
+            // Labels
+            ctx.fillStyle = isLight ? '#475569' : '#CBD5E1';
+            ctx.font = '12px sans-serif';
+            ctx.textAlign = 'center';
+            months.forEach((m, i) => {
+                const x = padding + (i * (canvas.width - 2 * padding) / 5);
+                ctx.fillText(m, x, canvas.height - 20);
+            });
+        }
+
+        // ==================== DISTRIBUTION CHART ====================
+        function drawDistributionChart() {
+            const canvas = document.getElementById('distributionChart');
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = 300;
+
+            const optimal = biomarkersData.filter(b => b.status === 'optimal').length;
+            const warning = biomarkersData.filter(b => b.status === 'warning').length;
+            const critical = biomarkersData.filter(b => b.status === 'critical').length;
+            const total = biomarkersData.length;
+
+            const data = [
+                { label: 'Óptimo', value: optimal, color: '#06D6A0' },
+                { label: 'Atención', value: warning, color: '#0EA5E9' },
+                { label: 'Crítico', value: critical, color: '#0A2463' }
+            ];
+
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = 90;
+            let currentAngle = -Math.PI / 2;
+
+            data.forEach(d => {
+                const sliceAngle = (d.value / total) * 2 * Math.PI;
+
+                ctx.fillStyle = d.color;
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, currentAngle, currentAngle + sliceAngle);
+                ctx.arc(centerX, centerY, 45, currentAngle + sliceAngle, currentAngle, true);
+                ctx.closePath();
+                ctx.fill();
+
+                currentAngle += sliceAngle;
+            });
+
+            // Center
+            const isLight = document.body.classList.contains('light-mode');
+            ctx.fillStyle = isLight ? '#FFFFFF' : '#1E293B';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 40, 0, 2 * Math.PI);
+            ctx.fill();
+
+            ctx.fillStyle = isLight ? '#0A2463' : '#F1F5F9';
+            ctx.font = 'bold 28px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(total, centerX, centerY);
+        }
+
+        // ==================== CORRELATION MATRIX ====================
+        function drawCorrelationMatrix() {
+            const canvas = document.getElementById('correlationMatrix');
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = 400;
+            
+            const markers = ['HbA1c', 'LDL', 'PCR', 'Vit D', 'TSH', 'Crea'];
+            const size = markers.length;
+            const cellSize = Math.min((canvas.width - 100) / size, (canvas.height - 100) / size);
+            const startX = 80;
+            const startY = 20;
+            
+            // Generate correlation matrix
+            const correlations = [];
+            for (let i = 0; i < size; i++) {
+                correlations[i] = [];
+                for (let j = 0; j < size; j++) {
+                    if (i === j) correlations[i][j] = 1.0;
+                    else correlations[i][j] = (Math.random() * 1.6) - 0.8;
+                }
+            }
+            
+            // Draw cells
+            correlations.forEach((row, i) => {
+                row.forEach((value, j) => {
+                    const x = startX + j * cellSize;
+                    const y = startY + i * cellSize;
+                    
+                    const intensity = Math.abs(value);
+                    const color = value > 0 
+                        ? `rgba(6, 214, 160, ${intensity})`
+                        : `rgba(10, 36, 99, ${intensity})`;
+                    
+                    ctx.fillStyle = color;
+                    ctx.fillRect(x, y, cellSize - 2, cellSize - 2);
+                    
+                    ctx.fillStyle = intensity > 0.5 ? 'white' : (isLight ? '#0A2463' : '#F1F5F9');
+                    ctx.font = 'bold 12px sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText(value.toFixed(2), x + cellSize / 2, y + cellSize / 2);
+                });
+                
+                // Labels
+                ctx.fillStyle = isLight ? '#475569' : '#CBD5E1';
+                ctx.font = '11px sans-serif';
+                ctx.textAlign = 'right';
+                ctx.fillText(markers[i], startX - 10, startY + i * cellSize + cellSize / 2);
+                ctx.textAlign = 'center';
+                ctx.fillText(markers[i], startX + i * cellSize + cellSize / 2, startY - 10);
+            });
+        }
+
+        // ==================== RESPONSIVE ====================
+        window.addEventListener('resize', () => {
+            drawTimeSeriesChart();
+            drawDistributionChart();
+            drawCorrelationMatrix();
+        });
+    </script>
+</body>
+</html>
             const ctx = canvas.getContext('2d');
             canvas.width = canvas.offsetWidth;
             canvas.height = 400;
