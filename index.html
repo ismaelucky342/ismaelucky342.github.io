@@ -97,7 +97,7 @@
             position: fixed;
             bottom: 2rem;
             right: 2rem;
-            z-index: 1000;
+            z-index: 1001;
             width: 60px;
             height: 60px;
             background: linear-gradient(135deg, var(--accent-mint), var(--accent-teal));
@@ -128,6 +128,11 @@
             50% {
                 box-shadow: 0 12px 24px rgba(6, 214, 160, 0.5);
             }
+        }
+
+        /* Ocultar el botón por defecto de Flowise */
+        flowise-fullchatbot, flowise-chatbot {
+            --flowise-button-display: none !important;
         }
 
         /* ==================== NAVIGATION ==================== */
@@ -1339,12 +1344,16 @@
         const chatbotButton = document.getElementById('chatbotButton');
         
         chatbotButton.addEventListener('click', () => {
-            // El chatbot de Flowise se abrirá automáticamente al hacer clic
-            const flowiseButton = document.querySelector('flowise-chatbot');
-            if (flowiseButton && flowiseButton.shadowRoot) {
-                const button = flowiseButton.shadowRoot.querySelector('button');
-                if (button) button.click();
-            }
+            // Buscar y hacer clic en el botón de Flowise
+            setTimeout(() => {
+                const flowiseWidget = document.querySelector('flowise-chatbot') || document.querySelector('flowise-fullchatbot');
+                if (flowiseWidget && flowiseWidget.shadowRoot) {
+                    const flowiseBtn = flowiseWidget.shadowRoot.querySelector('button');
+                    if (flowiseBtn) {
+                        flowiseBtn.click();
+                    }
+                }
+            }, 100);
         });
 
         // ==================== EXPANDED DATA MODEL ====================
@@ -1794,42 +1803,6 @@
         Chatbot.init({
             chatflowid: "15149e15-e1ea-476c-93da-d502a09929fa",
             apiHost: "http://hormiguita.es:3000/",
-            theme: {
-                button: {
-                    backgroundColor: "#06D6A0",
-                    right: 20,
-                    bottom: 20,
-                    size: 60,
-                    iconColor: "white",
-                    customIconSrc: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg",
-                },
-                chatWindow: {
-                    welcomeMessage: "¡Hola! Soy el asistente de BioSense. ¿En qué puedo ayudarte?",
-                    backgroundColor: "#1E293B",
-                    height: 600,
-                    width: 400,
-                    fontSize: 16,
-                    poweredByTextColor: "#06D6A0",
-                    botMessage: {
-                        backgroundColor: "#334155",
-                        textColor: "#F1F5F9",
-                        showAvatar: true,
-                        avatarSrc: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/openai.svg",
-                    },
-                    userMessage: {
-                        backgroundColor: "#06D6A0",
-                        textColor: "#0A2463",
-                        showAvatar: true,
-                        avatarSrc: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/user.svg",
-                    },
-                    textInput: {
-                        placeholder: "Escribe tu mensaje...",
-                        backgroundColor: "#334155",
-                        textColor: "#F1F5F9",
-                        sendButtonColor: "#06D6A0",
-                    }
-                }
-            }
         })
     </script>
 </body>
