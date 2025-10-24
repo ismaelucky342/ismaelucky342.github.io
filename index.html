@@ -92,48 +92,8 @@
             font-size: 1.2rem;
         }
 
-        /* ==================== CHATBOT BUTTON ==================== */
-        .chatbot-button {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 1001;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--accent-mint), var(--accent-teal));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 8px 16px rgba(6, 214, 160, 0.3);
-            transition: all 0.3s ease;
-            animation: pulse-chat 2s infinite;
-        }
-
-        .chatbot-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 24px rgba(6, 214, 160, 0.4);
-        }
-
-        .chatbot-icon {
-            font-size: 1.8rem;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-        }
-
-        @keyframes pulse-chat {
-            0%, 100% {
-                box-shadow: 0 8px 16px rgba(6, 214, 160, 0.3);
-            }
-            50% {
-                box-shadow: 0 12px 24px rgba(6, 214, 160, 0.5);
-            }
-        }
-
-        /* Ocultar el botón por defecto de Flowise */
-        flowise-fullchatbot, flowise-chatbot {
-            --flowise-button-display: none !important;
-        }
+        /* ==================== CHATBOT BUTTON - REMOVED ==================== */
+        /* Botón personalizado eliminado, se usa solo el de Flowise */
 
         /* ==================== NAVIGATION ==================== */
         .navbar {
@@ -971,11 +931,6 @@
     </style>
 </head>
 <body>
-    <!-- Chatbot Button -->
-    <div class="chatbot-button" id="chatbotButton" title="Asistente BioSense">
-        <span class="chatbot-icon">💬</span>
-    </div>
-
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -1259,6 +1214,12 @@
                     </div>
                 </div>
 
+                <!-- Correlation Matrix - MOVED HERE -->
+                <div class="correlation-matrix">
+                    <h4 class="chart-title">Matriz de Correlación entre Biomarcadores</h4>
+                    <canvas id="correlationMatrix" style="width: 100%; height: 400px;"></canvas>
+                </div>
+
                 <!-- Charts -->
                 <div class="charts-container">
                     <div class="chart-card">
@@ -1269,12 +1230,6 @@
                         <h4 class="chart-title">Distribución de Estados</h4>
                         <canvas id="distributionChart" class="chart-canvas"></canvas>
                     </div>
-                </div>
-
-                <!-- Correlation Matrix -->
-                <div class="correlation-matrix">
-                    <h4 class="chart-title">Matriz de Correlación entre Biomarcadores</h4>
-                    <canvas id="correlationMatrix" style="width: 100%; height: 400px;"></canvas>
                 </div>
 
                 <!-- Data Table -->
@@ -1334,27 +1289,14 @@
 
             // Redraw charts with new theme
             setTimeout(() => {
+                drawCorrelationMatrix();
                 drawTimeSeriesChart();
                 drawDistributionChart();
-                drawCorrelationMatrix();
             }, 100);
         });
 
-        // ==================== CHATBOT BUTTON ====================
-        const chatbotButton = document.getElementById('chatbotButton');
-        
-        chatbotButton.addEventListener('click', () => {
-            // Buscar y hacer clic en el botón de Flowise
-            setTimeout(() => {
-                const flowiseWidget = document.querySelector('flowise-chatbot') || document.querySelector('flowise-fullchatbot');
-                if (flowiseWidget && flowiseWidget.shadowRoot) {
-                    const flowiseBtn = flowiseWidget.shadowRoot.querySelector('button');
-                    if (flowiseBtn) {
-                        flowiseBtn.click();
-                    }
-                }
-            }, 100);
-        });
+        // ==================== CHATBOT BUTTON - REMOVED ====================
+        // Ya no se necesita el listener personalizado, Flowise maneja todo
 
         // ==================== EXPANDED DATA MODEL ====================
         const biomarkersData = [
@@ -1400,9 +1342,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             renderBiomarkersGrid();
             renderTable();
+            drawCorrelationMatrix();
             drawTimeSeriesChart();
             drawDistributionChart();
-            drawCorrelationMatrix();
             startLiveUpdates();
             updateMetrics();
             updateDetailedStats();
@@ -1790,9 +1732,9 @@
 
         // ==================== RESPONSIVE ====================
         window.addEventListener('resize', () => {
+            drawCorrelationMatrix();
             drawTimeSeriesChart();
             drawDistributionChart();
-            drawCorrelationMatrix();
             renderBiomarkersGrid();
         });
     </script>
