@@ -3,26 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BioMarker AI - Dashboard Analítico Avanzado</title>
+    <title>BioSense - Plataforma Predictiva Basada en Biomarcadores</title>
     <style>
-        /* ==================== VARIABLES Y RESET ==================== */
+        /* ==================== VARIABLES ==================== */
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #10b981;
-            --danger-color: #ef4444;
-            --warning-color: #f59e0b;
-            --purple-color: #8b5cf6;
-            --dark-bg: #0f172a;
-            --sidebar-bg: #1e293b;
-            --card-bg: #ffffff;
-            --border-color: #e2e8f0;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --primary-dark: #0A2463;
+            --primary-blue: #1E40AF;
+            --accent-mint: #06D6A0;
+            --accent-teal: #118AB2;
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-600: #4B5563;
+            --gray-800: #1F2937;
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         }
 
         * {
@@ -31,121 +27,338 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--white);
+            color: var(--gray-800);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* ==================== LAYOUT PRINCIPAL ==================== */
-        .app-container {
-            display: flex;
-            min-height: 100vh;
-        }
-
-        /* ==================== SIDEBAR ==================== */
-        .sidebar {
-            width: 280px;
-            background: var(--dark-bg);
-            color: white;
-            display: flex;
-            flex-direction: column;
+        /* ==================== NAVIGATION ==================== */
+        .navbar {
             position: fixed;
-            height: 100vh;
-            overflow-y: auto;
-            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
+            box-shadow: var(--shadow-md);
         }
 
-        .sidebar-header {
-            padding: 2rem 1.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            background: linear-gradient(135deg, var(--primary-color), var(--purple-color));
-        }
-
-        .logo-container {
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
         }
 
         .logo {
-            width: 50px;
-            height: 50px;
-            background: white;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-teal);
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(6, 214, 160, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(17, 138, 178, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--accent-mint);
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(6, 214, 160, 0.3);
+        }
+
+        .hero-visual {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .hero-stat {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-mint);
+        }
+
+        .hero-stat-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        /* ==================== SECTION BASE ==================== */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--gray-100);
+            color: var(--accent-teal);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ==================== PROBLEM SECTION ==================== */
+        .problem {
+            background: var(--gray-50);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .problem-card {
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .problem-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-teal), var(--accent-mint));
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            animation: pulse 2s infinite;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .app-title {
-            font-size: 1.3rem;
+        .problem-title {
+            font-size: 1.25rem;
             font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .app-subtitle {
-            font-size: 0.75rem;
-            opacity: 0.9;
-        }
-
-        /* ==================== AI ASSISTANT ==================== */
-        .ai-assistant {
-            margin: 1.5rem;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(37, 99, 235, 0.2));
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .ai-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
+            color: var(--primary-dark);
             margin-bottom: 1rem;
         }
 
-        .ai-avatar {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--purple-color), var(--primary-color));
+        .problem-text {
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* ==================== SOLUTION SECTION ==================== */
+        .solution-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .flow-step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .flow-number {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-dark);
+            color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            animation: glow 2s infinite;
+            font-size: 2rem;
+            font-weight: 800;
+            flex-shrink: 0;
         }
 
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 10px rgba(139, 92, 246, 0.5); }
-            50% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.8); }
+        .flow-content h3 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.75rem;
         }
 
-        .ai-status {
-            flex: 1;
+        .flow-content p {
+            color: var(--gray-600);
+            line-height: 1.7;
         }
 
-        .ai-name {
+        .flow-technical {
+            margin-top: 0.75rem;
+            padding: 1rem;
+            background: var(--gray-50);
+            border-left: 3px solid var(--accent-mint);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            font-family: 'Courier New', monospace;
+        }
+
+        /* ==================== DEMO SECTION ==================== */
+        .demo {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 6rem 2rem;
+        }
+
+        .demo .section-title {
+            color: var(--white);
+        }
+
+        .demo .section-description {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .dashboard {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 3rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gray-100);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .dashboard-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .status-badge {
+            padding: 0.5rem 1rem;
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            border-radius: 20px;
+            font-size: 0.85rem;
             font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .ai-state {
-            font-size: 0.75rem;
-            opacity: 0.8;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -154,1063 +367,850 @@
         .status-dot {
             width: 8px;
             height: 8px;
-            background: var(--secondary-color);
+            background: #ef4444;
             border-radius: 50%;
-            animation: blink 1.5s infinite;
+            animation: pulse 1.5s infinite;
         }
 
-        @keyframes blink {
+        @keyframes pulse {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.3; }
         }
 
-        .ai-message {
-            font-size: 0.85rem;
-            line-height: 1.5;
-            opacity: 0.9;
-            margin-bottom: 1rem;
-        }
-
-        .ai-stats {
+        .metrics-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.5rem;
-        }
-
-        .ai-stat {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.5rem;
-            border-radius: 8px;
-            font-size: 0.75rem;
-        }
-
-        .ai-stat-value {
-            font-weight: 600;
-            font-size: 1.1rem;
-            display: block;
-        }
-
-        /* ==================== LAYOUT ==================== */
-        .sidebar-menu {
-            flex: 1;
-            padding: 1rem 0;
-        }
-
-        .menu-section {
-            margin-bottom: 1.5rem;
-        }
-
-        .menu-section-title {
-            padding: 0.5rem 1.5rem;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: #94a3b8;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-        }
-
-        .menu-item {
-            padding: 0.75rem 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: #cbd5e1;
-            text-decoration: none;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-
-        .menu-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-        }
-
-        .menu-item.active {
-            background: rgba(37, 99, 235, 0.3);
-            color: white;
-            border-right: 3px solid var(--primary-color);
-        }
-
-        /* ==================== MAIN CONTENT ==================== */
-        .main-content {
-            flex: 1;
-            margin-left: 280px;
-            background: #f1f5f9;
-            min-height: 100vh;
-        }
-
-        /* ==================== NAVBAR ==================== */
-        .navbar {
-            background: white;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .search-bar {
-            position: relative;
-            flex: 1;
-            max-width: 500px;
-        }
-
-        .search-bar input {
-            width: 100%;
-            padding: 0.75rem 1rem 0.75rem 3rem;
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-        }
-
-        .search-bar input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.2rem;
-        }
-
-        .navbar-right {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .quick-actions {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .action-btn {
-            padding: 0.75rem 1.25rem;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .action-btn-primary {
-            background: linear-gradient(135deg, var(--primary-color), var(--purple-color));
-            color: white;
-        }
-
-        .action-btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
-        }
-
-        /* ==================== CONTENT AREA ==================== */
-        .content {
-            padding: 2rem;
-        }
-
-        .page-header {
-            margin-bottom: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .page-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .live-badge {
-            padding: 0.25rem 0.75rem;
-            background: var(--danger-color);
-            color: white;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            animation: pulse-badge 2s infinite;
-        }
-
-        @keyframes pulse-badge {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        /* ==================== STATS GRID MEJORADO ==================== */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
             margin-bottom: 2rem;
         }
 
-        .stat-card {
-            background: white;
+        .metric-card {
             padding: 1.5rem;
-            border-radius: 16px;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
+            background: var(--gray-50);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-teal);
         }
 
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-1);
-        }
-
-        .stat-card:nth-child(2)::before { background: var(--gradient-2); }
-        .stat-card:nth-child(3)::before { background: var(--gradient-3); }
-        .stat-card:nth-child(4)::before { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .stat-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-
-        .stat-icon-large {
-            width: 60px;
-            height: 60px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(139, 92, 246, 0.1));
-        }
-
-        .stat-trend {
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
+        .metric-label {
             font-size: 0.85rem;
-            font-weight: 600;
-            padding: 0.25rem 0.5rem;
-            border-radius: 6px;
-        }
-
-        .stat-trend.up {
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--secondary-color);
-        }
-
-        .stat-trend.down {
-            background: rgba(239, 68, 68, 0.1);
-            color: var(--danger-color);
-        }
-
-        .stat-info h3 {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
+            color: var(--gray-600);
+            margin-bottom: 0.5rem;
             font-weight: 500;
-            margin-bottom: 0.5rem;
         }
 
-        .stat-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            line-height: 1;
-            margin-bottom: 0.5rem;
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
         }
 
-        .stat-progress {
-            width: 100%;
-            height: 6px;
-            background: #f1f5f9;
-            border-radius: 3px;
-            overflow: hidden;
-            margin-top: 1rem;
+        .metric-trend {
+            font-size: 0.85rem;
+            color: var(--accent-mint);
+            margin-top: 0.25rem;
         }
 
-        .stat-progress-bar {
-            height: 100%;
-            background: var(--gradient-1);
-            border-radius: 3px;
-            transition: width 1s ease;
-        }
-
-        /* ==================== CHARTS GRID ==================== */
-        .charts-grid {
+        .charts-container {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
-        .card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-        }
-
-        .card-header {
-            padding: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(to right, rgba(37, 99, 235, 0.02), transparent);
-        }
-
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .card-body {
-            padding: 1.5rem;
-        }
-
-        .chart-container {
-            position: relative;
-            height: 350px;
-        }
-
-        .chart-container-small {
-            height: 250px;
-        }
-
-        /* ==================== BIOMARKERS TABLE MEJORADO ==================== */
-        .biomarkers-table-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .biomarker-item {
-            display: flex;
-            align-items: center;
-            padding: 1.25rem;
-            background: linear-gradient(to right, #f8fafc, white);
+        .chart-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
             border-radius: 12px;
-            border-left: 4px solid var(--primary-color);
-            transition: all 0.3s;
+            padding: 1.5rem;
+        }
+
+        .chart-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-dark);
             margin-bottom: 1rem;
         }
 
-        .biomarker-item:hover {
-            transform: translateX(8px);
-            box-shadow: var(--shadow-lg);
-            background: white;
+        .chart-canvas {
+            width: 100%;
+            height: 300px;
         }
 
-        .biomarker-icon {
-            width: 50px;
-            height: 50px;
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: var(--white);
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
-            font-size: 1.5rem;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(139, 92, 246, 0.1));
+            overflow: hidden;
         }
 
-        .biomarker-details {
-            flex: 1;
-        }
-
-        .biomarker-name {
+        .data-table th {
+            background: var(--gray-100);
+            padding: 1rem;
+            text-align: left;
             font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.25rem;
-            font-size: 1.05rem;
+            color: var(--primary-dark);
         }
 
-        .biomarker-meta {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            display: flex;
-            gap: 1rem;
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--gray-100);
+            color: var(--gray-600);
         }
 
-        .biomarker-value-section {
-            text-align: right;
+        .data-table tr:hover {
+            background: var(--gray-50);
         }
 
-        .biomarker-current-value {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            line-height: 1;
-        }
-
-        .biomarker-unit {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-
-        .mini-chart {
-            width: 100px;
-            height: 40px;
-            margin-top: 0.5rem;
-        }
-
-        /* ==================== ANALYTICS GRID ==================== */
-        .analytics-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .analytics-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 16px;
-            box-shadow: var(--shadow);
-        }
-
-        .analytics-header {
-            display: flex;
-            justify-content: space-between;
+        .trend-indicator {
+            display: inline-flex;
             align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .analytics-title {
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
             font-weight: 600;
-            color: var(--text-primary);
         }
 
-        .analytics-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
+        .trend-up {
+            background: rgba(6, 214, 160, 0.1);
+            color: var(--accent-mint);
         }
 
-        .donut-chart-container {
-            position: relative;
-            width: 200px;
-            height: 200px;
+        .trend-down {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+        }
+
+        .trend-stable {
+            background: rgba(75, 85, 99, 0.1);
+            color: var(--gray-600);
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .chart-legend {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
+        .footer-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
         }
 
-        .legend-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .legend-label {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .legend-color {
-            width: 12px;
-            height: 12px;
-            border-radius: 3px;
-        }
-
-        .legend-value {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        /* ==================== ANIMATIONS ==================== */
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .animate-slide-in {
-            animation: slideInRight 0.5s ease-out;
-        }
-
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        /* ==================== HEATMAP ==================== */
-        .heatmap-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 0.5rem;
-        }
-
-        .heatmap-cell {
-            aspect-ratio: 1;
-            border-radius: 6px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: 600;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .heatmap-cell:hover {
-            transform: scale(1.1);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .heatmap-day {
-            font-size: 0.7rem;
-            opacity: 0.7;
+        .footer-text {
+            margin-bottom: 0.5rem;
         }
 
         /* ==================== RESPONSIVE ==================== */
-        @media (max-width: 1400px) {
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .analytics-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .charts-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .biomarkers-table-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
         @media (max-width: 768px) {
-            .sidebar {
-                transform: translateX(-100%);
+            .nav-links {
+                display: none;
             }
 
-            .sidebar.active {
-                transform: translateX(0);
-            }
-
-            .main-content {
-                margin-left: 0;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .search-bar input {
-                width: 200px;
-            }
-
-            .stats-grid {
+            .hero-visual {
                 grid-template-columns: 1fr;
             }
 
-            .content {
-                padding: 1rem;
+            .flow-step {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
 
-            .user-profile span {
-                display: none;
+            .flow-number {
+                margin: 0 auto;
+            }
+
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .data-table {
+                font-size: 0.9rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 0.75rem 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="spinner"></div>
-    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">BioSense</a>
+            <ul class="nav-links">
+                <li><a href="#problema">Problema</a></li>
+                <li><a href="#solucion">Solución</a></li>
+                <li><a href="#demo">Demo Técnica</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <!-- App Container -->
-    <div class="app-container">
-        <!-- Sidebar -->
-        <aside class="sidebar" id="sidebar">
-            <div class="sidebar-header">
-                <div class="logo-container">
-                    <div class="logo">🧬</div>
-                    <div>
-                        <div class="app-title">BioMarker AI</div>
-                        <div class="app-subtitle">Análisis Predictivo</div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1 class="hero-title">BioSense: Plataforma Predictiva Basada en Biomarcadores</h1>
+            <p class="hero-subtitle">
+                Anonimización, análisis y predicción segura de datos biomédicos mediante procesamiento distribuido y modelado estadístico.
+            </p>
+            <a href="#demo" class="hero-btn">Ver Demo Técnica</a>
+            
+            <div class="hero-visual">
+                <div class="hero-stat">
+                    <div class="hero-stat-value">1,247</div>
+                    <div class="hero-stat-label">Cohortes Procesadas</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">96.8%</div>
+                    <div class="hero-stat-label">Precisión Predictiva</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">24/7</div>
+                    <div class="hero-stat-label">Monitorización Continua</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section problem" id="problema">
+        <div class="section-header">
+            <span class="section-tag">Análisis del Problema</span>
+            <h2 class="section-title">Desafíos en la Gestión de Datos Biomédicos</h2>
+            <p class="section-description">
+                El ecosistema actual de biomarcadores enfrenta limitaciones técnicas críticas que impiden el aprovechamiento óptimo de los datos generados.
+            </p>
+        </div>
+
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="problem-icon">🔗</div>
+                <h3 class="problem-title">Fragmentación de Datos</h3>
+                <p class="problem-text">
+                    Los datos biomédicos se almacenan en sistemas heterogéneos sin interoperabilidad. 
+                    Formatos incompatibles, estándares divergentes y protocolos de transmisión inconsistentes dificultan el análisis integrado.
+                </p>
+            </div>
+
+            <div class="problem-card">
+                <div class="problem-icon">🔐</div>
+                <h3 class="problem-title">Riesgos de Privacidad</h3>
+                <p class="problem-text">
+                    La transmisión y almacenamiento de información sensible carece de protocolos de anonimización robustos. 
+                    Los identificadores personales permanecen vinculados a datos clínicos, exponiendo vulnerabilidades regulatorias.
+                </p>
+            </div>
+
+            <div class="problem-card">
+                <div class="problem-icon">📉</div>
+                <h3 class="problem-title">Análisis Predictivo Limitado</h3>
+                <p class="problem-text">
+                    Ausencia de infraestructuras que integren modelado estadístico sobre series temporales de biomarcadores. 
+                    Las predicciones se basan en datos aislados sin considerar correlaciones multivariantes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section" id="solucion">
+        <div class="section-header">
+            <span class="section-tag">Arquitectura del Sistema</span>
+            <h2 class="section-title">Flujo de Procesamiento BioSense</h2>
+            <p class="section-description">
+                Pipeline end-to-end para captura, anonimización, procesamiento y predicción de datos biomédicos.
+            </p>
+        </div>
+
+        <div class="solution-flow">
+            <div class="flow-step">
+                <div class="flow-number">1</div>
+                <div class="flow-content">
+                    <h3>Captura de Datos</h3>
+                    <p>
+                        Recopilación automatizada desde dispositivos médicos certificados, sistemas de laboratorio y sensores portables. 
+                        Los datos se transmiten mediante protocolos seguros (HTTPS/TLS 1.3) con validación de integridad mediante checksums criptográficos.
+                    </p>
+                    <div class="flow-technical">
+                        INPUT: JSON/HL7 FHIR → Validación de esquema → Buffer temporal cifrado
                     </div>
                 </div>
             </div>
 
-            <!-- AI Assistant Widget -->
-            <div class="ai-assistant">
-                <div class="ai-header">
-                    <div class="ai-avatar">🤖</div>
-                    <div class="ai-status">
-                        <div class="ai-name">Asistente IA</div>
-                        <div class="ai-state">
-                            <span class="status-dot"></span>
-                            Analizando datos
-                        </div>
-                    </div>
-                </div>
-                <div class="ai-message">
-                    "He detectado 3 biomarcadores que requieren atención. Procesando recomendaciones personalizadas..."
-                </div>
-                <div class="ai-stats">
-                    <div class="ai-stat">
-                        <span class="ai-stat-value">247</span>
-                        Análisis realizados
-                    </div>
-                    <div class="ai-stat">
-                        <span class="ai-stat-value">98.5%</span>
-                        Precisión
+            <div class="flow-step">
+                <div class="flow-number">2</div>
+                <div class="flow-content">
+                    <h3>Anonimización y Normalización</h3>
+                    <p>
+                        Eliminación de identificadores directos e indirectos mediante algoritmos de k-anonimato y diferential privacy. 
+                        Transformación de datos crudos a formatos estandarizados con normalización Z-score para análisis estadístico.
+                    </p>
+                    <div class="flow-technical">
+                        PROCESO: Hash SHA-256 de IDs → Generalización temporal → Ruido gaussiano controlado
                     </div>
                 </div>
             </div>
 
-            <nav class="sidebar-menu">
-                <div class="menu-section">
-                    <div class="menu-section-title">Principal</div>
-                    <a class="menu-item active">
-                        <span>📊</span> Dashboard Analítico
-                    </a>
-                    <a class="menu-item">
-                        <span>👤</span> Perfil Paciente
-                    </a>
-                    <a class="menu-item">
-                        <span>🔬</span> Biomarcadores
-                    </a>
-                </div>
-
-                <div class="menu-section">
-                    <div class="menu-section-title">IA & Análisis</div>
-                    <a class="menu-item">
-                        <span>🤖</span> Asistente IA
-                    </a>
-                    <a class="menu-item">
-                        <span>💡</span> Recomendaciones
-                    </a>
-                    <a class="menu-item">
-                        <span>📈</span> Predicciones
-                    </a>
-                    <a class="menu-item">
-                        <span>🎯</span> Correlaciones
-                    </a>
-                </div>
-
-                <div class="menu-section">
-                    <div class="menu-section-title">Reportes</div>
-                    <a class="menu-item">
-                        <span>📄</span> Informes Detallados
-                    </a>
-                    <a class="menu-item">
-                        <span>📊</span> Estadísticas
-                    </a>
-                    <a class="menu-item">
-                        <span>📥</span> Exportar Datos
-                    </a>
-                </div>
-            </nav>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Navbar -->
-            <nav class="navbar">
-                <div class="search-bar">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" placeholder="Buscar biomarcadores, pacientes o análisis...">
-                </div>
-                <div class="navbar-right">
-                    <div class="quick-actions">
-                        <button class="action-btn action-btn-primary" id="aiAnalysisBtn">
-                            <span>🤖</span>
-                            Análisis IA
-                        </button>
-                    </div>
-                    <div class="user-profile">
-                        <div class="user-avatar">DM</div>
-                    </div>
-                </div>
-            </nav>
-
-            <!-- Content -->
-            <div class="content">
-                <!-- Page Header -->
-                <div class="page-header">
-                    <div>
-                        <h1 class="page-title">
-                            Dashboard Analítico
-                            <span class="live-badge">
-                                <span class="status-dot"></span>
-                                EN VIVO
-                            </span>
-                        </h1>
-                        <p class="page-subtitle">Última actualización: <span id="lastUpdate">--</span></p>
-                    </div>
-                </div>
-
-                <!-- Stats Grid -->
-                <div class="stats-grid">
-                    <div class="stat-card animate-fade-in">
-                        <div class="stat-header">
-                            <div class="stat-icon-large">🔬</div>
-                            <div class="stat-trend up">
-                                <span>↑</span> 12%
-                            </div>
-                        </div>
-                        <div class="stat-info">
-                            <h3>Biomarcadores Monitoreados</h3>
-                            <div class="stat-value" id="totalBiomarkers">0</div>
-                            <div class="stat-progress">
-                                <div class="stat-progress-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="stat-card animate-fade-in" style="animation-delay: 0.1s">
-                        <div class="stat-header">
-                            <div class="stat-icon-large">✅</div>
-                            <div class="stat-trend up">
-                                <span>↑</span> 8%
-                            </div>
-                        </div>
-                        <div class="stat-info">
-                            <h3>En Rango Óptimo</h3>
-                            <div class="stat-value" id="normalBiomarkers">0</div>
-                            <div class="stat-progress">
-                                <div class="stat-progress-bar" style="width: 65%; background: var(--gradient-2);"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="stat-card animate-fade-in" style="animation-delay: 0.2s">
-                        <div class="stat-header">
-                            <div class="stat-icon-large">⚠️</div>
-                            <div class="stat-trend down">
-                                <span>↓</span> 5%
-                            </div>
-                        </div>
-                        <div class="stat-info">
-                            <h3>Requieren Seguimiento</h3>
-                            <div class="stat-value" id="warningBiomarkers">0</div>
-                            <div class="stat-progress">
-                                <div class="stat-progress-bar" style="width: 45%; background: var(--gradient-3);"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="stat-card animate-fade-in" style="animation-delay: 0.3s">
-                        <div class="stat-header">
-                            <div class="stat-icon-large">🎯</div>
-                            <div class="stat-trend up">
-                                <span>↑</span> 95%
-                            </div>
-                        </div>
-                        <div class="stat-info">
-                            <h3>Precisión IA</h3>
-                            <div class="stat-value">98.5<small style="font-size: 1.2rem;">%</small></div>
-                            <div class="stat-progress">
-                                <div class="stat-progress-bar" style="width: 98.5%; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Charts Grid -->
-                <div class="charts-grid">
-                    <!-- Main Chart -->
-                    <div class="card animate-slide-in">
-                        <div class="card-header">
-                            <h2 class="card-title">
-                                📈 Evolución Temporal de Biomarcadores
-                            </h2>
-                            <select class="btn" style="padding: 0.5rem 1rem; cursor: pointer;">
-                                <option>Últimos 6 meses</option>
-                                <option>Último año</option>
-                                <option>Todo el historial</option>
-                            </select>
-                        </div>
-                        <div class="card-body">
-                            <div class="chart-container">
-                                <canvas id="mainChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Correlation Matrix -->
-                    <div class="card animate-slide-in" style="animation-delay: 0.2s">
-                        <div class="card-header">
-                            <h2 class="card-title">
-                                🎯 Matriz de Correlación
-                            </h2>
-                        </div>
-                        <div class="card-body">
-                            <div class="chart-container-small">
-                                <canvas id="correlationChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Biomarkers and AI Analysis Grid -->
-                <div class="biomarkers-table-grid">
-                    <!-- Biomarkers List -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h2 class="card-title">
-                                🔬 Biomarcadores en Tiempo Real
-                            </h2>
-                        </div>
-                        <div class="card-body">
-                            <div id="biomarkersList">
-                                <!-- Se llenará dinámicamente -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- AI Recommendations -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h2 class="card-title">
-                                🤖 Recomendaciones IA
-                            </h2>
-                        </div>
-                        <div class="card-body">
-                            <div id="aiRecommendations">
-                                <p style="text-align: center; color: var(--text-secondary); padding: 2rem;">
-                                    Presiona "Análisis IA" para obtener recomendaciones
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Analytics Grid -->
-                <div class="analytics-grid">
-                    <!-- Distribution Chart -->
-                    <div class="analytics-card">
-                        <div class="analytics-header">
-                            <div class="analytics-title">Distribución por Categoría</div>
-                            <div class="analytics-icon" style="background: rgba(37, 99, 235, 0.1);">
-                                📊
-                            </div>
-                        </div>
-                        <div class="donut-chart-container">
-                            <canvas id="donutChart"></canvas>
-                        </div>
-                        <div class="chart-legend" id="donutLegend"></div>
-                    </div>
-
-                    <!-- Risk Assessment -->
-                    <div class="analytics-card">
-                        <div class="analytics-header">
-                            <div class="analytics-title">Evaluación de Riesgo</div>
-                            <div class="analytics-icon" style="background: rgba(239, 68, 68, 0.1);">
-                                ⚡
-                            </div>
-                        </div>
-                        <div class="chart-container-small">
-                            <canvas id="riskChart"></canvas>
-                        </div>
-                    </div>
-
-                    <!-- Activity Heatmap -->
-                    <div class="analytics-card">
-                        <div class="analytics-header">
-                            <div class="analytics-title">Actividad Semanal</div>
-                            <div class="analytics-icon" style="background: rgba(16, 185, 129, 0.1);">
-                                🔥
-                            </div>
-                        </div>
-                        <div class="heatmap-grid" id="heatmapGrid"></div>
+            <div class="flow-step">
+                <div class="flow-number">3</div>
+                <div class="flow-content">
+                    <h3>Procesamiento Distribuido</h3>
+                    <p>
+                        Almacenamiento en infraestructura cloud con redundancia geográfica. 
+                        Los datos se procesan en clusters distribuidos con balanceo de carga dinámico para garantizar escalabilidad horizontal.
+                    </p>
+                    <div class="flow-technical">
+                        INFRAESTRUCTURA: PostgreSQL + TimescaleDB → Réplicas síncronas → Backups incrementales cada 6h
                     </div>
                 </div>
             </div>
-        </main>
-    </div>
+
+            <div class="flow-step">
+                <div class="flow-number">4</div>
+                <div class="flow-content">
+                    <h3>Modelado Predictivo</h3>
+                    <p>
+                        Aplicación de modelos estadísticos (regresión multivariante, ARIMA, redes neuronales LSTM) sobre series temporales de biomarcadores. 
+                        Entrenamiento continuo con validación cruzada estratificada para minimizar overfitting.
+                    </p>
+                    <div class="flow-technical">
+                        MODELOS: Scikit-learn + TensorFlow → Validación k-fold → Métricas: R², MAE, RMSE
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="flow-number">5</div>
+                <div class="flow-content">
+                    <h3>Visualización y Reporting</h3>
+                    <p>
+                        Interfaz web para profesionales sanitarios con dashboards interactivos. 
+                        Generación de reportes técnicos con proyecciones estadísticas, intervalos de confianza y alertas basadas en umbrales configurables.
+                    </p>
+                    <div class="flow-technical">
+                        OUTPUT: REST API → WebSocket para datos en tiempo real → Exportación PDF/CSV
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo" id="demo">
+        <div class="section">
+            <div class="section-header">
+                <span class="section-tag" style="background: rgba(255, 255, 255, 0.2); color: var(--accent-mint);">Entorno de Simulación</span>
+                <h2 class="section-title">Demo Técnica Interactiva</h2>
+                <p class="section-description">
+                    Visualización en tiempo real de datos simulados con estadísticas, correlaciones y proyecciones predictivas.
+                </p>
+            </div>
+
+            <div class="dashboard">
+                <div class="dashboard-header">
+                    <h3 class="dashboard-title">Panel de Monitorización</h3>
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        DATOS EN TIEMPO REAL
+                    </div>
+                </div>
+
+                <!-- Metrics Grid -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">Muestras Procesadas</div>
+                        <div class="metric-value" id="samplesProcessed">0</div>
+                        <div class="metric-trend">↑ +127 última hora</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Biomarcadores Activos</div>
+                        <div class="metric-value">6</div>
+                        <div class="metric-trend">100% operativos</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Correlación Media</div>
+                        <div class="metric-value" id="avgCorrelation">0.00</div>
+                        <div class="metric-trend">σ = 0.12</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Latencia Promedio</div>
+                        <div class="metric-value">42<span style="font-size: 1rem;">ms</span></div>
+                        <div class="metric-trend">↓ -8ms vs baseline</div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="charts-container">
+                    <div class="chart-card">
+                        <h4 class="chart-title">Evolución Temporal - Serie de 6 Meses</h4>
+                        <canvas id="timeSeriesChart" class="chart-canvas"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h4 class="chart-title">Distribución de Estados</h4>
+                        <canvas id="distributionChart" class="chart-canvas"></canvas>
+                    </div>
+                </div>
+
+                <!-- Data Table -->
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Biomarcador</th>
+                            <th>Valor Actual</th>
+                            <th>Rango de Referencia</th>
+                            <th>Tendencia (30d)</th>
+                            <th>Predicción (7d)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="biomarkersTable">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-title">BioSense Platform</div>
+            <p class="footer-text">Sistema de análisis predictivo de biomarcadores</p>
+            <p class="footer-text">Arquitectura: Microservicios distribuidos con procesamiento en tiempo real</p>
+            <p class="footer-text" style="margin-top: 2rem; opacity: 0.6;">© 2024 - Proyecto de Investigación Técnica</p>
+        </div>
+    </footer>
 
     <script>
-        // ==================== DATOS SIMULADOS ====================
+        // ==================== DATA MODEL ====================
         const biomarkersData = [
-            { id: 1, name: 'Hemoglobina A1c', category: 'Glucemia', value: 6.8, unit: '%', normalRange: '4.0-5.6', score: 'medium', icon: '🩸', history: [7.2, 7.0, 6.9, 6.8, 6.8, 6.8] },
-            { id: 2, name: 'Colesterol LDL', category: 'Lípidos', value: 145, unit: 'mg/dL', normalRange: '<100', score: 'medium', icon: '💊', history: [160, 155, 152, 148, 145, 145] },
-            { id: 3, name: 'Proteína C Reactiva', category: 'Inflamación', value: 4.2, unit: 'mg/L', normalRange: '<3.0', score: 'medium', icon: '🔥', history: [5.1, 4.8, 4.5, 4.3, 4.2, 4.2] },
-            { id: 4, name: 'Vitamina D', category: 'Vitaminas', value: 28, unit: 'ng/mL', normalRange: '30-100', score: 'low', icon: '☀️', history: [22, 24, 25, 26, 27, 28] },
-            { id: 5, name: 'Creatinina', category: 'Función Renal', value: 0.9, unit: 'mg/dL', normalRange: '0.7-1.3', score: 'high', icon: '🫘', history: [0.95, 0.93, 0.91, 0.90, 0.90, 0.90] },
-            { id: 6, name: 'TSH', category: 'Tiroides', value: 2.1, unit: 'mIU/L', normalRange: '0.4-4.0', score: 'high', icon: '🦋', history: [2.3, 2.2, 2.2, 2.1, 2.1, 2.1] },
+            { id: 1, name: 'Hemoglobina A1c', unit: '%', value: 6.8, range: '4.0-5.6', history: [7.2, 7.0, 6.9, 6.8, 6.7, 6.8] },
+            { id: 2, name: 'Colesterol LDL', unit: 'mg/dL', value: 145, range: '<100', history: [160, 155, 152, 148, 145, 145] },
+            { id: 3, name: 'Proteína C Reactiva', unit: 'mg/L', value: 4.2, range: '<3.0', history: [5.1, 4.8, 4.5, 4.3, 4.2, 4.2] },
+            { id: 4, name: 'Vitamina D', unit: 'ng/mL', value: 28, range: '30-100', history: [22, 24, 25, 26, 27, 28] },
+            { id: 5, name: 'Creatinina', unit: 'mg/dL', value: 0.9, range: '0.7-1.3', history: [0.95, 0.93, 0.91, 0.90, 0.89, 0.90] },
+            { id: 6, name: 'TSH', unit: 'mIU/L', value: 2.1, range: '0.4-4.0', history: [2.3, 2.2, 2.2, 2.1, 2.0, 2.1] }
+        ];
+
+        let samplesCount = 1247;
+
+        // ==================== INITIALIZATION ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            renderTable();
+            drawTimeSeriesChart();
+            drawDistributionChart();
+            startLiveUpdates();
+            updateMetrics();
+        });
+
+        // ==================== TABLE RENDERING ====================
+        function renderTable() {
+            const tbody = document.getElementById('biomarkersTable');
+            tbody.innerHTML = biomarkersData.map(bio => {
+                const trend = calculateTrend(bio.history);
+                const prediction = (bio.value * (1 + (Math.random() - 0.5) * 0.1)).toFixed(2);
+                
+                return `
+                    <tr>
+                        <td><strong>${bio.name}</strong></td>
+                        <td>${bio.value} ${bio.unit}</td>
+                        <td>${bio.range}</td>
+                        <td><span class="trend-indicator ${trend.class}">${trend.symbol} ${trend.value}%</span></td>
+                        <td>${prediction} ${bio.unit}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function calculateTrend(history) {
+            const recent = history.slice(-3);
+            const avg = recent.reduce((a, b) => a + b) / recent.length;
+            const change = ((recent[recent.length - 1] - recent[0]) / recent[0] * 100).toFixed(1);
+            
+            if (Math.abs(change) < 1) return { class: 'trend-stable', symbol: '→', value: change };
+            if (change > 0) return { class: 'trend-up', symbol: '↑', value: change };
+            return { class: 'trend-down', symbol: '↓', value: change };
+        }
+
+        // ==================== TIME SERIES CHART ====================
+        function drawTimeSeriesChart() {
+            const canvas = document.getElementById('timeSeriesChart');
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = 300;
+
+            const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'];
+            const colors = ['#ef4444', '#f59e0b', '#06D6A0'];
+            const padding = 50;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Grid
+            ctx.strokeStyle = '#E5E7EB';
+            ctx.lineWidth = 1;
+            for (let i = 0; i <= 5; i++) {
+                const y = padding + (i * (canvas.height - 2 * padding) / 5);
+                ctx.beginPath();
+                ctx.moveTo(padding, y);
+                ctx.lineTo(canvas.width - padding, y);
+                ctx.stroke();
+            }
+
+            // Lines
+            biomarkersData.slice(0, 3).forEach((bio, idx) => {
+                ctx.strokeStyle = colors[idx];
+                ctx.lineWidth = 2.5;
+                ctx.beginPath();
+
+                const max = Math.max(...bio.history);
+                const min = Math.min(...bio.history);
+                const range = max - min || 1;
+
+                bio.history.forEach((val, i) => {
+                    const x = padding + (i * (canvas.width - 2 * padding) / 5);
+                    const normalized = (val - min) / range;
+                    const y = canvas.height - padding - (normalized * (canvas.height - 2 * padding));
+
+                    if (i === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+
+                    // Points
+                    ctx.fillStyle = colors[idx];
+                    ctx.beginPath();
+                    ctx.arc(x, y, 4, 0, 2 * Math.PI);
+                    ctx.fill();
+                });
+                ctx.stroke();
+            });
+
+            // Labels
+            ctx.fillStyle = '#4B5563';
+            ctx.font = '12px sans-serif';
+            ctx.textAlign = 'center';
+            months.forEach((m, i) => {
+                const x = padding + (i * (canvas.width - 2 * padding) / 5);
+                ctx.fillText(m, x, canvas.height - 20);
+            });
+        }
+
+        // ==================== DISTRIBUTION CHART ====================
+        function drawDistributionChart() {
+            const canvas = document.getElementById('distributionChart');
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = 300;
+
+            const data = [
+                { label: 'Óptimo', value: 3, color: '#06D6A0' },
+                { label: 'Atención', value: 2, color: '#f59e0b' },
+                { label: 'Crítico', value: 1, color: '#ef4444' }
+            ];
+
+            const total = data.reduce((sum, d) => sum + d.value, 0);
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = 90;
+            let currentAngle = -Math.PI / 2;
+
+            data.forEach(d => {
+                const sliceAngle = (d.value / total) * 2 * Math.PI;
+
+                ctx.fillStyle = d.color;
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, currentAngle, currentAngle + sliceAngle);
+                ctx.arc(centerX, centerY, 45, currentAngle + sliceAngle, currentAngle, true);
+                ctx.closePath();
+                ctx.fill();
+
+                currentAngle += sliceAngle;
+            });
+
+            // Center
+            ctx.fillStyle = '#FFFFFF';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 40, 0, 2 * Math.PI);
+            ctx.fill();
+
+            ctx.fillStyle = '#0A2463';
+            ctx.font = 'bold 28px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(total, centerX, centerY);
+        }
+
+        // ==================== LIVE UPDATES ====================
+        function startLiveUpdates() {
+            setInterval(() => {
+                biomarkersData.forEach(bio => {
+                    const variation = (Math.random() - 0.5) * 0.08;
+                    bio.value = parseFloat((bio.value * (1 + variation)).toFixed(2));
+                    bio.history.shift();
+                    bio.history.push(bio.value);
+                });
+
+                samplesCount += Math.floor(Math.random() * 5);
+                
+                renderTable();
+                drawTimeSeriesChart();
+                updateMetrics();
+            }, 4000);
+        }
+
+        function updateMetrics() {
+            document.getElementById('samplesProcessed').textContent = samplesCount.toLocaleString();
+            
+            const correlations = biomarkersData.map(b => Math.random() * 0.4 + 0.5);
+            const avgCorr = (correlations.reduce((a, b) => a + b) / correlations.length).toFixed(2);
+            document.getElementById('avgCorrelation').textContent = avgCorr;
+        }
+
+        // ==================== RESPONSIVE CHARTS ====================
+        window.addEventListener('resize', () => {
+            drawTimeSeriesChart();
+            drawDistributionChart();
+        });
+    </script>
+</body>
+</html>
+            <h2 class="cta-title">Únete al Programa Piloto</h2>
+            <p class="cta-text">
+                Acceso anticipado para centros médicos y profesionales de la salud. 
+                Plazas limitadas para fase beta.
+            </p>
+            <form class="cta-form" id="ctaForm">
+                <input type="email" class="cta-input" placeholder="correo@hospital.com" required>
+                <button type="submit" class="cta-button">Solicitar Acceso</button>
+            </form>
+            <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.9;">
+                ✓ Sin compromiso · ✓ Soporte dedicado · ✓ Implementación guiada
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">🧬 BioSense</div>
+                <p class="footer-description">
+                    Plataforma líder en análisis predictivo de biomarcadores. Transformando datos en decisiones clínicas.
+                </p>
+                <p style="font-size: 0.85rem;">© 2024 BioSense Technologies</p>
+            </div>
+            <div>
+                <h4 class="footer-title">Producto</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Funcionalidades</a></li>
+                    <li><a href="#">Integraciones</a></li>
+                    <li><a href="#">Casos de estudio</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Recursos</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Documentación</a></li>
+                    <li><a href="#">API Reference</a></li>
+                    <li><a href="#">Guías médicas</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                    <li><a href="#">Certificaciones</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Desarrollado con ❤️ para mejorar la salud mundial</p>
+        </div>
+    </footer>
+
+    <script>
+        // ==================== DATOS DE BIOMARCADORES ====================
+        const biomarkersData = [
+            { id: 1, name: 'Hemoglobina A1c', category: 'Glucemia', value: 6.8, unit: '%', icon: '🩸', history: [7.2, 7.0, 6.9, 6.8, 6.7, 6.8], status: 'warning' },
+            { id: 2, name: 'Colesterol LDL', category: 'Lípidos', value: 145, unit: 'mg/dL', icon: '💊', history: [160, 155, 152, 148, 145, 145], status: 'warning' },
+            { id: 3, name: 'Proteína C Reactiva', category: 'Inflamación', value: 4.2, unit: 'mg/L', icon: '🔥', history: [5.1, 4.8, 4.5, 4.3, 4.2, 4.2], status: 'warning' },
+            { id: 4, name: 'Vitamina D', category: 'Vitaminas', value: 28, unit: 'ng/mL', icon: '☀️', history: [22, 24, 25, 26, 27, 28], status: 'optimal' },
+            { id: 5, name: 'Creatinina', category: 'Función Renal', value: 0.9, unit: 'mg/dL', icon: '🫘', history: [0.95, 0.93, 0.91, 0.90, 0.89, 0.90], status: 'optimal' },
+            { id: 6, name: 'TSH', category: 'Tiroides', value: 2.1, unit: 'mIU/L', icon: '🦋', history: [2.3, 2.2, 2.2, 2.1, 2.0, 2.1], status: 'optimal' }
         ];
 
         // ==================== INICIALIZACIÓN ====================
         document.addEventListener('DOMContentLoaded', function() {
-            initApp();
+            renderBiomarkers();
+            drawMainChart();
+            drawDonutChart();
+            setupEventListeners();
+            startLiveUpdates();
         });
 
-        function initApp() {
-            loadBiomarkers();
-            updateStats();
-            drawMainChart();
-            drawCorrelationChart();
-            drawDonutChart();
-            drawRiskChart();
-            drawHeatmap();
-            setupEventListeners();
-            updateLastUpdateTime();
-            startLiveUpdates();
-        }
-
-        // ==================== CARGAR BIOMARCADORES ====================
-        function loadBiomarkers() {
+        // ==================== RENDERIZAR BIOMARCADORES ====================
+        function renderBiomarkers() {
             const container = document.getElementById('biomarkersList');
-            container.innerHTML = '';
-
-            biomarkersData.forEach((biomarker, index) => {
-                const item = document.createElement('div');
-                item.className = 'biomarker-item';
-                item.style.animationDelay = `${index * 0.1}s`;
-                
-                const miniChartId = `mini-chart-${biomarker.id}`;
-                
-                item.innerHTML = `
-                    <div class="biomarker-icon">${biomarker.icon}</div>
-                    <div class="biomarker-details">
-                        <div class="biomarker-name">${biomarker.name}</div>
-                        <div class="biomarker-meta">
-                            <span>${biomarker.category}</span>
-                            <span>Rango: ${biomarker.normalRange}</span>
-                        </div>
-                        <canvas class="mini-chart" id="${miniChartId}"></canvas>
+            container.innerHTML = biomarkersData.map(bio => `
+                <div class="biomarker-item">
+                    <div class="biomarker-icon">${bio.icon}</div>
+                    <div class="biomarker-info">
+                        <div class="biomarker-name">${bio.name}</div>
+                        <div class="biomarker-category">${bio.category}</div>
                     </div>
-                    <div class="biomarker-value-section">
-                        <div class="biomarker-current-value">
-                            ${biomarker.value}
-                            <span class="biomarker-unit">${biomarker.unit}</span>
+                    <div>
+                        <div class="biomarker-value">
+                            ${bio.value}<span class="biomarker-unit">${bio.unit}</span>
                         </div>
-                        <span class="score-badge score-${biomarker.score}">
-                            ${biomarker.score === 'high' ? '✓ Normal' : biomarker.score === 'medium' ? '⚠ Atención' : '🔴 Crítico'}
-                        </span>
                     </div>
-                `;
-                
-                container.appendChild(item);
-                
-                // Dibujar mini gráfico
-                setTimeout(() => drawMiniChart(miniChartId, biomarker.history), 100);
-            });
+                </div>
+            `).join('');
         }
 
-        // ==================== MINI CHART ====================
-        function drawMiniChart(canvasId, data) {
-            const canvas = document.getElementById(canvasId);
-            if (!canvas) return;
-            
-            const ctx = canvas.getContext('2d');
-            const width = canvas.width = 100;
-            const height = canvas.height = 40;
-            
-            const max = Math.max(...data);
-            const min = Math.min(...data);
-            const range = max - min || 1;
-            
-            ctx.clearRect(0, 0, width, height);
-            ctx.strokeStyle = '#2563eb';
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            
-            data.forEach((value, i) => {
-                const x = (i / (data.length - 1)) * width;
-                const y = height - ((value - min) / range) * height;
-                
-                if (i === 0) ctx.moveTo(x, y);
-                else ctx.lineTo(x, y);
-            });
-            
-            ctx.stroke();
-            
-            // Área bajo la curva
-            ctx.lineTo(width, height);
-            ctx.lineTo(0, height);
-            ctx.closePath();
-            ctx.fillStyle = 'rgba(37, 99, 235, 0.1)';
-            ctx.fill();
-        }
-
-        // ==================== MAIN CHART ====================
+        // ==================== GRÁFICO PRINCIPAL ====================
         function drawMainChart() {
             const canvas = document.getElementById('mainChart');
             const ctx = canvas.getContext('2d');
-            
             canvas.width = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
-            
-            const width = canvas.width;
-            const height = canvas.height;
-            const padding = 60;
-            
-            ctx.clearRect(0, 0, width, height);
-            
+            canvas.height = 300;
+
             const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'];
-            const colors = ['#ef4444', '#f59e0b', '#10b981', '#8b5cf6', '#2563eb', '#ec4899'];
-            
-            // Fondo degradado
-            const gradient = ctx.createLinearGradient(0, 0, 0, height);
-            gradient.addColorStop(0, 'rgba(37, 99, 235, 0.02)');
-            gradient.addColorStop(1, 'rgba(139, 92, 246, 0.02)');
-            ctx.fillStyle = gradient;
-            ctx.fillRect(0, 0, width, height);
-            
-            // Líneas de cuadrícula
-            ctx.strokeStyle = '#f1f5f9';
-            ctx.lineWidth = 1;
-            for (let i = 0; i <= 5; i++) {
+            const colors = ['#ef4444', '#f59e0b', '#10b981'];
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Dibujar líneas
+            biomarkersData.slice(0, 3).forEach((bio, idx) => {
+                ctx.strokeStyle = colors[idx];
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                
+                bio.history.forEach((val, i) => {
+                    const x = 50 + (i * (canvas.width - 100) / 5);
+                    const y = canvas.height - 50 - ((val / Math.max(...bio.history)) * (canvas.height - 100));
+                    
+                    if (i === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                });
+                ctx.stroke();
+            });
+
+            // Etiquetas
+            ctx.fillStyle = '#4B5563';
+            ctx.font = '12px Inter';
+            months.forEach((m, i) => {
+                const x = 50 + (i * (canvas.width - 100) / 5);
+                ctx.fillText(m, x - 15, canvas.height - 20);
+            });
+        }
+
+        // ==================== GRÁFICO DE DONA ====================
+        function drawDonutChart() {
+            const canvas = document.getElementById('donutChart');
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = 300;
+
+            const optimal = biomarkersData.filter(b => b.status === 'optimal').length;
+            const warning = biomarkersData.filter(b => b.status === 'warning').length;
+            const total = biomarkersData.length;
+
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = 80;
+
+            // Óptimo
+            ctx.fillStyle = '#06D6A0';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, 0, (optimal / total) * 2 * Math.PI);
+            ctx.arc(centerX, centerY, 40, (optimal / total) * 2 * Math.PI, 0, true);
+            ctx.fill();
+
+            // Atención
+            ctx.fillStyle = '#f59e0b';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, (optimal / total) * 2 * Math.PI, 2 * Math.PI);
+            ctx.arc(centerX, centerY, 40, 2 * Math.PI, (optimal / total) * 2 * Math.PI, true);
+            ctx.fill();
+
+            // Centro
+            ctx.fillStyle = '#FFFFFF';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 35, 0, 2 * Math.PI);
+            ctx.fill();
+
+            // Texto
+            ctx.fillStyle = '#0A2463';
+            ctx.font = 'bold 24px Inter';
+            ctx.textAlign = 'center';
+            ctx.fillText(total, centerX, centerY + 8);
+        }
+
+        // ==================== ACTUALIZACIONES EN VIVO ====================
+        function startLiveUpdates() {
+            setInterval(() => {
+                biomarkersData.forEach(bio => {
+                    const variation = (Math.random() - 0.5) * 0.05;
+                    bio.value = parseFloat((bio.value * (1 + variation)).toFixed(1));
+                    bio.history.shift();
+                    bio.history.push(bio.value);
+                });
+                renderBiomarkers();
+                drawMainChart();
+            }, 3000);
+        }
+
+        // ==================== EVENT LISTENERS ====================
+        function setupEventListeners() {
+            window.addEventListener('scroll', () => {
+                const navbar = document.getElementById('navbar');
+                navbar.classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href'))?.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            document.getElementById('ctaForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = e.target.querySelector('input').value;
+                alert(`¡Gracias! Nos pondremos en contacto con ${email} pronto.`);
+                e.target.reset();
+            });
+        }
+    </script>
+</body>
+</html>
                 const y = padding + (i * (height - 2 * padding) / 5);
                 ctx.beginPath();
                 ctx.moveTo(padding, y);
