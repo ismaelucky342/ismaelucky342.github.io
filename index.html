@@ -2374,18 +2374,18 @@
         });
 
         // ==================== GENETIC PROFILE DEMO ====================
-        const geneticMarkers = [
-            'ACGT', 'TGCA', 'CGTA', 'GATC', 'TCAG', 'AGCT', 'CTGA', 'GCTA',
-            'ATCG', 'TAGC', 'CAGT', 'GTAC', 'ACTG', 'TCGA', 'GACT', 'CATG'
-        ];
+        const geneticBases = ['A', 'C', 'G', 'T'];
 
         function generateGeneticSequence() {
             const sequence = [];
-            for (let i = 0; i < 12; i++) {
+            for (let i = 0; i < 16; i++) { // 16 líneas de codones
                 const line = [];
-                for (let j = 0; j < 8; j++) {
-                    const marker = geneticMarkers[Math.floor(Math.random() * geneticMarkers.length)];
-                    line.push(marker);
+                for (let j = 0; j < 10; j++) { // 10 codones por línea
+                    // Generar un codón (triplete)
+                    const codon = geneticBases[Math.floor(Math.random() * 4)] +
+                                  geneticBases[Math.floor(Math.random() * 4)] +
+                                  geneticBases[Math.floor(Math.random() * 4)];
+                    line.push(codon);
                 }
                 sequence.push(line.join(' '));
             }
@@ -2398,16 +2398,17 @@
             
             const sequence = generateGeneticSequence();
             
+            // Introducir algunas mutaciones puntuales (cambio de una base)
             container.innerHTML = sequence.map((line, idx) => {
-                const parts = line.split(' ');
-                const highlighted = parts.map((marker, i) => {
-                    if (idx === 3 && (i === 2 || i === 5)) {
-                        return `<span class="genetic-marker">${marker}</span>`;
+                const codons = line.split(' ');
+                const highlighted = codons.map((codon, i) => {
+                    // Marcar algunos codones como mutaciones
+                    if ((idx === 3 && (i === 2 || i === 7)) || 
+                        (idx === 8 && i === 5) ||
+                        (idx === 12 && i === 4)) {
+                        return `<span class="genetic-marker">${codon}</span>`;
                     }
-                    if (idx === 7 && i === 4) {
-                        return `<span class="genetic-marker">${marker}</span>`;
-                    }
-                    return marker;
+                    return codon;
                 }).join(' ');
                 return highlighted;
             }).join('<br>');
@@ -2432,9 +2433,9 @@
 
             // Stage 1: Genetic markers extraction
             await animateStage('stage1', async () => {
-                const markers = ['CGTA', 'GATC', 'TCAG'];
+                const markers = ['ACG→ATG', 'GCT', 'TAC→TGC'];
                 document.getElementById('stage1Output').textContent = 
-                    `Marcadores extraídos: ${markers.join(', ')} + 15 adicionales`;
+                    `Codones marcadores extraídos: ${markers.join(', ')} + 18 SNPs detectados`;
             });
 
             // Stage 2: SHA-256 Hash
