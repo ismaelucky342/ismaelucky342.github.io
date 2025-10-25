@@ -786,6 +786,11 @@
             border-radius: 12px;
             border: 1px solid var(--border-color);
             margin-bottom: 3rem;
+            overflow-x: auto;
+        }
+
+        .correlation-matrix canvas {
+            min-width: 500px;
         }
 
         /* Data Table */
@@ -913,6 +918,15 @@
             .arch-arrow {
                 display: none;
             }
+
+            .correlation-matrix {
+                padding: 1rem;
+            }
+
+            .correlation-matrix canvas {
+                min-width: 600px;
+                height: 400px !important;
+            }
         }
 
         @media (max-width: 480px) {
@@ -925,6 +939,148 @@
             }
             
             .biomarkers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .correlation-matrix {
+                padding: 0.75rem;
+            }
+
+            .correlation-matrix canvas {
+                min-width: 550px;
+            }
+        }
+
+        /* ==================== GENETIC PROFILE DEMO ==================== */
+        .profile-demo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .genetic-input-panel {
+            background: var(--bg-tertiary);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .genetic-sequence {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .genetic-marker {
+            color: var(--accent-mint);
+            font-weight: bold;
+        }
+
+        .process-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-mint));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .process-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(6, 214, 160, 0.3);
+        }
+
+        .process-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .profile-output-panel {
+            background: var(--bg-tertiary);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .processing-stage {
+            padding: 1rem;
+            background: var(--card-bg);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 3px solid transparent;
+            transition: all 0.3s;
+            opacity: 0.4;
+        }
+
+        .processing-stage.active {
+            opacity: 1;
+            border-left-color: var(--accent-mint);
+            background: rgba(6, 214, 160, 0.05);
+        }
+
+        .processing-stage.complete {
+            opacity: 1;
+            border-left-color: var(--accent-mint);
+        }
+
+        .stage-title {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .stage-output {
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            word-break: break-all;
+        }
+
+        .final-profile {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 2px solid var(--accent-mint);
+            margin-top: 1rem;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.5s;
+        }
+
+        .final-profile.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .profile-id-display {
+            font-family: 'Courier New', monospace;
+            font-size: 1.2rem;
+            color: var(--accent-mint);
+            font-weight: bold;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(6, 214, 160, 0.1);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile-demo {
                 grid-template-columns: 1fr;
             }
         }
@@ -987,29 +1143,41 @@
 
         <div class="problem-grid">
             <div class="problem-card">
-                <div class="problem-icon">🔗</div>
+                <div class="problem-icon" style="background: linear-gradient(135deg, var(--primary-blue), var(--accent-mint)); color: white; font-weight: bold;">01</div>
                 <h3 class="problem-title">Fragmentación de Datos</h3>
                 <p class="problem-text">
                     Los datos biomédicos se almacenan en sistemas heterogéneos sin interoperabilidad. 
-                    Formatos incompatibles, estándares divergentes y protocolos de transmisión inconsistentes dificultan el análisis integrado.
+                    Más del 80% de los hospitales europeos utilizan múltiples formatos incompatibles (HL7 v2, ASTM, FHIR parcial, CSV propietarios).
+                </p>
+                <p class="problem-text" style="margin-top: 0.75rem; font-size: 0.9rem; opacity: 0.9;">
+                    <strong>Impacto:</strong> El 70% de los centros duplica la entrada de datos entre sistemas (EHR Interoperability Report, 2024).
+                    El 90% de dispositivos wearables usa APIs privadas, impidiendo integración directa.
                 </p>
             </div>
 
             <div class="problem-card">
-                <div class="problem-icon">🔐</div>
+                <div class="problem-icon" style="background: linear-gradient(135deg, var(--primary-blue), var(--accent-mint)); color: white; font-weight: bold;">02</div>
                 <h3 class="problem-title">Riesgos de Privacidad</h3>
                 <p class="problem-text">
                     La transmisión y almacenamiento de información sensible carece de protocolos de anonimización robustos. 
-                    Los identificadores personales permanecen vinculados a datos clínicos, exponiendo vulnerabilidades regulatorias.
+                    El 46% de instituciones sanitarias europeas ha sufrido incidentes de exposición de datos en los últimos tres años (ENISA, 2023).
+                </p>
+                <p class="problem-text" style="margin-top: 0.75rem; font-size: 0.9rem; opacity: 0.9;">
+                    <strong>Impacto:</strong> El 80% de dispositivos médicos conectados transmite sin cifrado end-to-end (FDA, 2024).
+                    Los ataques ransomware crecieron 130% entre 2020-2024 en laboratorios clínicos.
                 </p>
             </div>
 
             <div class="problem-card">
-                <div class="problem-icon">📉</div>
+                <div class="problem-icon" style="background: linear-gradient(135deg, var(--primary-blue), var(--accent-mint)); color: white; font-weight: bold;">03</div>
                 <h3 class="problem-title">Análisis Predictivo Limitado</h3>
                 <p class="problem-text">
                     Ausencia de infraestructuras que integren modelado estadístico sobre series temporales de biomarcadores. 
-                    Las predicciones se basan en datos aislados sin considerar correlaciones multivariantes.
+                    El 70% de herramientas predictivas actuales se basan en datasets estáticos, no en datos continuos (Nature Digital Medicine, 2024).
+                </p>
+                <p class="problem-text" style="margin-top: 0.75rem; font-size: 0.9rem; opacity: 0.9;">
+                    <strong>Impacto:</strong> Los sistemas desperdician hasta 55% de datos generados por falta de integración (McKinsey, 2023).
+                    Solo 10% de proyectos de IA biomédica combinan laboratorio con sensores continuos.
                 </p>
             </div>
         </div>
@@ -1115,13 +1283,135 @@
         </div>
     </section>
 
+    <!-- Anonymous Profiles Section -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="section-header">
+            <span class="section-tag">Seguridad y Privacidad</span>
+            <h2 class="section-title">Perfiles Anónimos Cifrados</h2>
+            <p class="section-description">
+                Generación de identificadores únicos basados en huella genética sin almacenar datos personales
+            </p>
+        </div>
+
+        <div class="profile-demo">
+            <!-- Input Panel -->
+            <div class="genetic-input-panel">
+                <h3 style="font-size: 1.3rem; color: var(--text-primary); margin-bottom: 1.5rem;">
+                    Datos de Entrada
+                </h3>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                        Muestra de Secuencia Genética
+                    </h4>
+                    <div class="genetic-sequence" id="geneticSequence">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                        Biomarcadores Actuales
+                    </h4>
+                    <div style="background: var(--card-bg); border-radius: 8px; padding: 1rem; border: 1px solid var(--border-color);">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.85rem;">
+                            <div>
+                                <span style="color: var(--text-tertiary);">HbA1c:</span>
+                                <span style="color: var(--text-primary); font-weight: bold;"> 6.8%</span>
+                            </div>
+                            <div>
+                                <span style="color: var(--text-tertiary);">LDL:</span>
+                                <span style="color: var(--text-primary); font-weight: bold;"> 145 mg/dL</span>
+                            </div>
+                            <div>
+                                <span style="color: var(--text-tertiary);">TSH:</span>
+                                <span style="color: var(--text-primary); font-weight: bold;"> 2.1 mIU/L</span>
+                            </div>
+                            <div>
+                                <span style="color: var(--text-tertiary);">Creatinina:</span>
+                                <span style="color: var(--text-primary); font-weight: bold;"> 0.9 mg/dL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="process-btn" id="generateProfileBtn">
+                    Generar Perfil Anónimo
+                </button>
+            </div>
+
+            <!-- Output Panel -->
+            <div class="profile-output-panel">
+                <h3 style="font-size: 1.3rem; color: var(--text-primary); margin-bottom: 1.5rem;">
+                    Proceso de Anonimización
+                </h3>
+
+                <div class="processing-stage" id="stage1">
+                    <div class="stage-title">1. Extracción de Marcadores Genéticos</div>
+                    <div class="stage-output" id="stage1Output">Esperando inicio...</div>
+                </div>
+
+                <div class="processing-stage" id="stage2">
+                    <div class="stage-title">2. Hash Criptográfico (SHA-256)</div>
+                    <div class="stage-output" id="stage2Output">Esperando inicio...</div>
+                </div>
+
+                <div class="processing-stage" id="stage3">
+                    <div class="stage-title">3. Integración con Biomarcadores</div>
+                    <div class="stage-output" id="stage3Output">Esperando inicio...</div>
+                </div>
+
+                <div class="processing-stage" id="stage4">
+                    <div class="stage-title">4. Aplicación de k-Anonimato y Cifrado</div>
+                    <div class="stage-output" id="stage4Output">Esperando inicio...</div>
+                </div>
+
+                <div class="final-profile" id="finalProfile">
+                    <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 1rem; text-align: center;">
+                        Perfil Anónimo Generado
+                    </h4>
+                    <div class="profile-id-display" id="profileIdDisplay">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.85rem; font-family: 'Courier New', monospace;">
+                        <div>
+                            <div style="color: var(--text-tertiary);">k-anonimato:</div>
+                            <div style="color: var(--accent-mint); font-weight: bold;">k ≥ 5</div>
+                        </div>
+                        <div>
+                            <div style="color: var(--text-tertiary);">Diff. Privacy:</div>
+                            <div style="color: var(--accent-teal); font-weight: bold;">ε = 0.1</div>
+                        </div>
+                        <div>
+                            <div style="color: var(--text-tertiary);">Cifrado:</div>
+                            <div style="color: var(--primary-blue); font-weight: bold;">AES-256-GCM</div>
+                        </div>
+                        <div>
+                            <div style="color: var(--text-tertiary);">Estado:</div>
+                            <div style="color: var(--accent-mint); font-weight: bold;">✓ Validado</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 3rem; padding: 1.5rem; background: rgba(6, 214, 160, 0.1); border-radius: 12px; border: 1px solid rgba(6, 214, 160, 0.3); text-align: center;">
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+                <strong style="color: var(--accent-mint);">Nota importante:</strong> 
+                El proceso es unidireccional e irreversible. La huella genética original no puede recuperarse desde el perfil anónimo, 
+                garantizando cumplimiento total con GDPR, HIPAA y normativas de protección de datos biomédicos.
+            </p>
+        </div>
+    </section>
+
     <!-- Demo Section -->
     <section class="demo" id="demo">
         <div class="section">
             <div class="section-header">
                 <span class="section-tag" style="background: rgba(255, 255, 255, 0.2); color: var(--accent-mint);">Entorno de Simulación</span>
-                <h2 class="section-title">BioSense</h2>
+                <h2 class="section-title">Panel de Control BioSense</h2>
                 <p class="section-description">
+                    Sistema de monitorización en tiempo real con procesamiento estadístico avanzado
                 </p>
             </div>
 
@@ -1139,7 +1429,7 @@
                     <div class="metric-card">
                         <div class="metric-label">Muestras Procesadas</div>
                         <div class="metric-value" id="samplesProcessed">0</div>
-                        <div class="metric-trend">↑ +127 última hora</div>
+                        <div class="metric-trend">+127 última hora</div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-label">Biomarcadores Activos</div>
@@ -1154,7 +1444,7 @@
                     <div class="metric-card">
                         <div class="metric-label">Latencia Promedio</div>
                         <div class="metric-value">42<span style="font-size: 1rem;">ms</span></div>
-                        <div class="metric-trend">↓ -8ms vs baseline</div>
+                        <div class="metric-trend">-8ms vs baseline</div>
                     </div>
                 </div>
 
@@ -1178,7 +1468,7 @@
                 <div class="detailed-stats">
                     <div class="detailed-stat-card">
                         <div class="detailed-stat-header">
-                            <div class="stat-icon-large">📊</div>
+                            <div class="stat-icon-large" style="font-weight: bold; color: var(--accent-mint);">σ</div>
                             <div class="stat-info">
                                 <h4>Desviación Estándar Global</h4>
                             </div>
@@ -1187,7 +1477,7 @@
                     </div>
                     <div class="detailed-stat-card">
                         <div class="detailed-stat-header">
-                            <div class="stat-icon-large">🎯</div>
+                            <div class="stat-icon-large" style="font-weight: bold; color: var(--accent-teal);">CV</div>
                             <div class="stat-info">
                                 <h4>Coeficiente de Variación</h4>
                             </div>
@@ -1196,7 +1486,7 @@
                     </div>
                     <div class="detailed-stat-card">
                         <div class="detailed-stat-header">
-                            <div class="stat-icon-large">📈</div>
+                            <div class="stat-icon-large" style="font-weight: bold; color: var(--primary-blue);">Δ</div>
                             <div class="stat-info">
                                 <h4>Tendencia Dominante</h4>
                             </div>
@@ -1205,7 +1495,7 @@
                     </div>
                     <div class="detailed-stat-card">
                         <div class="detailed-stat-header">
-                            <div class="stat-icon-large">⚡</div>
+                            <div class="stat-icon-large" style="font-weight: bold; color: var(--accent-mint);">!</div>
                             <div class="stat-info">
                                 <h4>Alertas Activas</h4>
                             </div>
@@ -1349,6 +1639,7 @@
             updateMetrics();
             updateDetailedStats();
             setupFilters();
+            displayGeneticSequence();
         });
 
         // ==================== BIOMARKERS GRID RENDERING ====================
@@ -1362,6 +1653,18 @@
                 const trend = calculateTrend(bio.history);
                 const zScore = calculateZScore(bio);
                 
+                const statusSymbols = {
+                    'optimal': '✓',
+                    'warning': '⚠',
+                    'critical': '●'
+                };
+                
+                const statusTexts = {
+                    'optimal': 'Óptimo',
+                    'warning': 'Atención',
+                    'critical': 'Crítico'
+                };
+                
                 return `
                     <div class="biomarker-card">
                         <div class="biomarker-header">
@@ -1370,7 +1673,7 @@
                                 <span class="biomarker-category-tag">${getCategoryName(bio.category)}</span>
                             </div>
                             <div class="biomarker-status status-${bio.status}">
-                                ${bio.status === 'optimal' ? '✓ Óptimo' : bio.status === 'warning' ? '⚠ Atención' : '🔴 Crítico'}
+                                ${statusSymbols[bio.status]} ${statusTexts[bio.status]}
                             </div>
                         </div>
                         
@@ -1501,10 +1804,12 @@
                 ctx.stroke();
             }
 
-            // Lines
+            // Lines - Sin puntos circulares
             biomarkersData.slice(0, 3).forEach((bio, idx) => {
                 ctx.strokeStyle = colors[idx];
                 ctx.lineWidth = 3;
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
                 ctx.beginPath();
 
                 const max = Math.max(...bio.history);
@@ -1518,11 +1823,6 @@
 
                     if (i === 0) ctx.moveTo(x, y);
                     else ctx.lineTo(x, y);
-
-                    ctx.fillStyle = colors[idx];
-                    ctx.beginPath();
-                    ctx.arc(x, y, 5, 0, 2 * Math.PI);
-                    ctx.fill();
                 });
                 ctx.stroke();
             });
@@ -1591,7 +1891,11 @@
             if (!canvas) return;
             
             const ctx = canvas.getContext('2d');
-            canvas.width = canvas.offsetWidth;
+            
+            // Ajustar tamaño según dispositivo
+            const containerWidth = canvas.parentElement.offsetWidth;
+            const isMobile = window.innerWidth < 768;
+            canvas.width = isMobile ? Math.max(600, containerWidth) : containerWidth;
             canvas.height = 400;
             
             const markers = ['HbA1c', 'LDL', 'PCR', 'Vit D', 'TSH', 'Crea'];
@@ -1628,6 +1932,7 @@
                     
                     ctx.fillStyle = intensity > 0.5 ? 'white' : (isLight ? '#0A2463' : '#F1F5F9');
                     ctx.font = 'bold 12px sans-serif';
+                   
                     ctx.textAlign = 'center';
                     ctx.textBaseline = 'middle';
                     ctx.fillText(value.toFixed(2), x + cellSize / 2, y + cellSize / 2);
@@ -1737,6 +2042,106 @@
             drawDistributionChart();
             renderBiomarkersGrid();
         });
+
+        // ==================== GENETIC PROFILE DEMO ====================
+        const geneticMarkers = [
+            'ACGT', 'TGCA', 'CGTA', 'GATC', 'TCAG', 'AGCT', 'CTGA', 'GCTA',
+            'ATCG', 'TAGC', 'CAGT', 'GTAC', 'ACTG', 'TCGA', 'GACT', 'CATG'
+        ];
+
+        function generateGeneticSequence() {
+            const sequence = [];
+            for (let i = 0; i < 12; i++) {
+                const line = [];
+                for (let j = 0; j < 8; j++) {
+                    const marker = geneticMarkers[Math.floor(Math.random() * geneticMarkers.length)];
+                    line.push(marker);
+                }
+                sequence.push(line.join(' '));
+            }
+            return sequence;
+        }
+
+        function displayGeneticSequence() {
+            const container = document.getElementById('geneticSequence');
+            const sequence = generateGeneticSequence();
+            
+            container.innerHTML = sequence.map((line, idx) => {
+                const parts = line.split(' ');
+                const highlighted = parts.map((marker, i) => {
+                    if (idx === 3 && (i === 2 || i === 5)) {
+                        return `<span class="genetic-marker">${marker}</span>`;
+                    }
+                    if (idx === 7 && i === 4) {
+                        return `<span class="genetic-marker">${marker}</span>`;
+                    }
+                    return marker;
+                }).join(' ');
+                return highlighted;
+            }).join('<br>');
+        }
+
+        async function generateAnonymousProfile() {
+            const btn = document.getElementById('generateProfileBtn');
+            const stages = ['stage1', 'stage2', 'stage3', 'stage4'];
+            const finalProfile = document.getElementById('finalProfile');
+            
+            btn.disabled = true;
+            btn.textContent = 'Procesando...';
+            finalProfile.classList.remove('show');
+
+            // Reset stages
+            stages.forEach(id => {
+                const stage = document.getElementById(id);
+                stage.classList.remove('active', 'complete');
+            });
+
+            // Stage 1: Genetic markers extraction
+            await animateStage('stage1', async () => {
+                const markers = ['CGTA', 'GATC', 'TCAG'];
+                document.getElementById('stage1Output').textContent = 
+                    `Marcadores extraídos: ${markers.join(', ')} + 15 adicionales`;
+            });
+
+            // Stage 2: SHA-256 Hash
+            await animateStage('stage2', async () => {
+                const hash = 'a7f3c9d8e2b14f56c83a92e1b7d4f8e3c5a9b2d6f1e8c4a7b3d9e5f2c8a1b6d4';
+                document.getElementById('stage2Output').textContent = 
+                    `Hash generado: ${hash}`;
+            });
+
+            // Stage 3: Biomarker integration
+            await animateStage('stage3', async () => {
+                document.getElementById('stage3Output').textContent = 
+                    `Hash + [HbA1c: 6.8, LDL: 145, TSH: 2.1, Crea: 0.9] → Hash combinado`;
+            });
+
+            // Stage 4: Anonymization
+            await animateStage('stage4', async () => {
+                document.getElementById('stage4Output').textContent = 
+                    `k-anonimato aplicado (k≥5) + Ruido DP (ε=0.1) + AES-256-GCM`;
+            });
+
+            // Show final profile
+            const finalId = 'BIO_' + Math.random().toString(36).substring(2, 15).toUpperCase();
+            document.getElementById('profileIdDisplay').textContent = finalId;
+            finalProfile.classList.add('show');
+
+            btn.disabled = false;
+            btn.textContent = 'Generar Nuevo Perfil';
+        }
+
+        async function animateStage(stageId, callback) {
+            const stage = document.getElementById(stageId);
+            stage.classList.add('active');
+            
+            await new Promise(resolve => setTimeout(resolve, 800));
+            await callback();
+            await new Promise(resolve => setTimeout(resolve, 600));
+            
+            stage.classList.remove('active');
+            stage.classList.add('complete');
+        }
     </script>
 
     <!-- Flowise Chatbot Integration -->
