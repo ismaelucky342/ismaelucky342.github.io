@@ -774,6 +774,64 @@
             color: var(--accent-teal);
         }
 
+        /* ==================== ARCHITECTURE DIAGRAM ==================== */
+        .architecture-diagram {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 1rem;
+            padding: 2rem;
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+        }
+
+        .arch-component {
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .arch-component:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-mint);
+            box-shadow: 0 8px 16px rgba(6, 214, 160, 0.2);
+        }
+
+        .arch-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .arch-title {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .arch-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .arch-arrow {
+            position: absolute;
+            right: -1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--accent-mint);
+        }
+
+        .arch-component:last-child .arch-arrow {
+            display: none;
+        }
+
         /* ==================== RESPONSIVE ==================== */
         @media (max-width: 768px) {
             .nav-container {
@@ -2210,25 +2268,6 @@
             const stage = document.getElementById(stageId);
             stage.classList.add('active');
             
-            await new Promise(resolve => setTimeout(resolve, 800));
-            await callback();
-            await new Promise(resolve => setTimeout(resolve, 600));
-            
-            stage.classList.remove('active');
-            stage.classList.add('complete');
-        }
-    </script>
-
-    <!-- Flowise Chatbot Integration -->
-    <script type="module">
-        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-        Chatbot.init({
-            chatflowid: "15149e15-e1ea-476c-93da-d502a09929fa",
-            apiHost: "http://hormiguita.es:3000/",
-        })
-    </script>
-</body>
-</html>
             await new Promise(resolve => setTimeout(resolve, 800));
             await callback();
             await new Promise(resolve => setTimeout(resolve, 600));
