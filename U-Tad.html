@@ -3,15 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Ismaelucky342</title>
-    <link rel="stylesheet" href="proj_styles.css">
+    <meta name="description" content="U-Tad Computer Science and Mathematics curriculum - B.S. Double Degree documentation">
+    <meta name="keywords" content="U-Tad, Computer Science, Mathematics, curriculum, academic">
+    <meta name="author" content="Ismaelucky342">
+    <meta name="theme-color" content="#1a1a2e">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="U-Tad - Ismaelucky342">
+    <meta property="og:description" content="B.S. Double Degree in Computer Science and Mathematics">
+    
+    <title>U-Tad - Ismaelucky342</title>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    
+    <!-- CSS with media attribute for performance -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="utad-styles.css">
     <link rel="stylesheet" href="background.css">
-    <script src="particles.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press%20Start%202P">
+    
+    <!-- External CSS with async loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" media="print" onload="this.media='all'">
+    
+    <!-- Fallback for no-JS -->
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    </noscript>
 </head>
 <body class="dark-mode pixel-art">
-    <div class="grid-container">
+    <div class="grid-container" aria-hidden="true">
         <div class="plane">
             <div class="grid"></div>
             <div class="glow"></div>
@@ -21,134 +45,128 @@
             <div class="glow"></div>
         </div>
     </div>    
+    
     <header class="pixel-header">
         <div class="logo-container">
-            <div class="pixel-logo">42</div>
+            <div class="pixel-logo" aria-label="42 Logo">42</div>
         </div>
 
         <div class="profile-container">
             <div class="title-container">
-                <a href="https://github.com/Ismaelucky342" target="_blank" class="title-link">
+                <a href="https://github.com/Ismaelucky342" target="_blank" rel="noopener noreferrer" class="title-link" aria-label="Visit GitHub profile">
                     <h1 class="site-title">Ismaelucky342 HUB</h1>
                     <br>
                     <br>
                 </a>
             </div>
         </div>
-        <!-- Menú de navegación añadido aquí -->
-        <nav class="nav-menu">
+        
+        <nav class="nav-menu" aria-label="Main navigation">
             <nav>
                 <a href="index.html" class="nav-item">ABOUT ME</a>
                 <a href="projects.html" class="nav-item">42 PROJECTS</a>
-                <a href="U-Tad.html" class="nav-item">U-Tad</a>
+                <a href="U-Tad.html" class="nav-item" aria-current="page">U-Tad</a>
                 <a href="Contact.html" class="nav-item">CONTACT</a>
             </nav>  
             <br>
         </nav>
         <br>
     </header>
-    <br><br><br><br><br><br><br><br><br><br>
-    <utadh2>U-Tad</utadh2>
-    <br><br>
+    
     <main class="main-content">
+        <br><br>
+        <h2 class="page-title">U-Tad</h2>
         <br>
-        <div class="image-box">
-            <img src="images/pixel_utad.png" alt="Philosophers"
-                 class="intro-image pixel-border">
+        
+        <div class="image-box utad-logo">
+            <img src="images/pixel_utad.png" alt="U-Tad Logo" class="intro-image pixel-border" loading="lazy" width="400" height="200">
         </div>
         <br>
+        
         <section class="intro-section">
             <div class="container">
-                <div class="utext-box">
+                <article class="text-box">
                     <p class="intro-title">My journey at U-Tad</p>
-                    <p class="intro-text">Here are the projects and content carried out during my B.S. Double </p>
-                    <p class="intro-text">Degree in Computer Science and Computational Mathematics at U-Tad. </p>
+                    <p class="intro-text">Here are the projects and content carried out during my B.S. Double</p>
+                    <p class="intro-text">Degree in Computer Science and Computational Mathematics at U-Tad.</p>
                     <br>
-                    <p class="intro-text">This program at U-Tad offers a comprehensive and interdisciplinary </p>
+                    <p class="intro-text">This program at U-Tad offers a comprehensive and interdisciplinary</p>
                     <p class="intro-text">education that combines the core principles of <strong>Computer Science</strong> with</p>
-                    <p class="intro-text">advanced mathematical theories, preparing students to tackle complex  </p>
-                    <p class="intro-text">problems in areas such as data science, artificial intelligence, </p>
+                    <p class="intro-text">advanced mathematical theories, preparing students to tackle complex</p>
+                    <p class="intro-text">problems in areas such as data science, artificial intelligence,</p>
                     <p class="intro-text">machine learning and software engineering.</p>
                     <br>
                     <p class="intro-text">The Github repository is organized by academic year, semester, and</p>
                     <p class="intro-text">finally by subject, where I have stored study content, practical</p>
-                    <p class="intro-text">materials from the subjects, personal projects, and exams. </p>
-                    <p class="intro-text"><br>
+                    <p class="intro-text">materials from the subjects, personal projects, and exams.</p>
+                    <br>
                     <p class="intro-text">Many of the subjects, such as those taken in the mathematics section</p>
                     <p class="intro-text">of the double degree, do not include practical or coding content</p>
                     <p class="intro-text">so they will only contain a transcription of my summaries and</p>
                     <p class="intro-text">study materials into Markdown.</p>
                     <p class="intro-text">The rest of the subjects, unless otherwise specified, will have the</p>
                     <p class="intro-text">full content (study material, examples, practical exercises, etc.).</p>
-                </div>
+                </article>
             </div>
         </section>
+        
         <section class="intro-section">
             <div class="container">
-                <div class="utext-box2">
+                <article class="text-box">
                     <p class="intro-title">Degree Curriculum:</p>
-                    <p class="intro-text">The degree is divided into five academic years,              </p>
-                    <p class="intro-text">each consisting of two semesters (Q1 & Q2),    </p>
-                    <p class="intro-text">which offer core and elective subjects        </p>
+                    <p class="intro-text">The degree is divided into five academic years,</p>
+                    <p class="intro-text">each consisting of two semesters (Q1 & Q2),</p>
+                    <p class="intro-text">which offer core and elective subjects</p>
                     <p class="intro-text">and company interships. Throughout the</p>
                     <p class="intro-text">degree, students explore both disciplines</p>
                     <p class="intro-text">giving them a well-rounded understanding</p>
                     <p class="intro-text">of technical and mathematical aspects in</p>
-                    <p class="intro-text">computing.</p>                    
-                    <br>
-
-                </div>
-                <br>
-                <br>
-
-                <br>
-                <div class="button-container">
-                    <button class="index-button" onclick="scrollToSection('first-course')">1st Course</button>
-                    <button class="index-button" onclick="scrollToSection('second-course')">2nd Course</button>
-                    <button class="index-button" onclick="scrollToSection('third-course')">3rd Course</button>
-                    <button class="index-button" onclick="scrollToSection('fourth-course')">4th Course</button>
-                    <button class="index-button" onclick="scrollToSection('fifth-course')">5th Course</button>
-                </div>
+                    <p class="intro-text">computing.</p>
+                </article>
+                
+                <nav class="button-container" aria-label="Course navigation">
+                    <button class="index-button" onclick="scrollToSection('first-course')" aria-label="Go to 1st Course">1st Course</button>
+                    <button class="index-button" onclick="scrollToSection('second-course')" aria-label="Go to 2nd Course">2nd Course</button>
+                    <button class="index-button" onclick="scrollToSection('third-course')" aria-label="Go to 3rd Course">3rd Course</button>
+                    <button class="index-button" onclick="scrollToSection('fourth-course')" aria-label="Go to 4th Course">4th Course</button>
+                    <button class="index-button" onclick="scrollToSection('fifth-course')" aria-label="Go to 5th Course">5th Course</button>
+                </nav>
             </div>
         </section>
         
-        <section id="first-course" class="intro-section">
+        <section id="first-course" class="intro-section course-section">
             <div class="container">
-                <div class="utext-box">
+                <article class="text-box">
                     <p class="intro-title">1st Course</p>
-                    <p class="intro-text">In the first year, we are introduced to the fundamental concepts of programming, web development, operating systems, and networking...</p>
-                    <br>
+                    <p class="intro-text">In the first year, we are introduced to the fundamental concepts of</p>
+                    <p class="intro-text">programming, web development, operating systems, and networking...</p>
                     <br>
                     <p class="intro-title2">Q1:</p>
                     <br>
-                    <br>
-                        <p class="intro-text">Introduction to Programming I (6 ECTS)</p>
-                        <p class="intro-text">Web Development Fundamentals (6 ECTS)</p>
-                        <p class="intro-text">Networking and Operating Systems Labs (6 ECTS)</p>
-                        <p class="intro-text">Logic and Discrete Mathematics (6 ECTS) (Only Study Material)</p>
-                        <p class="intro-text">Creative Thinking (3 ECTS)</p>
-                    <br>
+                    <p class="intro-text">Introduction to Programming I (6 ECTS)</p>
+                    <p class="intro-text">Web Development Fundamentals (6 ECTS)</p>
+                    <p class="intro-text">Networking and Operating Systems Labs (6 ECTS)</p>
+                    <p class="intro-text">Logic and Discrete Mathematics (6 ECTS) (Only Study Material)</p>
+                    <p class="intro-text">Creative Thinking (3 ECTS)</p>
                     <br>
                     <p class="intro-title2">Q2:</p>
                     <br>
-                    <br>
-                        <p class="intro-text">Algebra (6 ECTS) (Only Study Material)</p>
-                        <p class="intro-text">Computer Architecture (6 ECTS)</p>
-                        <p class="intro-text">Introduction to Programming II (6 ECTS)</p>
-                        <p class="intro-text">Database and Distributed Systems Laboratory (6 ECTS)</p>
-                        <p class="intro-text">Digital Society (3 ECTS) (Only Study Material)</p>
-                    <br>
+                    <p class="intro-text">Algebra (6 ECTS) (Only Study Material)</p>
+                    <p class="intro-text">Computer Architecture (6 ECTS)</p>
+                    <p class="intro-text">Introduction to Programming II (6 ECTS)</p>
+                    <p class="intro-text">Database and Distributed Systems Laboratory (6 ECTS)</p>
+                    <p class="intro-text">Digital Society (3 ECTS) (Only Study Material)</p>
                     <br>
                     <p class="intro-title2">Full-year Project:</p>
                     <br>
                     <p class="intro-text">Projects I: Digital Techniques and Technologies (6 ECTS)</p>
-                </div>
+                </article>
             </div>
         </section>
         
-        <section id="second-course" class="intro-section">
+        <section id="second-course" class="intro-section course-section">
             <div class="container">
-                <div class="utext-box">
+                <article class="text-box">
                     <p class="intro-title">2nd Course</p>
                     <p class="intro-text">In the second year, we acquire programming skills in algorithms, POO, data structures, and design patterns...</p>
                     <br>
@@ -175,13 +193,13 @@
                     <p class="intro-title2">Full-year Project:</p>
                     <br>
                     <p class="intro-text">Projects II: Software Engineering Trends (6 ECTS)</p>
-                </div>
+                </article>
             </div>
         </section>
         
-        <section id="third-course" class="intro-section">
+        <section id="third-course" class="intro-section course-section">
             <div class="container">
-                <div class="utext-box">
+                <article class="text-box">
                     <p class="intro-title">3rd Course</p>
                     <p class="intro-text">The third year introduces specialized subjects such as Artificial Intelligence, Machine Learning, Distributed Systems, and Web Programming...</p>
                     <br>
@@ -207,13 +225,13 @@
                         <p class="intro-text">Machine Learning I (6 ECTS)</p>
                         <p class="intro-text">Web Programming II, Server (6 ECTS)</p>
                     
-                </div>
+                </article>
             </div>
         </section>
         
-        <section id="fourth-course" class="intro-section">
+        <section id="fourth-course" class="intro-section course-section">
             <div class="container">
-                <div class="utext-box">
+                <article class="text-box">
                     <p class="intro-title">4th Course</p>
                     <p class="intro-text">In the fourth year, students focus on more advanced topics such as Mathematical Analysis III, Optimization, and Algebraic Structures...</p>
                     <br>
@@ -239,13 +257,13 @@
                     <p class="intro-title2">Full-year Project:</p>
                     <br>
                     <p class="intro-text">Projects III: Web and App Development (9 ECTS)</p>
-                </div>
+                </article>
             </div>
         </section>
         
-        <section id="fifth-course" class="intro-section">
+        <section id="fifth-course" class="intro-section course-section">
             <div class="container">
-                <div class="utext-box">
+                <article class="text-box">
                     <p class="intro-title">5th Course</p>
                     <p class="intro-text">The final year is focused on preparation for the professional world. Students engage in an internship with a company...</p>
                     <br>
@@ -272,22 +290,27 @@
                     <br>
                     <p class="intro-text">Computational Maths Final Degree Project (6 ECTS)</p>
                     <p class="intro-text">Software Engineering Final Degree Project (6 ECTS)</p>
-                </div>
-            </div>    
+                </article>
+            </div>
         </section>
         
-        
-
     </main>
     
+    <footer class="site-footer">
+        <p>&copy; 2024 Ismaelucky342. All rights reserved.</p>
+    </footer>
     
-    <script>function scrollToSection(sectionId) {
+    <script>
+    function scrollToSection(sectionId) {
         const element = document.getElementById(sectionId);
-        const offset = 200; // Ajusta este valor según el espacio que desees dejar arriba
-        const top = element.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top: top, behavior: 'smooth' });
+        if (element) {
+            const offset = 200;
+            const top = element.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+        }
     }
     </script>
-    <script src="script.js"></script>
+    <script src="particles.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

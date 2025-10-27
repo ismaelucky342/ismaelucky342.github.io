@@ -278,6 +278,63 @@ a:focus {
 }
 
 /* ============================================
+   Contact Links
+   ============================================ */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    align-items: center;
+}
+
+.contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-size: clamp(0.6rem, 1.5vw, 0.9rem);
+    color: var(--color-text);
+    transition: all var(--transition-speed);
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+}
+
+.contact-item i {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: var(--color-primary);
+}
+
+.contact-item:hover,
+.contact-item:focus {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--color-glow);
+    color: var(--color-background);
+}
+
+.contact-item:hover i,
+.contact-item:focus i {
+    color: var(--color-background);
+}
+
+@media (min-width: 768px) {
+    .contact-links {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .contact-item {
+        width: auto;
+    }
+}
+
+/* ============================================
    Responsive Design - Mobile Small (360px+)
    ============================================ */
 @media (max-width: 480px) {

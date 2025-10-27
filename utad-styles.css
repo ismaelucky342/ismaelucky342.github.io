@@ -1,0 +1,79 @@
+/* ============================================
+   U-Tad Page Specific Styles
+   Uses base styles from styles.css
+   ============================================ */
+
+.page-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--color-primary);
+    text-align: center;
+    margin: var(--spacing-lg) 0;
+    text-shadow: 0 0 10px var(--color-glow);
+}
+
+.utad-logo {
+    margin: 0 auto;
+}
+
+.intro-title2 {
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    color: var(--color-secondary);
+    margin: var(--spacing-sm) 0;
+    line-height: 1.4;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+    width: 100%;
+}
+
+.index-button {
+    display: inline-block;
+    padding: clamp(0.5rem, 2vw, 1rem) clamp(0.75rem, 3vw, 1.5rem);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-size: clamp(0.5rem, 1.5vw, 0.8rem);
+    font-family: var(--font-pixel), var(--font-fallback);
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    white-space: nowrap;
+}
+
+.index-button:hover,
+.index-button:focus {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--color-glow);
+    outline: none;
+}
+
+.course-section {
+    scroll-margin-top: 200px;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 480px) {
+    .button-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .index-button {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .button-container {
+        gap: var(--spacing-md);
+    }
+}

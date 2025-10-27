@@ -3,16 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="42 Projects by Ismaelucky342 - Complete curriculum from Rank 00 to Rank 05">
+    <meta name="keywords" content="42 Madrid, C programming, C++, projects, libft, minishell, philosophers">
+    <meta name="author" content="Ismaelucky342">
+    <meta name="theme-color" content="#1a1a2e">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="42 Projects - Ismaelucky342">
+    <meta property="og:description" content="Complete 42 curriculum projects documentation">
+    
     <title>42 Projects - Ismaelucky342</title>
-    <link rel="stylesheet" href="styles2.css">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    
+    <!-- CSS with media attribute for performance -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projects-styles.css">
     <link rel="stylesheet" href="background.css">
-    <script src="particles.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press%20Start%202P">
+    
+    <!-- External CSS with async loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" media="print" onload="this.media='all'">
+    
+    <!-- Fallback for no-JS -->
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    </noscript>
 </head>
 <body class="dark-mode pixel-art">
 
-    <div class="grid-container">
+    <div class="grid-container" aria-hidden="true">
         <div class="plane">
             <div class="grid"></div>
             <div class="glow"></div>
@@ -25,50 +49,49 @@
 
     <header class="pixel-header">
         <div class="logo-container">
-            <div class="pixel-logo">42</div>
+            <div class="pixel-logo" aria-label="42 Logo">42</div>
         </div>
         
         <div class="profile-container">
             <div class="title-container">
-                <a href="https://github.com/Ismaelucky342" target="_blank" class="title-link">
+                <a href="https://github.com/Ismaelucky342" target="_blank" rel="noopener noreferrer" class="title-link" aria-label="Visit GitHub profile">
                     <h1 class="site-title">Ismaelucky342 HUB</h1>
                     <br>
                     <br>
                 </a>
             </div>
         </div>
-        <!-- Menú de navegación añadido aquí -->
-        <nav class="nav-menu">
+        
+        <nav class="nav-menu" aria-label="Main navigation">
             <nav>
                 <a href="index.html" class="nav-item">ABOUT ME</a>
-                <a href="projects.html" class="nav-item">42 PROJECTS</a>
+                <a href="projects.html" class="nav-item" aria-current="page">42 PROJECTS</a>
                 <a href="U-Tad.html" class="nav-item">U-Tad</a>
                 <a href="Contact.html" class="nav-item">CONTACT</a>
             </nav>  
+            <br>
         </nav>
+        <br>
     </header>
 
-    <main class="projects-container">
-        <br>
-        <br>
+    <main class="main-content projects-container">
+        <br><br>
+        
         <!-- Rank 00: Libft -->
         <section class="project-group" id="rank-00">
-            <br><br><br><br><br><br><br><br>
-            <h2> ===================  Rank 00 ====================</h2>
-            <br><br>
+            <h2 class="rank-title">Rank 00</h2>
             <div class="container">
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-front">
                             <div class="image-container">
-                                <img src="images/libft.png" alt="Libft" class="intro-image pixel-border">
+                                <img src="images/libft.png" alt="Libft" class="project-image pixel-border" loading="lazy" width="200" height="200">
                             </div>
-                            <br><br>
-                            <div class="text-box">Libft</div>
+                            <div class="card-title">Libft</div>
                         </div>
                         <div class="card-back">
-                            <div class="text-box">Libft Project - Implementing a C library with various functions.</div>
-                            <a href="42projects/libft.html" class="play-button">Play</a>
+                            <div class="card-description">Libft Project - Implementing a C library with various functions.</div>
+                            <a href="42projects/libft.html" class="play-button" aria-label="View Libft project">Play</a>
                         </div>
                     </div>
                 </div>
@@ -77,22 +100,19 @@
 
         <!-- Rank 01: ft_printf, born2beroot, get_next_line -->
         <section class="project-group" id="rank-01">
-            <br><br><br><br>
-            <h2> ===================  Rank 01 ====================</h2>
-            <br><br>
+            <h2 class="rank-title">Rank 01</h2>
             <div class="container">
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-front">
                             <div class="image-container">
-                                <img src="images/ft_printf.png" alt="ft_printf" class="intro-image pixel-border">
+                                <img src="images/ft_printf.png" alt="ft_printf" class="project-image pixel-border" loading="lazy" width="200" height="200">
                             </div>
-                            <br><br>
-                            <div class="text-box">ft_printf</div>
+                            <div class="card-title">ft_printf</div>
                         </div>
                         <div class="card-back">
-                            <div class="text-box">Custom implementation of printf in C.</div>
-                            <a href="42projects/ft_printf.html" class="play-button">Play</a>
+                            <div class="card-description">Custom implementation of printf in C.</div>
+                            <a href="42projects/ft_printf.html" class="play-button" aria-label="View ft_printf project">Play</a>
                         </div>
                     </div>
                 </div>
@@ -100,14 +120,13 @@
                     <div class="card-inner">
                         <div class="card-front">
                             <div class="image-container">
-                                <img src="images/b2b.png" alt="ft_printf" class="intro-image pixel-border">
+                                <img src="images/b2b.png" alt="born2beroot" class="project-image pixel-border" loading="lazy" width="200" height="200">
                             </div>
-                            <br><br>
-                            <div class="text-box">born2beroot</div>
+                            <div class="card-title">born2beroot</div>
                         </div>
                         <div class="card-back">
-                            <div class="text-box">Linux system initialization project with shell scripting.</div>
-                            <a href="42projects/born2beroot.html" class="play-button">Play</a>
+                            <div class="card-description">Linux system initialization project with shell scripting.</div>
+                            <a href="42projects/born2beroot.html" class="play-button" aria-label="View born2beroot project">Play</a>
                         </div>
                     </div>
                 </div>
@@ -115,36 +134,33 @@
                     <div class="card-inner">
                         <div class="card-front">
                             <div class="image-container">
-                                <img src="images/gnl.png" alt="ft_printf" class="intro-image pixel-border">
+                                <img src="images/gnl.png" alt="get_next_line" class="project-image pixel-border" loading="lazy" width="200" height="200">
                             </div>
-                            <br><br>
-                            <div class="text-box">get_next_line</div>
+                            <div class="card-title">get_next_line</div>
                         </div>
                         <div class="card-back">
-                            <div class="text-box">Reading lines from a file with dynamic memory management.</div>
-                            <a href="42projects/get_next_line.html" class="play-button">Play</a>
+                            <div class="card-description">Reading lines from a file with dynamic memory management.</div>
+                            <a href="42projects/get_next_line.html" class="play-button" aria-label="View get_next_line project">Play</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- Rank 02: push_swap, fract_ol, minitalk -->
         <section class="project-group" id="rank-02">
-            <br><br><br><br>
-            <h2> ===================  Rank 02 ====================</h2>
-            <br><br>
+            <h2 class="rank-title">Rank 02</h2>
             <div class="container">
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-front">
                             <div class="image-container">
-                                <img src="images/push_swap.png" alt="push_swap" class="intro-image pixel-border">
+                                <img src="images/push_swap.png" alt="push_swap" class="project-image pixel-border" loading="lazy" width="200" height="200">
                             </div>
-                            <br><br>
-                            <div class="text-box">push_swap</div>
+                            <div class="card-title">push_swap</div>
                         </div>
                         <div class="card-back">
-                            <div class="text-box">Sorting algorithm project, using stacks.</div>
+                            <div class="card-description">Sorting algorithm project, using stacks.</div>
                             <a href="42projects/push_swap.html" class="play-button">Play</a>
                         </div>
                     </div>
@@ -153,13 +169,12 @@
                     <div class="card-inner">
                         <div class="card-front">
                             <div class="image-container">
-                                <img src="images/fractol.png" alt="fractol" class="intro-image pixel-border">
+                                <img src="images/fractol.png" alt="fractol" class="project-image pixel-border" loading="lazy" width="200" height="200">
                             </div>
-                            <br><br>
-                            <div class="text-box">fract_ol</div>
+                            <div class="card-title">fract_ol</div>
                         </div>
                         <div class="card-back">
-                            <div class="text-box">Fractal generation using the Mandelbrot set.</div>
+                            <div class="card-description">Fractal generation using the Mandelbrot set.</div>
                             <a href="42projects/fract-ol.html" class="play-button">Play</a>
                         </div>
                     </div>
@@ -168,13 +183,12 @@
                     <div class="card-inner">
                         <div class="card-front">
                             <div class="image-container">
-                                <img src="images/minitalk.png" alt="minitalk" class="intro-image pixel-border">
+                                <img src="images/minitalk.png" alt="minitalk" class="project-image pixel-border" loading="lazy" width="200" height="200">
                             </div>
-                            <br><br>
-                            <div class="text-box">minitalk</div>
+                            <div class="card-title">minitalk</div>
                         </div>
                         <div class="card-back">
-                            <div class="text-box">Implementing inter-process communication using signals in C.</div>
+                            <div class="card-description">Implementing inter-process communication using signals in C.</div>
                             <a href="42projects/minitalk.html" class="play-button">Play</a>
                         </div>
                     </div>
@@ -182,24 +196,21 @@
             </div>
         </section>
 
-        <!-- Rank 03: minishell, Philosophers -->
+        <!-- Rank 03 -->
         <section class="project-group" id="rank-03">
-            <br><br><br><br>
-            <h2> ===================  Rank 03 ====================</h2>
-            <br><br>
+            <h2 class="rank-title">Rank 03</h2>
             <div class="container">
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-front">
                             <div class="image-container">
-                                <img src="images/miniche.png" alt="ft_printf" class="intro-image pixel-border">
+                                <img src="images/miniche.png" alt="minishell" class="project-image pixel-border" loading="lazy" width="200" height="200">
                             </div>
-                            <br><br>
-                            <div class="text-box">minishell</div>
+                            <div class="card-title">minishell</div>
                         </div>
                         <div class="card-back">
-                            <div class="text-box">Building a custom shell in C, similar to Bash.</div>
-                            <a href="42projects/minishell.html" class="play-button">Play</a>
+                            <div class="card-description">Building a custom shell in C, similar to Bash.</div>
+                            <a href="42projects/minishell.html" class="play-button" aria-label="View minishell project">Play</a>
                         </div>
                     </div>
                 </div>
@@ -207,264 +218,245 @@
                     <div class="card-inner">
                         <div class="card-front">
                             <div class="image-container">
-                                <img src="images/philosophers.png" alt="Philosophers" class="intro-image pixel-border">
+                                <img src="images/philosophers.png" alt="Philosophers" class="project-image pixel-border" loading="lazy" width="200" height="200">
                             </div>
-                            <br><br>
-                            <div class="text-box">Philosophers</div>
-                            <br>
+                            <div class="card-title">Philosophers</div>
                         </div>
                         <div class="card-back">
-                            <div class="text-box">Synchronization of philosophers eating using semaphores.</div>
-                            <a href="42projects/Philosophers.html" class="play-button">Play</a>
+                            <div class="card-description">Synchronization of philosophers eating using semaphores.</div>
+                            <a href="42projects/Philosophers.html" class="play-button" aria-label="View Philosophers project">Play</a>
                         </div>
                     </div>
                 </div>                
             </div>
         </section>
-    </main>
-            <section class="project-group" id="rank-03">
-                <br><br><br><br>
-                <h2> ===================  Rank 04 ====================</h2>
-                <br><br>
-                <div class="container">
-                    
-                    <div class="card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <div class="image-container">
-                                    <img src="images/cub3d.png" alt="cub3d" class="intro-image pixel-border">
-                                </div>
-                                <br><br>
-                                <div class="text-box">Cub3D</div>
-                                <br>
+
+        <!-- Rank 04 -->
+        <section class="project-group" id="rank-04">
+            <h2 class="rank-title">Rank 04</h2>
+            <div class="container">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="image-container">
+                                <img src="images/cub3d.png" alt="cub3d" class="project-image pixel-border" loading="lazy" width="200" height="200">
                             </div>
-                            <div class="card-back">
-                                <div class="text-box">Raycasting game project using mlx.</div>
-                                <a href="42projects/cub3d.html" class="play-button">Play</a>
-                            </div>
+                            <div class="card-title">Cub3D</div>
                         </div>
-                    </div>          
-                    <div class="card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <div class="image-container">
-                                    <img src="images/netpractice.png" alt="cub3d" class="intro-image pixel-border">
-                                </div>
-                                <br><br>
-                                <div class="text-box">Net Practice</div>
-                                <br>
-                            </div>
-                            <div class="card-back">
-                                <div class="text-box">Networks Project fundamental networking concepts such as IP addressing, subnetting, and routing.</div>
-                                <a href="42projects/netpractice.html" class="play-button">Play</a>
-                            </div>
-                        </div>
-                    </div>            
-                    <div class="card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <div class="image-container">
-                                    <img src="images/cpp.png" alt="cpp_module_00" class="intro-image pixel-border">
-                                </div>
-                                <br><br>
-                                <div class="text-box">cpp_module_00</div>
-                            </div>
-                            <div class="card-back">
-                                <div class="text-box">The first C++ module, basic concepts of OOP.</div>
-                                <a href="42projects/cpp_00.html" class="play-button">Play</a>
-                            </div>
+                        <div class="card-back">
+                            <div class="card-description">Raycasting game project using mlx.</div>
+                            <a href="42projects/cub3d.html" class="play-button" aria-label="View Cub3D project">Play</a>
                         </div>
                     </div>
-                    
-                    <div class="card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <div class="image-container">
-                                    <img src="images/cpp.png" alt="cpp_module_01" class="intro-image pixel-border">
-                                </div>
-                                <br><br>
-                                <div class="text-box">cpp_module_01</div>
+                </div>          
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="image-container">
+                                <img src="images/netpractice.png" alt="Net Practice" class="project-image pixel-border" loading="lazy" width="200" height="200">
                             </div>
-                            <div class="card-back">
-                                <div class="text-box">Memory allocation, references, and pointers.</div>
-                                <a href="42projects/cpp_01.html" class="play-button">Play</a>
-                            </div>
+                            <div class="card-title">Net Practice</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-description">Networks Project fundamental networking concepts such as IP addressing, subnetting, and routing.</div>
+                            <a href="42projects/netpractice.html" class="play-button" aria-label="View Net Practice project">Play</a>
                         </div>
                     </div>
-                    
-                    <div class="card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <div class="image-container">
-                                    <img src="images/cpp.png" alt="cpp_module_02" class="intro-image pixel-border">
-                                </div>
-                                <br><br>
-                                <div class="text-box">cpp_module_02</div>
+                </div>            
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="image-container">
+                                <img src="images/cpp.png" alt="cpp_module_00" class="project-image pixel-border" loading="lazy" width="200" height="200">
                             </div>
-                            <div class="card-back">
-                                <div class="text-box">Ad-hoc polymorphism, operator overloading.</div>
-                                <a href="42projects/cpp_02.html" class="play-button">Play</a>
-                            </div>
+                            <div class="card-title">cpp_module_00</div>
                         </div>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <div class="image-container">
-                                    <img src="images/cpp.png" alt="cpp_module_03" class="intro-image pixel-border">
-                                </div>
-                                <br><br>
-                                <div class="text-box">cpp_module_03</div>
-                            </div>
-                            <div class="card-back">
-                                <div class="text-box">Inheritance, abstract classes, and interfaces.</div>
-                                <a href="42projects/cpp_03.html" class="play-button">Play</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <div class="image-container">
-                                    <img src="images/cpp.png" alt="cpp_module_04" class="intro-image pixel-border">
-                                </div>
-                                <br><br>
-                                <div class="text-box">cpp_module_04</div>
-                            </div>
-                            <div class="card-back">
-                                <div class="text-box">Subtyping polymorphism and dynamic casting.</div>
-                                <a href="42projects/cpp_04.html" class="play-button">Play</a>
-                            </div>
+                        <div class="card-back">
+                            <div class="card-description">The first C++ module, basic concepts of OOP.</div>
+                            <a href="42projects/cpp_00.html" class="play-button" aria-label="View cpp_module_00 project">Play</a>
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
-                    <!-- Rank 03: minishell, Philosophers -->
-                    <section class="project-group" id="rank-05">
-                        <br><br><br><br>
-                        <h2> ===================  Rank 05 ====================</h2>
-                        <br><br>
-                        <div class="container">
-                            
-                            <div class="card">
-                                <div class="card-inner">
-                                    <div class="card-front">
-                                        <div class="image-container">
-                                            <img src="images/inception.png" alt="cub3d" class="intro-image pixel-border">
-                                        </div>
-                                        <br><br>
-                                        <div class="text-box">Inception</div>
-                                        <br>
-                                    </div>
-                                    <div class="card-back">
-                                        <div class="text-box">This project aims to broaden your knowledge of system administration through the use
-                                            of Docker technology.</div>
-                                        <a href="42projects/Inception.html" class="play-button">Play</a>
-                                    </div>
-                                </div>
-                            </div>          
-                            <div class="card">
-                                <div class="card-inner">
-                                    <div class="card-front">
-                                        <div class="image-container">
-                                            <img src="images/irc.png" alt="cub3d" class="intro-image pixel-border">
-                                        </div>
-                                        <br><br>
-                                        <div class="text-box">ft_irc</div>
-                                        <br>
-                                    </div>
-                                    <div class="card-back">
-                                        <div class="text-box">This project is about creating your own Internet Relay Chat server.</div>
-                                        <a href="42projects/ft_irc.html" class="play-button">Play</a>
-                                    </div>
-                                </div>
-                            </div>            
-                            <div class="card">
-                                <div class="card-inner">
-                                    <div class="card-front">
-                                        <div class="image-container">
-                                            <img src="images/cpp.png" alt="cpp_module_00" class="intro-image pixel-border">
-                                        </div>
-                                        <br><br>
-                                        <div class="text-box">cpp_module_05</div>
-                                    </div>
-                                    <div class="card-back">
-                                        <div class="text-box">C++ module focusing on file streams and exception handling.</div>
-                                        <a href="42projects/cpp_05.html" class="play-button">Play</a>
-                                    </div>
-                                </div>
+                
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="image-container">
+                                <img src="images/cpp.png" alt="cpp_module_01" class="project-image pixel-border" loading="lazy" width="200" height="200">
                             </div>
-                            
-                            <div class="card">
-                                <div class="card-inner">
-                                    <div class="card-front">
-                                        <div class="image-container">
-                                            <img src="images/cpp.png" alt="cpp_module_01" class="intro-image pixel-border">
-                                        </div>
-                                        <br><br>
-                                        <div class="text-box">cpp_module_06</div>
-                                    </div>
-                                    <div class="card-back">
-                                        <div class="text-box">C++ module covering static casts and serialization techniques.</div>
-                                        <a href="42projects/cpp_06.html" class="play-button">Play</a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="card">
-                                <div class="card-inner">
-                                    <div class="card-front">
-                                        <div class="image-container">
-                                            <img src="images/cpp.png" alt="cpp_module_02" class="intro-image pixel-border">
-                                        </div>
-                                        <br><br>
-                                        <div class="text-box">cpp_module_07</div>
-                                    </div>
-                                    <div class="card-back">
-                                        <div class="text-box">C++ module exploring templates and iterators.</div>
-                                        <a href="42projects/cpp_07.html" class="play-button">Play</a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="card">
-                                <div class="card-inner">
-                                    <div class="card-front">
-                                        <div class="image-container">
-                                            <img src="images/cpp.png" alt="cpp_module_03" class="intro-image pixel-border">
-                                        </div>
-                                        <br><br>
-                                        <div class="text-box">cpp_module_08</div>
-                                    </div>
-                                    <div class="card-back">
-                                        <div class="text-box">C++ module focusing on container classes and algorithms.</div>
-                                        <a href="42projects/cpp_08.html" class="play-button">Play</a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="card">
-                                <div class="card-inner">
-                                    <div class="card-front">
-                                        <div class="image-container">
-                                            <img src="images/cpp.png" alt="cpp_module_04" class="intro-image pixel-border">
-                                        </div>
-                                        <br><br>
-                                        <div class="text-box">cpp_module_09</div>
-                                    </div>
-                                    <div class="card-back">
-                                        <div class="text-box">C++ module focusing on advanced STL usage and algorithms.</div>
-                                        <a href="42projects/cpp_09.html" class="play-button">Play</a>
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="card-title">cpp_module_01</div>
                         </div>
-                    </section>
-                </main>
+                        <div class="card-back">
+                            <div class="card-description">Memory allocation, references, and pointers.</div>
+                            <a href="42projects/cpp_01.html" class="play-button" aria-label="View cpp_module_01 project">Play</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="image-container">
+                                <img src="images/cpp.png" alt="cpp_module_02" class="project-image pixel-border" loading="lazy" width="200" height="200">
+                            </div>
+                            <div class="card-title">cpp_module_02</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-description">Ad-hoc polymorphism, operator overloading.</div>
+                            <a href="42projects/cpp_02.html" class="play-button" aria-label="View cpp_module_02 project">Play</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="image-container">
+                                <img src="images/cpp.png" alt="cpp_module_03" class="project-image pixel-border" loading="lazy" width="200" height="200">
+                            </div>
+                            <div class="card-title">cpp_module_03</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-description">Inheritance, abstract classes, and interfaces.</div>
+                            <a href="42projects/cpp_03.html" class="play-button" aria-label="View cpp_module_03 project">Play</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="image-container">
+                                <img src="images/cpp.png" alt="cpp_module_04" class="project-image pixel-border" loading="lazy" width="200" height="200">
+                            </div>
+                            <div class="card-title">cpp_module_04</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-description">Subtyping polymorphism and dynamic casting.</div>
+                            <a href="42projects/cpp_04.html" class="play-button" aria-label="View cpp_module_04 project">Play</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <script src="script.js"></script>
+        <!-- Rank 05 -->
+        <section class="project-group" id="rank-05">
+            <h2 class="rank-title">Rank 05</h2>
+            <div class="container">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="image-container">
+                                <img src="images/inception.png" alt="Inception" class="project-image pixel-border" loading="lazy" width="200" height="200">
+                            </div>
+                            <div class="card-title">Inception</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-description">This project aims to broaden your knowledge of system administration through the use
+                                of Docker technology.</div>
+                            <a href="42projects/Inception.html" class="play-button" aria-label="View Inception project">Play</a>
+                        </div>
+                    </div>
+                </div>          
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="image-container">
+                                <img src="images/irc.png" alt="ft_irc" class="project-image pixel-border" loading="lazy" width="200" height="200">
+                            </div>
+                            <div class="card-title">ft_irc</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-description">This project is about creating your own Internet Relay Chat server.</div>
+                            <a href="42projects/ft_irc.html" class="play-button" aria-label="View ft_irc project">Play</a>
+                        </div>
+                    </div>
+                </div>            
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="image-container">
+                                <img src="images/cpp.png" alt="cpp_module_05" class="project-image pixel-border" loading="lazy" width="200" height="200">
+                            </div>
+                            <div class="card-title">cpp_module_05</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-description">C++ module focusing on file streams and exception handling.</div>
+                            <a href="42projects/cpp_05.html" class="play-button" aria-label="View cpp_module_05 project">Play</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="image-container">
+                                <img src="images/cpp.png" alt="cpp_module_06" class="project-image pixel-border" loading="lazy" width="200" height="200">
+                            </div>
+                            <div class="card-title">cpp_module_06</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-description">C++ module covering static casts and serialization techniques.</div>
+                            <a href="42projects/cpp_06.html" class="play-button" aria-label="View cpp_module_06 project">Play</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="image-container">
+                                <img src="images/cpp.png" alt="cpp_module_07" class="project-image pixel-border" loading="lazy" width="200" height="200">
+                            </div>
+                            <div class="card-title">cpp_module_07</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-description">C++ module exploring templates and iterators.</div>
+                            <a href="42projects/cpp_07.html" class="play-button" aria-label="View cpp_module_07 project">Play</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="image-container">
+                                <img src="images/cpp.png" alt="cpp_module_08" class="project-image pixel-border" loading="lazy" width="200" height="200">
+                            </div>
+                            <div class="card-title">cpp_module_08</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-description">C++ module focusing on container classes and algorithms.</div>
+                            <a href="42projects/cpp_08.html" class="play-button" aria-label="View cpp_module_08 project">Play</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="image-container">
+                                <img src="images/cpp.png" alt="cpp_module_09" class="project-image pixel-border" loading="lazy" width="200" height="200">
+                            </div>
+                            <div class="card-title">cpp_module_09</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-description">C++ module focusing on advanced STL usage and algorithms.</div>
+                            <a href="42projects/cpp_09.html" class="play-button" aria-label="View cpp_module_09 project">Play</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 Ismaelucky342. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts deferred for performance -->
+    <script src="particles.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

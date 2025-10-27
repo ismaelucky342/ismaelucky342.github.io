@@ -3,53 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Ismaelucky342</title>
+    <meta name="description" content="Contact Ismaelucky342 - Get in touch for collaborations and inquiries">
+    <meta name="keywords" content="contact, Ismaelucky342, collaboration, email">
+    <meta name="author" content="Ismaelucky342">
+    <meta name="theme-color" content="#1a1a2e">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact - Ismaelucky342">
+    <meta property="og:description" content="Get in touch with Ismaelucky342">
+    
+    <title>Contact - Ismaelucky342</title>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    
+    <!-- CSS with media attribute for performance -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="background.css">
-    <script src="particles.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press%20Start%202P">
+    
+    <!-- External CSS with async loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" media="print" onload="this.media='all'">
+    
+    <!-- Fallback for no-JS -->
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    </noscript>
 </head>
 <body class="dark-mode pixel-art">
 
-        <div class="grid-container">
-            <div class="plane">
-                <div class="grid"></div>
-                <div class="glow"></div>
-            </div>
-            <div class="plane">
-                <div class="grid"></div>
-                <div class="glow"></div>
-            </div>
+    <div class="grid-container" aria-hidden="true">
+        <div class="plane">
+            <div class="grid"></div>
+            <div class="glow"></div>
         </div>
-            
+        <div class="plane">
+            <div class="grid"></div>
+            <div class="glow"></div>
+        </div>
+    </div>
+        
     <header class="pixel-header">
         <div class="logo-container">
-            <div class="pixel-logo">42</div>
+            <div class="pixel-logo" aria-label="42 Logo">42</div>
         </div>
         
         <div class="profile-container">
             <div class="title-container">
-                <a href="https://github.com/Ismaelucky342" target="_blank" class="title-link">
+                <a href="https://github.com/Ismaelucky342" target="_blank" rel="noopener noreferrer" class="title-link" aria-label="Visit GitHub profile">
                     <h1 class="site-title">Ismaelucky342 HUB</h1>
                     <br>
                     <br>
                 </a>
             </div>
         </div>
-        <!-- Menú de navegación añadido aquí -->
-        <nav class="nav-menu">
+        
+        <nav class="nav-menu" aria-label="Main navigation">
             <nav>
                 <a href="index.html" class="nav-item">ABOUT ME</a>
                 <a href="projects.html" class="nav-item">42 PROJECTS</a>
                 <a href="U-Tad.html" class="nav-item">U-Tad</a>
-                <a href="Contact.html" class="nav-item">CONTACT</a>
+                <a href="Contact.html" class="nav-item" aria-current="page">CONTACT</a>
             </nav>  
             <br>
         </nav>
         <br>
     </header>
     
-    <script src="script.js"></script>
+    <main class="main-content">
+        <br><br>
+        <section class="intro-section">
+            <div class="container">
+                <article class="text-box">
+                    <h2 class="intro-title">Get in Touch</h2>
+                    <br>
+                    <p class="intro-text">Feel free to reach out for collaborations,</p>
+                    <p class="intro-text">questions, or just to say hi!</p>
+                    <br>
+                    <div class="contact-links">
+                        <a href="https://github.com/Ismaelucky342" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/ismaelucky342" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="mailto:ismaelucky342@gmail.com" class="contact-item">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="site-footer">
+        <p>&copy; 2024 Ismaelucky342. All rights reserved.</p>
+    </footer>
+    
+    <script src="particles.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
