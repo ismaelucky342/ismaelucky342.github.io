@@ -65,12 +65,10 @@ a {
 a:hover,
 a:focus {
     color: var(--color-primary);
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
 }
 
 /* ============================================
-   Header Styles
+   Header Styles - Pixel Art
    ============================================ */
 .pixel-header {
     padding: var(--spacing-md);
@@ -97,33 +95,62 @@ a:focus {
     margin: var(--spacing-md) 0;
 }
 
+.title-link {
+    display: inline-block;
+}
+
+.title-link:hover .site-title,
+.title-link:focus .site-title {
+    color: var(--color-primary);
+    text-shadow: 0 0 10px var(--color-glow);
+}
+
 .site-title {
     font-size: clamp(1rem, 3vw, 1.5rem);
     color: var(--color-text);
-    margin: var(--spacing-sm) 0;
+    margin: 0;
+    transition: all var(--transition-speed);
     word-break: break-word;
 }
 
 /* ============================================
-   Navigation
+   Navigation - Floating Pixel Art Menu
    ============================================ */
 .nav-menu {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: var(--spacing-sm);
+    align-items: center;
     margin-top: var(--spacing-lg);
     padding: var(--spacing-sm);
 }
 
+.nav-menu nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
 .nav-item {
     display: inline-block;
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: clamp(0.5rem, 2vw, 1rem) clamp(0.75rem, 3vw, 1.5rem);
     background-color: var(--color-surface);
     border: 2px solid var(--color-border);
     border-radius: var(--border-radius);
-    font-size: clamp(0.6rem, 2vw, 0.8rem);
+    font-size: clamp(0.5rem, 1.5vw, 0.8rem);
+    font-family: var(--font-pixel), var(--font-fallback);
     transition: all var(--transition-speed);
+    white-space: nowrap;
+    position: relative;
+}
+
+.nav-item::before {
+    content: '▶';
+    position: absolute;
+    left: 0.5rem;
+    opacity: 0;
+    transition: opacity var(--transition-speed);
 }
 
 .nav-item:hover,
@@ -132,11 +159,18 @@ a:focus {
     border-color: var(--color-primary);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px var(--color-glow);
+    outline: none;
+}
+
+.nav-item:hover::before,
+.nav-item:focus::before {
+    opacity: 1;
 }
 
 .nav-item[aria-current="page"] {
     background-color: var(--color-secondary);
     border-color: var(--color-secondary);
+    box-shadow: 0 0 15px var(--color-glow);
 }
 
 /* ============================================
@@ -156,7 +190,7 @@ a:focus {
 }
 
 /* ============================================
-   Intro Section
+   Intro Section - Texto mejorado
    ============================================ */
 .intro-section {
     margin-bottom: var(--spacing-xl);
@@ -164,24 +198,32 @@ a:focus {
 
 .text-box {
     background-color: var(--color-surface);
-    padding: var(--spacing-lg);
+    padding: clamp(1rem, 3vw, 2rem);
     border: 2px solid var(--color-border);
     border-radius: var(--border-radius);
     width: 100%;
     max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .intro-title {
-    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-size: clamp(0.8rem, 2.5vw, 1.5rem);
     color: var(--color-primary);
     margin-bottom: var(--spacing-md);
+    line-height: 1.4;
 }
 
 .intro-text {
-    font-size: clamp(0.6rem, 1.5vw, 0.8rem);
+    font-size: clamp(0.5rem, 1.2vw, 0.75rem);
     line-height: 1.8;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
     color: var(--color-text-secondary);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.intro-text:last-of-type {
+    margin-bottom: 0;
 }
 
 .image-box {
@@ -219,6 +261,7 @@ a:focus {
     max-width: 500px;
     border-radius: var(--border-radius);
     border: 2px solid var(--color-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* ============================================
@@ -229,12 +272,36 @@ a:focus {
     padding: var(--spacing-lg);
     background-color: var(--color-surface);
     border-top: 2px solid var(--color-border);
-    font-size: clamp(0.6rem, 1.5vw, 0.8rem);
+    font-size: clamp(0.5rem, 1.2vw, 0.75rem);
     color: var(--color-text-secondary);
+    margin-top: var(--spacing-xl);
 }
 
 /* ============================================
-   Responsive Design - Tablet
+   Responsive Design - Mobile Small (360px+)
+   ============================================ */
+@media (max-width: 480px) {
+    .nav-menu nav {
+        gap: 0.5rem;
+    }
+    
+    .nav-item {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.5rem;
+    }
+    
+    .text-box {
+        padding: 1rem;
+    }
+    
+    .intro-text {
+        font-size: 0.5rem;
+        line-height: 1.6;
+    }
+}
+
+/* ============================================
+   Responsive Design - Tablet (768px+)
    ============================================ */
 @media (min-width: 768px) {
     .container {
@@ -261,13 +328,21 @@ a:focus {
         max-width: 48%;
     }
     
-    .nav-menu {
+    .nav-menu nav {
         gap: var(--spacing-md);
+    }
+    
+    .nav-item {
+        font-size: 0.65rem;
+    }
+    
+    .intro-text {
+        font-size: 0.65rem;
     }
 }
 
 /* ============================================
-   Responsive Design - Desktop
+   Responsive Design - Desktop (1024px+)
    ============================================ */
 @media (min-width: 1024px) {
     .main-content {
@@ -283,16 +358,30 @@ a:focus {
     }
     
     .nav-item {
-        font-size: 0.8rem;
-        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: 0.75rem;
+        padding: 1rem 1.5rem;
     }
     
     .intro-title {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
     
     .intro-text {
+        font-size: 0.7rem;
+    }
+}
+
+/* ============================================
+   Responsive Design - Large Desktop (1920px+)
+   ============================================ */
+@media (min-width: 1920px) {
+    .nav-item {
         font-size: 0.8rem;
+        padding: 1rem 2rem;
+    }
+    
+    .intro-text {
+        font-size: 0.75rem;
     }
 }
 
@@ -322,318 +411,16 @@ a:focus {
     border-width: 0;
 }
 
-/* Focus visible for keyboard navigation */
 :focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }
 
-/* Animación de parpadeo retro suave */
-@keyframes retroBlink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.6; /* Baja la opacidad a la mitad para un parpadeo suave */
-  }
-}
-
-/* Efecto de rebote suave retro para el logo */
-@keyframes retroBounce {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(-10px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  75% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-/* Efecto de máquina de escribir para el texto */
-@keyframes typing {
-  0% {
-    width: 0;
-    border-right: none;
-  }
-  2%{
-    border-right: 3px solid #ffcc00; /* Mantiene la barra visible al principio */
-  }
-  99% {
-    border-right: 3px solid #ffcc00; /* Mantiene la barra visible hasta casi el final */
-  }
-  100% {
-    width: 100%;
-    border-right: none; /* Oculta la barra al terminar */
-  }
-}
-
-/* Hacer que toda la barra del menú sea fija y flotante */
-.pixel-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(68, 17, 68, 0.9); /* Fondo semitransparente */
-    padding: 35px;
-    border-bottom: 4px solid #ffcc00;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-  }
-  
-  /* Asegurar que el contenido no quede oculto detrás del menú */
-  body {
-    padding-top: 80px; /* Ajusta según la altura del menú */
-  }
-
-/* Título principal con parpadeo retro */
-.site-title {
-  color: #ffcc00;
-  text-shadow: 3px 3px 0 #222, 6px 6px 0 #ff0099;
-  animation: retroBlink 1.5s ease-in-out infinite; /* Parpadeo suave y lento */
-}
-
-/* Animación de rebote suave para el logo */
-.pixel-logo {
-  font-size: 48px;
-  color: #FFD700;
-  font-weight: bold;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  display: inline-block;
-  animation: retroBounce 2s infinite;
-}
-
-.nav-menu {
-    display: flex;
-    justify-content: center;  /* Centra los botones */
-    gap: 40px; 
-    margin-top: 15px;
-}
-
-/* Botones de navegación con efecto retro */
-.nav-button {
-    color: #fff090;
-    background: none;
-    border: 2px solid #ffcc00;
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 12px;
-    text-decoration: none;
-    position: relative;
-    text-transform: uppercase;
-    animation: retroBounce 1.5s infinite; /* Rebote suave en los botones */
-}
-
-.nav-button::after {
-    content: '→';
-    position: absolute;
-    top: 100%;
-    left: 100%;
-    transform: translateY(-20%);
-    opacity: 0;
-    transition: 0.3s ease;
-    font-size: 14px;
-    color: #ffcc00;
-}
-
-.nav-button:hover {
-    background-color: #ffcc00;
-    color: #221;
-    box-shadow: 4px 4px 0 #ff0099;
-}
-
-.nav-button:hover::after {
-    opacity: 1;
-    left: 105%;
-}
-
-.nav-button:focus {
-    outline: none;
-}
-
-/* Para la pestaña activa */
-.nav-item.active::after {
-    width: 100%; /* Mantiene el subrayado */
-}
-
-/* Añadir brillo a la pestaña activa */
-.nav-item.active {
-    animation: neonGlow 1.5s infinite alternate;
-}
-/* Animación de máquina de escribir para títulos introductorios */
-.intro-title {
-  color: #ffcc00;
-  font-size: 24px;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid #ffcc00;
-  animation: typing 2s steps(30) 0s 1 normal both;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* Animación de máquina de escribir para cada párrafo introductorio */
-.intro-text {
-  color: #fff090;
-  font-size: 15px;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid #fff090;
-  animation: typing 0.5s steps(40) 1s 1 normal both;
-  margin-top: 10px;
-  display: block;
-}
-
-/* Retrasos de animación para cada línea, esperando a que termine la anterior */
-.intro-text:nth-of-type(1) { animation-delay: 3s; } /* Espera a que termine el título */
-.intro-text:nth-of-type(2) { animation-delay: 3.5s; }
-.intro-text:nth-of-type(3) { animation-delay: 4s; }
-.intro-text:nth-of-type(4) { animation-delay: 4.5s; }
-.intro-text:nth-of-type(5) { animation-delay: 5s; }
-.intro-text:nth-of-type(6) { animation-delay: 5.5s; }
-.intro-text:nth-of-type(7) { animation-delay: 6s; }
-.intro-text:nth-of-type(8) { animation-delay: 6.5s; }
-.intro-text:nth-of-type(9) { animation-delay: 7s; }
-.intro-text:nth-of-type(10) { animation-delay: 7.5s; }
-/* Estilo de la lista y los enlaces con flechas */
-ol {
-  list-style-type: none;
-  padding: 0;
-  margin: 20px 0;
-}
-
-.arrow {
-  position: relative;
-  display: block;
-  color: #F6EB14;
-  text-decoration: none;
-  font-size: 18px;
-  padding-left: 25px;
-}
-
-.arrow i {
-  display: none;
-  position: absolute;
-  top: -1px;
-  left: -0.60em;
-  color: #F6EB14;
-  font-size: 22px;
-}
-
-.arrow:hover {
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.arrow:hover i {
-  display: block;
-}
-
-.arrow:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-/* Contenedor del logo de 42 */
-.logo-container {
-  position: fixed;
-  top: 60px;
-  left: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Press Start 2P', cursive;
-  z-index: 9999;
-}
-
-/* Estilo para el logo "42" */
-@keyframes neonGlow {
-    0% {
-      text-shadow: 0 0 3px #FFD700, 0 0 6px #FF9900;
-    }
-    50% {
-      text-shadow: 0 0 5px #FFD700, 0 0 8px #FFCC00;
-    }
-    100% {
-      text-shadow: 0 0 3px #FFD700, 0 0 6px #FF9900;
-    }
-  }
-  
-  .pixel-logo {
-    font-size: 48px;
-    color: #FFD700;
-    font-weight: bold;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    display: inline-block;
-    animation: retroBounce 2s infinite, neonGlow 1.5s infinite alternate;
-  }
-
-.intro-section {
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px 20px;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.text-box {
-  max-width: 1000px;
-  text-align: left;
-  padding: 20px;
-  border: 4px solid #ffcc00;
-  background-color: #441144;
-  box-shadow: 5px 5px 0 #ff0099;
-}
-.text-box-2 {
-  max-width: 1030px;
-  width: 100%;
-  text-align: left;
-  padding: 20px;
-  border: 4px solid #ffcc00;
-  background-color: #441144;
-  box-shadow: 5px 5px 0 #ff0099;
-}
-
-.intro-title {
-  color: #ffcc00;
-}
-
-.image-box {
-  margin-top: 20px;
-}
-
-.intro-image {
-  width: 250px;
-  border: 4px solid #ffcc00;
-  box-shadow: 5px 5px 0 #ff0099;
-}
-
-/* Añadido para mostrar las flechas con Font Awesome */
-.arrow i::before {
-  content: "\f061"; /* Esto es el código para la flecha derecha en Font Awesome */
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900; /* Necesario para algunos iconos */
-}
-
-main-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+/* ============================================
+   Utility Classes
+   ============================================ */
+.pixel-border {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
