@@ -1,58 +1,332 @@
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
 
+/* ============================================
+   CSS Variables for maintainability
+   ============================================ */
+:root {
+    --color-primary: #8b5cf6;
+    --color-secondary: #6d28d9;
+    --color-background: #1a1a2e;
+    --color-surface: #16213e;
+    --color-text: #e0e0e0;
+    --color-text-secondary: #a0a0a0;
+    --color-border: #2d3561;
+    --color-glow: rgba(139, 92, 246, 0.3);
+    
+    --font-pixel: 'Press Start 2P', monospace;
+    --font-fallback: monospace;
+    
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+}
+
+/* ============================================
+   Reset and Base Styles
+   ============================================ */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Press Start 2P', cursive;
-  background-color: #221;
-  color: #fff090;
-  text-transform: uppercase;
-  text-align: center;
+    font-family: var(--font-pixel), var(--font-fallback);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover,
+a:focus {
+    color: var(--color-primary);
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* ============================================
+   Header Styles
+   ============================================ */
+.pixel-header {
+    padding: var(--spacing-md);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.logo-container {
+    margin-bottom: var(--spacing-sm);
+}
+
+.pixel-logo {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--color-primary);
+    display: inline-block;
+    padding: var(--spacing-sm);
+    border: 3px solid var(--color-primary);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 20px var(--color-glow);
+}
+
+.profile-container {
+    margin: var(--spacing-md) 0;
+}
+
+.site-title {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: var(--color-text);
+    margin: var(--spacing-sm) 0;
+    word-break: break-word;
+}
+
+/* ============================================
+   Navigation
+   ============================================ */
+.nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-sm);
 }
 
 .nav-item {
-  text-decoration: none;
-  color: yellow;
-  padding: 5px 10px;
-  position: relative;
-  margin: 0 20px; /* Añade margen para separar los botones */
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-size: clamp(0.6rem, 2vw, 0.8rem);
+    transition: all var(--transition-speed);
 }
 
-.nav-item::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 0;
-  height: 3px;
-  background-color: yellow;
-  transition: width 0.3s ease-in-out;
+.nav-item:hover,
+.nav-item:focus {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--color-glow);
 }
 
-.nav-item:hover::after {
-  width: 100%; /* Subrayado completo al pasar el ratón */
+.nav-item[aria-current="page"] {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
 }
 
-.nav-item:hover::before {
-  content: "▶";
-  position: absolute;
-  left: -15px;
-  bottom: 3px; /* Sube la flecha */
-  color: yellow;
+/* ============================================
+   Main Content
+   ============================================ */
+.main-content {
+    padding: var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Para la pestaña activa */
-.nav-item.active::after {
-  width: 100%; /* Mantiene el subrayado */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    align-items: center;
 }
 
+/* ============================================
+   Intro Section
+   ============================================ */
+.intro-section {
+    margin-bottom: var(--spacing-xl);
+}
 
+.text-box {
+    background-color: var(--color-surface);
+    padding: var(--spacing-lg);
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    width: 100%;
+    max-width: 600px;
+}
 
+.intro-title {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.intro-text {
+    font-size: clamp(0.6rem, 1.5vw, 0.8rem);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-secondary);
+}
+
+.image-box {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.intro-image {
+    border-radius: var(--border-radius);
+    border: 3px solid var(--color-primary);
+    box-shadow: 0 0 20px var(--color-glow);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+/* ============================================
+   Stats Section
+   ============================================ */
+.stats-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.text-box-2 {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: center;
+    width: 100%;
+}
+
+.text-box-2 img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--color-border);
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.site-footer {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: var(--color-surface);
+    border-top: 2px solid var(--color-border);
+    font-size: clamp(0.6rem, 1.5vw, 0.8rem);
+    color: var(--color-text-secondary);
+}
+
+/* ============================================
+   Responsive Design - Tablet
+   ============================================ */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    .text-box {
+        max-width: 50%;
+    }
+    
+    .image-box {
+        max-width: 40%;
+    }
+    
+    .text-box-2 {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .text-box-2 img {
+        max-width: 48%;
+    }
+    
+    .nav-menu {
+        gap: var(--spacing-md);
+    }
+}
+
+/* ============================================
+   Responsive Design - Desktop
+   ============================================ */
+@media (min-width: 1024px) {
+    .main-content {
+        padding: var(--spacing-xl);
+    }
+    
+    .pixel-logo {
+        font-size: 3rem;
+    }
+    
+    .site-title {
+        font-size: 1.5rem;
+    }
+    
+    .nav-item {
+        font-size: 0.8rem;
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+    
+    .intro-title {
+        font-size: 1.5rem;
+    }
+    
+    .intro-text {
+        font-size: 0.8rem;
+    }
+}
+
+/* ============================================
+   Accessibility & Performance
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Focus visible for keyboard navigation */
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
 
 /* Animación de parpadeo retro suave */
 @keyframes retroBlink {
